@@ -1,9 +1,11 @@
+/* Configurações gerais e padrão de espaçamento */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Ajustes gerais de cores e identidade visual */
 body {
     background-color: #F8F9FA;
     font-family: Poppins, Arial, sans-serif;
@@ -12,6 +14,7 @@ body {
     line-height: 1.5;
 }
 
+/* Cabeçalho e navegação principal */
 header {
     background-color: #fff;
     display: flex;
@@ -23,6 +26,7 @@ header {
     gap: 25px;
 }
 
+/* Links e efeitos */
 header .logo, header > a {
     display: inline-block;
     font-size: 24px;
@@ -63,12 +67,14 @@ header nav a:hover, header nav a.active, header nav a[aria-current="page"] {
     color: #009639;
 }
 
+/* Área principal e espaçamentos gerais */
 main {
     width: 100%;
     padding: 35px;
     min-height: 70vh;
 }
 
+/* Estilos dos títulos */
 h1 {
     font-size: 32px;
     line-height: 1.25;
@@ -115,6 +121,7 @@ a:hover {
     color: #009639;
 }
 
+/* Botões principais */
 .btn-destaque, button {
     display: inline-block;
     background-color: #F26522;
@@ -136,6 +143,7 @@ button {
     font-weight: bold;
 }
 
+/* Rodapé e links do rodapé */
 footer {
     width: 100%;
     text-align: center;
@@ -179,6 +187,7 @@ footer nav a:hover {
     color: #F26522;
 }
 
+/* Estilo geral dos formulários */
 form {
     background-color: #fff;
     padding: 25px;
@@ -217,6 +226,8 @@ form button {
     margin-top: 20px;
 }
 
+/* Grade dos integrantes */
+/* Organização dos cards da equipe */
 .grid-equipe, .grid-integrantes {
     display: flex;
     flex-wrap: wrap;
@@ -241,6 +252,7 @@ form button {
     border-radius: 8px;
 }
 
+/* Avisos sobre funcionalidades demonstrativas */
 .aviso-demo {
     background-color: #fff;
     padding: 12px;
@@ -248,6 +260,7 @@ form button {
     margin: 15px 0;
 }
 
+/* Estrutura inicial da página de doação */
 .doacao-colunas {
     display: flex;
     align-items: flex-start;
@@ -255,6 +268,7 @@ form button {
     width: 100%;
 }
 
+/* Imagem e texto de apresentação da doação */
 .doacao-imagem {
     flex: 1;
     min-width: 0;
@@ -273,6 +287,7 @@ form button {
     color: #009639;
 }
 
+/* Formulário de contribuição */
 .doacao-formulario {
     flex: 1;
     min-width: 0;
@@ -303,6 +318,7 @@ form button {
     margin-top: 15px;
 }
 
+/* Opções de frequência, valor e pagamento */
 .opcoes {
     display: flex;
     align-items: stretch;
@@ -356,12 +372,14 @@ form button {
     flex-shrink: 0;
 }
 
+/* Primeiros ajustes da página de contato */
 .pagina-contato {
     background-color: #F8F9FA;
     padding: 45px 5%;
     min-height: auto;
 }
 
+/* Layout da página de contato */
 .secao-contato {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -470,6 +488,7 @@ form button {
     transform: skew(-25deg);
 }
 
+/* Caixa e campos do formulário de contato */
 .formulario-contato {
     min-width: 0;
     padding: 30px;
@@ -552,6 +571,7 @@ form button {
     margin-top: 0;
 }
 
+/* Ajustes responsivos para telas médias */
 @media (max-width: 900px) {
     header {
         flex-wrap: wrap;
@@ -602,6 +622,7 @@ form button {
 
 }
 
+/* Ajustes responsivos para celulares */
 @media (max-width: 600px) {
     header {
         align-items: flex-start;
@@ -662,6 +683,7 @@ form button {
 
 }
 
+/* Página inicial: espaçamento e apresentação */
 .pagina-inicial {
     padding: 35px;
 }
@@ -693,6 +715,7 @@ form button {
     margin-bottom: 10px;
 }
 
+/* Banner principal da página inicial */
 .banner-inicial {
     display: flex;
     align-items: center;
@@ -724,6 +747,7 @@ form button {
     line-height: 1.6;
 }
 
+/* Botões do banner inicial */
 .banner-botoes {
     display: flex;
     align-items: center;
@@ -820,6 +844,7 @@ form button {
     margin-top: 12px;
 }
 
+/* Seções de ações e formas de ajudar */
 .secao-acoes, .secao-ajuda {
     padding: 45px 0;
 }
@@ -832,6 +857,7 @@ form button {
     margin-bottom: 0;
 }
 
+/* Organização dos cards da página inicial */
 .cards-acoes, .cards-ajuda {
     display: flex;
     align-items: stretch;
@@ -881,6 +907,7 @@ form button {
     text-decoration: none;
 }
 
+/* Destaque sobre a importância do impacto */
 .banner-impacto {
     display: flex;
     align-items: center;
@@ -904,6 +931,7 @@ form button {
     flex-shrink: 0;
 }
 
+/* Chamada final da página inicial */
 .chamada-final {
     padding: 45px 25px;
     margin-top: 30px;
@@ -999,6 +1027,7 @@ form button {
 
 }
 
+/* Página Quem Somos: equipe do projeto */
 .pagina-integrantes {
     background-color: #f7f9fc;
     padding: 50px 6%;
@@ -1096,11 +1125,13 @@ form button {
     flex-wrap: wrap;
 }
 
+/* Página Sobre: identidade visual e conteúdo */
 .pagina-sobre {
     background-color: #f7f9fc;
     color: #173b52;
 }
 
+/* Banner de apresentação da organização */
 .banner-sobre {
     padding: 65px 12%;
     text-align: center;
@@ -1204,6 +1235,7 @@ form button {
     margin-bottom: 18px;
 }
 
+/* Contexto sobre saúde bucal */
 .secao-contexto {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
@@ -1242,6 +1274,7 @@ form button {
     max-width: 850px;
 }
 
+/* Etapas do ciclo da pobreza */
 .lista-ciclo {
     max-width: 850px;
     margin: 0 auto;
@@ -1280,6 +1313,7 @@ form button {
     border-top: 4px solid #168b86;
 }
 
+/* Etapas de funcionamento do programa */
 .secao-funcionamento {
     padding: 55px 10%;
     background-color: #173b52;
@@ -1327,6 +1361,7 @@ form button {
     margin: 0 auto;
 }
 
+/* Página de perguntas frequentes */
 .pagina-faq {
     background-color: #f7f9fc;
     color: #173b52;
@@ -1361,6 +1396,7 @@ form button {
     line-height: 1.8;
 }
 
+/* Blocos de perguntas e respostas */
 .faq-lista {
     max-width: 900px;
     margin: 40px auto;
@@ -1407,6 +1443,7 @@ form button {
     text-decoration: underline;
 }
 
+/* Chamada para entrar em contato */
 .chamada-faq {
     max-width: 850px;
     margin: 50px auto 0;
@@ -1525,12 +1562,14 @@ form button {
     font-weight: bold;
 }
 
+/* Página Meu Impacto */
 .pagina-impacto {
     background-color: #F8F9FA;
     color: #173B52;
     padding-bottom: 25px;
 }
 
+/* Banner de apresentação do Meu Impacto */
 .banner-impacto-pagina {
     position: relative;
     display: flex;
@@ -1604,6 +1643,7 @@ form button {
     font-weight: bold;
 }
 
+/* Indicadores demonstrativos */
 .secao-indicadores {
     padding: 20px 5%;
 }
@@ -1618,6 +1658,7 @@ form button {
     margin: 0 0 10px;
 }
 
+/* Cards com os indicadores */
 .cards-impacto {
     display: flex;
     align-items: stretch;
@@ -1699,6 +1740,7 @@ form button {
     margin-bottom: 0;
 }
 
+/* Área da história ilustrativa */
 .secao-historia-impacto {
     display: flex;
     align-items: stretch;
@@ -1748,6 +1790,7 @@ form button {
     margin-bottom: 8px;
 }
 
+/* Chamada para contribuir na página de impacto */
 .chamada-impacto {
     position: relative;
     display: flex;
@@ -1850,6 +1893,7 @@ form button {
     transform: rotate(-10deg);
 }
 
+/* Página de doação */
 .pagina-doacao {
     padding: 40px 5%;
     background-color: #f7f9fc;
@@ -1967,6 +2011,7 @@ form button {
     accent-color: #168b86;
 }
 
+/* Campos de dados do doador */
 .campo-doacao {
     margin-bottom: 18px;
 }
@@ -2077,6 +2122,7 @@ label {
     color: #365A45;
 }
 
+/* Aparência compartilhada entre os cards */
 .card, .card-membro, .card-integrante, .card-acao, .card-ajuda, .card-sobre, .card-impacto, .indicador {
     background-color: #FFFFFF;
 }
