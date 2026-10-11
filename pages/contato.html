@@ -1,77 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Obtenha o contato da Turma do Bem" />
-
-    <title>Turma do Bem | Contato </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="../css/style.css" />
+    <title>Contato | Amigos da Turma</title>
+  </head>
 
-    <a href="../index.html">
-    <span>Turma do Bem</span> 
-    </a>
-
-</head>
-<body>
+  <body>
+    <!-- Cabeçalho e menu de navegação -->
     <header>
-      <a href="../index.html">
-        <span>Turma do Bem</span>
+      <a class="logo" href="../index.html">
+        <span>Amigos da Turma</span>
       </a>
 
-      <nav>
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="../index.html">Início</a></li>
+          <li><a class="nav-link" href="./integrantes.html">Quem Somos</a></li>
+          <li><a class="nav-link" href="./sobre.html">Sobre</a></li>
+          <li><a class="nav-link" href="./faq.html">FAQ</a></li>
+          <li><a class="nav-link active" href="./contato.html" aria-current="page">Contato</a></li>
+          <li><a class="nav-link" href="./meu-impacto.html">Meu Impacto</a></li>
+          <li><a class="nav-link" href="./doacao.html">Doação</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Conteúdo principal da página de contato -->
+    <main class="pagina-contato">
+      <section class="secao-contato">
+
+        <!-- Apresentação e ilustração da página -->
+        <div class="introducao-contato">
+          <p class="etiqueta-contato">ESTAMOS AQUI PARA AJUDAR</p>
+
+          <h1>Fale Conosco</h1>
+
+          <p>
+            Tem alguma dúvida sobre doações, parcerias ou sobre o projeto? Entre
+            em contato com a equipe.
+          </p>
+
+          <!-- Elementos decorativos e ícones de contato -->
+          <div class="ilustracao-contato">
+            <span class="forma-laranja"></span>
+            <span class="coracao-contato">♥</span>
+
+            <div class="icone-envelope">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+
+            <div class="icone-mensagem">
+              <i class="fa-regular fa-comments"></i>
+            </div>
+
+            <span class="forma-verde"></span>
+          </div>
+        </div>
+
+        <!-- Formulário para preenchimento dos dados de contato -->
+        <div class="formulario-contato">
+          <p class="aviso-demo">
+            Este formulário é demonstrativo e ainda não envia mensagens reais.
+          </p>
+
+          <form action="#">
+            <div class="campo-contato">
+              <label for="nome">Nome completo:</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome completo"
+                required
+              />
+            </div>
+
+            <div class="campo-contato">
+              <label for="email">E-mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="exemplo@dominio.com"
+                required
+              />
+            </div>
+
+            <div class="campo-contato">
+              <label for="assunto">Assunto:</label>
+              <input
+                type="text"
+                id="assunto"
+                name="assunto"
+                placeholder="Digite o assunto"
+                required
+              />
+            </div>
+
+            <div class="campo-contato">
+              <label for="mensagem">Mensagem:</label>
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                rows="3"
+                placeholder="Digite sua mensagem"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Botão para simular o envio do formulário -->
+            <button class="btn-destaque" type="submit">Simular Envio</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé com links de navegação e informações do projeto -->
+    <footer>
+      <p>Turma do Bem - Transformando vidas através de sorrisos.</p>
+
+      <nav class="footer-nav">
         <ul>
           <li><a href="../index.html">Início</a></li>
-          <li><a href="../integrantes.html">Quem Somos</a></li>
+          <li><a href="./integrantes.html">Quem Somos</a></li>
           <li><a href="./sobre.html">Sobre</a></li>
-          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
           <li><a href="./contato.html">Contato</a></li>
-          <li><a href="../meu-impacto.html">Meu Impacto</a></li>
-          <li><a href="../doacao.html">Doação</a></li>
+          <li><a href="./meu-impacto.html">Meu Impacto</a></li>
+          <li><a href="./doacao.html">Doação</a></li>
         </ul>
       </nav>
 
-    </header>
-    <main>
-        <section class="secao-contato">
-            <h1>Fale Conosco</h1>
-            <p>Tem alguma dúvida sobre doações, parcerias ou projetos? Envie-nos uma mensagem.</p>
-            
-            <form action="#" method="POST">
-                <fieldset>
-                    <legend>Formulário de Atendimento</legend>
-                    
-                    <label for="nome">Nome Completo:</label>
-                    <input type="text" id="nome" name="nome" placeholder="Digite o seu nome completo">
-
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="exemplo@dominio.com">
-
-                    <label for="assunto">Assunto:</label>
-                    <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem">
-
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva a sua mensagem aqui..."></textarea>
-
-                    <button type="submit">Enviar Mensagem</button>
-                </fieldset>
-            </form>
-        </section>
-    </main>
-   <footer>
-        <section>
-            <h2>Turma do Bem</h2>
-            <p>Transformando vidas através de sorrisos.</p>
-        </section>
-        <Br>
-        <section>
-            <h2>Contato</h2>
-            <p>contato@turmadobem.com.br</p>
-            <p>São Paulo - SP</p>
-        </section>
-        
-        <p>&copy; 2026 Turma do Bem - Projeto acadêmico. Todos os direitos reservados.</p>
+      <p>
+        &copy; 2026 Turma do Bem - Projeto acadêmico da NextByte. Todos os
+        direitos reservados.
+      </p>
     </footer>
-</body>
+  </body>
 </html>

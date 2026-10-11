@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Doação | Amigos da Turma</title>
+  </head>
+
+  <body>
+    <!-- Cabeçalho e menu de navegação -->
+    <header>
+      <a class="logo" href="../index.html">
+        <span>Amigos da Turma</span>
+      </a>
+
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="../index.html">Início</a></li>
+          <li><a class="nav-link" href="./integrantes.html">Quem Somos</a></li>
+          <li><a class="nav-link" href="./sobre.html">Sobre</a></li>
+          <li><a class="nav-link" href="./faq.html">FAQ</a></li>
+          <li><a class="nav-link" href="./contato.html">Contato</a></li>
+          <li><a class="nav-link" href="./meu-impacto.html">Meu Impacto</a></li>
+          <li><a class="nav-link active" href="./doacao.html" aria-current="page">Doação</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Conteúdo principal da página de doação -->
+    <main class="pagina-doacao">
+      <section class="doacao-colunas">
+
+        <!-- Imagem e mensagem de incentivo à contribuição -->
+        <div class="doacao-imagem">
+          <img src="../imagens/mulher-sorrindo.jpg" alt="Mulher sorrindo" />
+
+          <div class="texto-doacao-imagem">
+            <p class="etiqueta-doacao">UM SORRISO TRANSFORMA</p>
+            <h2>Faça parte dessa mudança.</h2>
+            <p>
+              Um sorriso pode representar mais autoestima, bem-estar e novas
+              oportunidades.
+            </p>
+          </div>
+
+          <!-- Elementos decorativos da imagem -->
+          <span class="coracao-decorativo coracao-amarelo">♡</span>
+          <span class="detalhe-amarelo detalhe-um"></span>
+          <span class="detalhe-amarelo detalhe-dois"></span>
+          <span class="curva-amarela"></span>
+        </div>
+
+        <!-- Introdução e formulário de doação -->
+        <div class="doacao-formulario">
+          <div class="introducao-doacao">
+            <p class="etiqueta-doacao">SUA CONTRIBUIÇÃO IMPORTA</p>
+            <h1>Escolha como contribuir</h1>
+            <p>Apoie as iniciativas sociais da Turma do Bem.</p>
+          </div>
+
+          <!-- Aviso de que o formulário é apenas demonstrativo -->
+          <p class="aviso-demo">
+            Esta é uma demonstração acadêmica. Nenhum pagamento real será
+            realizado.
+          </p>
+
+          <form action="#">
+
+            <!-- Escolha da frequência da contribuição -->
+            <h2>Frequência da contribuição</h2>
+
+            <div class="opcoes">
+              <label class="opcao" for="unica">
+                <input
+                  type="radio"
+                  id="unica"
+                  name="frequencia"
+                  value="unica"
+                  checked
+                />
+                Doação única
+              </label>
+
+              <label class="opcao" for="mensal">
+                <input
+                  type="radio"
+                  id="mensal"
+                  name="frequencia"
+                  value="mensal"
+                />
+                Doação mensal
+              </label>
+            </div>
+
+            <!-- Seleção do valor da doação -->
+            <h2>Valor da doação</h2>
+
+            <div class="opcoes">
+              <label class="opcao" for="valor30">
+                <input type="radio" id="valor30" name="valor" value="30" />
+                R$ 30,00
+              </label>
+
+              <label class="opcao" for="valor50">
+                <input
+                  type="radio"
+                  id="valor50"
+                  name="valor"
+                  value="50"
+                  checked
+                />
+                R$ 50,00
+              </label>
+
+              <label class="opcao" for="valor100">
+                <input type="radio" id="valor100" name="valor" value="100" />
+                R$ 100,00
+              </label>
+            </div>
+
+            <!-- Campo para informar outro valor -->
+            <div class="campo-doacao">
+              <label for="outro-valor">Outro valor (R$):</label>
+              <input
+                type="number"
+                id="outro-valor"
+                name="outro-valor"
+                placeholder="Ex.: 75"
+                min="1"
+                step="0.01"
+              />
+            </div>
+
+            <!-- Escolha da forma de pagamento -->
+            <h2>Forma de pagamento</h2>
+
+            <div class="opcoes">
+              <label class="opcao" for="pix">
+                <input
+                  type="radio"
+                  id="pix"
+                  name="pagamento"
+                  value="pix"
+                  checked
+                />
+                Pix
+              </label>
+
+              <label class="opcao" for="boleto">
+                <input
+                  type="radio"
+                  id="boleto"
+                  name="pagamento"
+                  value="boleto"
+                />
+                Boleto
+              </label>
+            </div>
+
+            <!-- Campos para preenchimento dos dados do doador -->
+            <h2>Seus dados</h2>
+
+            <div class="campo-doacao">
+              <label for="nome">Nome completo:</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome completo"
+                required
+              />
+            </div>
+
+            <div class="campo-doacao">
+              <label for="email">E-mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="exemplo@dominio.com"
+                required
+              />
+            </div>
+
+            <!-- Opção de consentimento para receber comunicações -->
+            <h2>Comunicações opcionais</h2>
+
+            <div class="consentimento">
+              <label for="comunicacoes">
+                <input
+                  type="checkbox"
+                  id="comunicacoes"
+                  name="comunicacoes"
+                  value="sim"
+                />
+                Quero receber novidades e informações sobre o impacto social.
+              </label>
+            </div>
+
+            <!-- Botão para simular o envio da doação -->
+            <button class="btn-destaque" type="submit">Simular Doação</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé com links de navegação e informações do projeto -->
+    <footer>
+      <p>Turma do Bem - Transformando vidas através de sorrisos.</p>
+
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="./integrantes.html">Quem Somos</a></li>
+          <li><a href="./sobre.html">Sobre</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./contato.html">Contato</a></li>
+          <li><a href="./meu-impacto.html">Meu Impacto</a></li>
+          <li><a href="./doacao.html">Doação</a></li>
+        </ul>
+      </nav>
+
+      <p>
+        &copy; 2026 Turma do Bem - Projeto acadêmico da NextByte. Todos os
+        direitos reservados.
+      </p>
+    </footer>
+  </body>
+</html>
