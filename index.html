@@ -5,132 +5,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Turma do Bem - ONG que oferece tratamento odontológico gratuito para jovens de baixa renda."
+      content="Amigos da Turma - Plataforma de captação e relacionamento para a Turma do Bem."
     />
-    <title>Turma do Bem | Página Inicial</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
+
+    <title>Turma do Bem | Amigos da Turma</title>
   </head>
+
   <body>
     <header>
-      <a href="index.html">
-        <span>Turma do Bem</span>
+      <a class="logo" href="./index.html">
+        <span>Amigos da Turma</span>
       </a>
 
-      <nav>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="integrantes.html">Quem Somos</a></li>
-          <li><a href="./pages/sobre.html">Sobre</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contato.html">Contato</a></li>
-          <li><a href="meu-impacto.html">Meu Impacto</a></li>
-          <li><a href="doacao.html">Doação</a></li>
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li><a class="nav-link active" href="./index.html">Início</a></li>
+          <li>
+            <a class="nav-link" href="./pages/integrantes.html">Quem Somos</a>
+          </li>
+          <li><a class="nav-link" href="./pages/sobre.html">Sobre</a></li>
+          <li><a class="nav-link" href="./pages/faq.html">FAQ</a></li>
+          <li><a class="nav-link" href="./pages/contato.html">Contato</a></li>
+          <li>
+            <a class="nav-link" href="./pages/meu-impacto.html">Meu Impacto</a>
+          </li>
+          <li><a class="nav-link" href="./pages/doacao.html">Doação</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <section>
-        <h1>Um sorriso pode mudar uma vida</h1>
-        <p>
-          A Turma do Bem é uma ONG que reúne dentistas voluntários para oferecer
-          tratamento odontológico gratuito a crianças e jovens em situação de
-          vulnerabilidade social.
-        </p>
-        <a href="./pages/sobre.html">Conheça o projeto</a>
-        <a href="contato.html">Fale conosco</a>
+    <main class="pagina-inicial">
+      <section class="banner-inicial">
+        <div class="banner-texto">
+          <p class="texto-destaque">Juntos por mais sorrisos</p>
+
+          <h1>
+            Um sorriso
+            <span class="titulo-verde">pode mudar</span>
+            <span class="titulo-verde">uma vida</span>
+          </h1>
+
+          <p>
+            A Turma do Bem é uma ONG que reúne dentistas voluntários para
+            oferecer tratamento odontológico gratuito a crianças e jovens em
+            situação de vulnerabilidade social.
+          </p>
+
+          <div class="banner-botoes">
+            <a class="btn-destaque" href="pages/doacao.html">
+              Quero ser um Doador
+            </a>
+
+            <a class="link-secundario" href="pages/sobre.html">
+              Conheça o projeto
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="banner-imagem">
+          <img src="imagens/banner.jpg" alt="Criança sorrindo" />
+
+          <p class="frase-imagem">
+            <span>Mais sorrisos</span>
+            <span>para novos</span>
+            <span>começos</span>
+          </p>
+
+          <i class="fa-regular fa-heart coracao-banner"></i>
+          <i class="fa-solid fa-sparkles brilho-banner"></i>
+        </div>
       </section>
 
-      <section>
-        <h2>O que fazemos</h2>
-        <p>Nossas principais ações para transformar sorrisos e vidas.</p>
+      <section class="secao-acoes">
+        <div class="titulo-secao">
+          <p class="texto-destaque">Nosso propósito</p>
+          <h2>O que fazemos</h2>
+          <p>Nossas principais ações para transformar sorrisos e vidas.</p>
+        </div>
 
-        <div>
-          <h3>Tratamento gratuito</h3>
-          <p>
-            Consultas e tratamentos odontológicos sem nenhum custo para jovens
-            de baixa renda.
-          </p>
-        </div>
-        <div>
-          <h3>Dentistas voluntários</h3>
-          <p>
-            Profissionais de todo o país doam seu tempo e conhecimento para
-            ajudar quem precisa.
-          </p>
-        </div>
-        <div>
-          <h3>Educação e prevenção</h3>
-          <p>
-            Orientações sobre higiene bucal para ensinar bons hábitos desde
-            cedo.
-          </p>
+        <div class="cards cards-acoes">
+          <article class="card card-acao">
+            <div class="icone-card icone-verde">
+              <i class="fa-solid fa-tooth"></i>
+            </div>
+            <h3>Tratamento gratuito</h3>
+            <p>
+              Viabilizamos consultas e tratamentos odontológicos sem custo para
+              jovens de baixa renda por meio da rede de dentistas voluntários.
+            </p>
+          </article>
+
+          <article class="card card-acao">
+            <div class="icone-card icone-laranja">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>Educação e prevenção</h3>
+            <p>
+              Incentivamos hábitos de higiene bucal e ações de prevenção para
+              contribuir com a saúde e o bem-estar.
+            </p>
+          </article>
+
+          <article class="card card-acao">
+            <div class="icone-card icone-amarelo">
+              <i class="fa-solid fa-chart-column"></i>
+            </div>
+            <h3>Transparência e impacto</h3>
+            <p>
+              Valorizamos o relacionamento com os doadores e a apresentação
+              transparente dos indicadores demonstrativos da plataforma.
+            </p>
+            <a href="pages/meu-impacto.html">Conheça o Meu Impacto</a>
+          </article>
         </div>
       </section>
 
-      <section>
-        <div>
+      <section class="banner-impacto">
+        <div class="banner-impacto-texto">
+          <p class="texto-destaque">Sua contribuição faz a diferença</p>
           <h2>Por que isso é importante?</h2>
           <p>
-            Muitos jovens brasileiros não têm acesso a cuidados dentários. A dor
-            de dente atrapalha os estudos, a alimentação e a autoestima. Com
-            atendimento adequado, eles voltam a sorrir e a ter mais
-            oportunidades no futuro.
+            A falta de acesso aos cuidados odontológicos pode afetar a saúde, a
+            autoestima, os estudos e as oportunidades de muitos jovens. Apoiar
+            iniciativas de saúde bucal também é contribuir para a inclusão
+            social.
           </p>
+        </div>
+
+        <div class="impacto-botao">
+          <a class="btn-destaque" href="pages/sobre.html">Saiba mais</a>
         </div>
       </section>
 
-      <section>
-        <div>
+      <section class="secao-ajuda">
+        <div class="titulo-secao">
+          <p class="texto-destaque">Faça parte dessa transformação</p>
           <h2>Como você pode ajudar</h2>
+          <p>Existem diferentes maneiras de apoiar essa causa.</p>
+        </div>
 
-          <div>
-            <h3>Doe</h3>
+        <div class="cards cards-ajuda">
+          <article class="card card-ajuda">
+            <div class="icone-card icone-verde">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <h3>Doe recorrentemente</h3>
             <p>
-              Sua contribuição ajuda a manter os atendimentos e a estrutura da
-              ONG.
+              Sua contribuição mensal pode ajudar a manter as iniciativas
+              sociais e apoiar o planejamento das ações.
             </p>
-          </div>
-          <div>
-            <h3>Seja voluntário</h3>
+            <a class="btn-destaque" href="pages/doacao.html">
+              Quero contribuir
+            </a>
+          </article>
+
+          <article class="card card-ajuda">
+            <div class="icone-card icone-laranja">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3>Conheça o impacto</h3>
             <p>
-              Se você é dentista, cadastre-se e atenda um jovem da sua região.
+              Veja como a plataforma apresenta os indicadores demonstrativos de
+              contribuições e impacto social.
             </p>
-          </div>
-          <div>
-            <h3>Divulgue</h3>
+            <a class="link-secundario" href="pages/meu-impacto.html">
+              Ver Meu Impacto
+            </a>
+          </article>
+
+          <article class="card card-ajuda">
+            <div class="icone-card icone-verde">
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+            <h3>Divulgue a causa</h3>
             <p>
-              Compartilhe a causa com amigos e familiares para ela chegar a mais
-              pessoas.
+              Compartilhe a iniciativa com outras pessoas e ajude a ampliar o
+              alcance da proposta.
             </p>
-          </div>
+            <a class="link-secundario" href="pages/contato.html">
+              Entre em contato
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="chamada-final">
+        <i class="fa-solid fa-heart chamada-icone"></i>
+        <h2>Um sorriso pode ser o começo de uma nova oportunidade.</h2>
+        <p>Conheça a proposta Amigos da Turma e descubra como contribuir.</p>
+        <a class="btn-destaque" href="pages/doacao.html">
+          Quero ser um Doador
+        </a>
       </section>
     </main>
 
     <footer>
-      <section>
-        <h2>Turma do Bem</h2>
-        <p>Transformando vidas através de sorrisos.</p>
-      </section>
+      <p>Turma do Bem - Transformando vidas através de sorrisos.</p>
 
-      <nav>
+      <nav class="footer-nav">
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="integrantes.html">Quem Somos</a></li>
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./pages/integrantes.html">Quem Somos</a></li>
           <li><a href="./pages/sobre.html">Sobre</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li><a href="./pages/faq.html">FAQ</a></li>
+          <li><a href="./pages/contato.html">Contato</a></li>
+          <li><a href="./pages/meu-impacto.html">Meu Impacto</a></li>
+          <li><a href="./pages/doacao.html">Doação</a></li>
         </ul>
       </nav>
 
-      <section>
-        <h2>Contato</h2>
-        <p>contato@turmadobem.com.br</p>
-        <p>São Paulo - SP</p>
-      </section>
       <p>
-        &copy; 2026 Turma do Bem - Projeto acadêmico. Todos os direitos
-        reservados.
+        &copy; 2026 Turma do Bem - Projeto acadêmico da NextByte. Todos os
+        direitos reservados.
       </p>
     </footer>
   </body>
