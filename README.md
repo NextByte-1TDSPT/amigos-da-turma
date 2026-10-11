@@ -92,7 +92,7 @@ amigos-da-turma/
 
 ## 🚀 Como executar o projeto
 
-1. Clone ou baixe o repositório do GitHub.
+1. Clone ou baixe o repositório do GitHub https://github.com/NextByte-1TDSPT/amigos-da-turma.
 2. Abra a pasta do projeto no Visual Studio Code.
 3. Abra o arquivo `index.html` em um navegador.
 4. Navegue pelas páginas utilizando o menu do site.
