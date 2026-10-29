@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/doacao-pontual.css" />
+    <script src="../js/doacao.js" defer></script>
     <title>Doação | Amigos da Turma</title>
   </head>
 
@@ -51,12 +53,12 @@
           <span class="curva-amarela"></span>
         </div>
 
-        <!-- Introdução e formulário de doação -->
+        <!-- Introdução e formulário de doação pontual -->
         <div class="doacao-formulario">
           <div class="introducao-doacao">
-            <p class="etiqueta-doacao">SUA CONTRIBUIÇÃO IMPORTA</p>
-            <h1>Escolha como contribuir</h1>
-            <p>Apoie as iniciativas sociais da Turma do Bem.</p>
+            <p class="etiqueta-doacao">DOAÇÃO PONTUAL</p>
+            <h1>Faça sua doação</h1>
+            <p>Escolha o valor, a forma de pagamento e conclua em poucos passos.</p>
           </div>
 
           <!-- Aviso de que o formulário é apenas demonstrativo -->
@@ -65,33 +67,15 @@
             realizado.
           </p>
 
-          <form action="#">
+          <!-- Etapas do fluxo (atualizadas pelo JavaScript) -->
+          <ol class="etapas" id="etapas" aria-label="Etapas da doação">
+            <li class="ativa">Valor</li>
+            <li>Pagamento</li>
+            <li>Seus dados</li>
+            <li>Confirmação</li>
+          </ol>
 
-            <!-- Escolha da frequência da contribuição -->
-            <h2>Frequência da contribuição</h2>
-
-            <div class="opcoes">
-              <label class="opcao" for="unica">
-                <input
-                  type="radio"
-                  id="unica"
-                  name="frequencia"
-                  value="unica"
-                  checked
-                />
-                Doação única
-              </label>
-
-              <label class="opcao" for="mensal">
-                <input
-                  type="radio"
-                  id="mensal"
-                  name="frequencia"
-                  value="mensal"
-                />
-                Doação mensal
-              </label>
-            </div>
+          <form action="#" id="form-doacao" novalidate>
 
             <!-- Seleção do valor da doação -->
             <h2>Valor da doação</h2>
@@ -103,13 +87,7 @@
               </label>
 
               <label class="opcao" for="valor50">
-                <input
-                  type="radio"
-                  id="valor50"
-                  name="valor"
-                  value="50"
-                  checked
-                />
+                <input type="radio" id="valor50" name="valor" value="50" />
                 R$ 50,00
               </label>
 
@@ -119,44 +97,39 @@
               </label>
             </div>
 
-            <!-- Campo para informar outro valor -->
+            <!-- Campo para informar outro valor (mínimo R$ 10,00) -->
             <div class="campo-doacao">
-              <label for="outro-valor">Outro valor (R$):</label>
+              <label for="outro-valor">Outro valor (mínimo R$ 10,00):</label>
               <input
-                type="number"
+                type="text"
                 id="outro-valor"
                 name="outro-valor"
-                placeholder="Ex.: 75"
-                min="1"
-                step="0.01"
+                inputmode="decimal"
+                placeholder="Ex.: 75 ou 75,50"
+                autocomplete="off"
               />
             </div>
+            <span class="mensagem-erro" id="erro-valor" role="alert"></span>
+            <p class="resumo-valor" id="resumo-valor" aria-live="polite"></p>
 
             <!-- Escolha da forma de pagamento -->
             <h2>Forma de pagamento</h2>
 
             <div class="opcoes">
               <label class="opcao" for="pix">
-                <input
-                  type="radio"
-                  id="pix"
-                  name="pagamento"
-                  value="pix"
-                  checked
-                />
+                <input type="radio" id="pix" name="pagamento" value="pix" />
                 Pix
               </label>
 
               <label class="opcao" for="boleto">
-                <input
-                  type="radio"
-                  id="boleto"
-                  name="pagamento"
-                  value="boleto"
-                />
+                <input type="radio" id="boleto" name="pagamento" value="boleto" />
                 Boleto
               </label>
             </div>
+            <span class="mensagem-erro" id="erro-pagamento" role="alert"></span>
+            <p class="dica-pagamento" id="dica-pagamento" aria-live="polite">
+              Escolha como deseja pagar.
+            </p>
 
             <!-- Campos para preenchimento dos dados do doador -->
             <h2>Seus dados</h2>
@@ -168,8 +141,9 @@
                 id="nome"
                 name="nome"
                 placeholder="Digite seu nome completo"
-                required
+                autocomplete="name"
               />
+              <span class="mensagem-erro" id="erro-nome" role="alert"></span>
             </div>
 
             <div class="campo-doacao">
@@ -179,13 +153,12 @@
                 id="email"
                 name="email"
                 placeholder="exemplo@dominio.com"
-                required
+                autocomplete="email"
               />
+              <span class="mensagem-erro" id="erro-email" role="alert"></span>
             </div>
 
             <!-- Opção de consentimento para receber comunicações -->
-            <h2>Comunicações opcionais</h2>
-
             <div class="consentimento">
               <label for="comunicacoes">
                 <input
@@ -201,6 +174,55 @@
             <!-- Botão para simular o envio da doação -->
             <button class="btn-destaque" type="submit">Simular Doação</button>
           </form>
+
+          <!-- Confirmação demonstrativa (preenchida pelo JavaScript) -->
+          <div class="mensagem-sucesso" id="confirmacao" role="status" tabindex="-1" hidden>
+            <h3>Doação simulada com sucesso!</h3>
+            <p id="conf-texto"></p>
+            <ul>
+              <li>Valor: <strong id="conf-valor"></strong></li>
+              <li>Forma de pagamento: <strong id="conf-pagamento"></strong></li>
+              <li id="conf-detalhe"></li>
+              <li id="conf-email"></li>
+            </ul>
+            <p class="conf-aviso">
+              Demonstração acadêmica: nenhum pagamento foi realizado e nenhum
+              dado foi enviado.
+            </p>
+            <button class="btn-destaque" type="button" id="nova-doacao">
+              Fazer nova simulação
+            </button>
+          </div>
+
+          <!-- Área informativa sobre a Nota Fiscal Paulista -->
+          <aside class="nfp" aria-labelledby="titulo-nfp">
+            <p class="etiqueta-nfp">INFORMATIVO</p>
+            <h2 id="titulo-nfp">Nota Fiscal Paulista</h2>
+            <p>
+              A Turma do Bem também recebe apoio por meio da Nota Fiscal
+              Paulista, programa do Estado de São Paulo em que parte do ICMS das
+              compras volta ao consumidor em forma de créditos.
+            </p>
+            <ol>
+              <li>Peça a nota com CPF nas compras em estabelecimentos paulistas.</li>
+              <li>Cadastre-se no site oficial da Nota Fiscal Paulista.</li>
+              <li>
+                Nos canais oficiais do programa, escolha doar seus créditos a uma
+                entidade cadastrada.
+              </li>
+            </ol>
+            <p class="nfp-aviso">
+              O valor que chega à entidade são os créditos gerados, e não o total
+              da compra. Esta área é apenas informativa: nenhuma nota fiscal é
+              enviada por este site.
+            </p>
+            <a
+              href="https://portal.fazenda.sp.gov.br/servicos/nfp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Conhecer o programa no site oficial</a
+            >
+          </aside>
         </div>
       </section>
     </main>
