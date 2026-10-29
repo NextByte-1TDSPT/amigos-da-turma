@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/doacao-pontual.css" />
     <script src="../js/doacao.js" defer></script>
+    <link rel="stylesheet" href="../css/doacao-recorrente.css" />
+    <script src="../js/doacao-recorrente.js" defer></script>
     <title>Doação | Amigos da Turma</title>
   </head>
 
@@ -33,25 +35,144 @@
     <main class="pagina-doacao">
       <section class="doacao-colunas">
 
-        <!-- Imagem e mensagem de incentivo à contribuição -->
-        <div class="doacao-imagem">
-          <img src="../imagens/mulher-sorrindo.jpg" alt="Mulher sorrindo" />
+<div class="doacao-formulario doacao-recorrente">
 
-          <div class="texto-doacao-imagem">
-            <p class="etiqueta-doacao">UM SORRISO TRANSFORMA</p>
-            <h2>Faça parte dessa mudança.</h2>
-            <p>
-              Um sorriso pode representar mais autoestima, bem-estar e novas
-              oportunidades.
-            </p>
-          </div>
+  <div class="introducao-doacao">
+    <p class="etiqueta-doacao">DOAÇÃO RECORRENTE</p>
+    <h2>Transforme sorrisos continuamente</h2>
+    <p>
+      Escolha o valor e a frequência da sua contribuição
+      para ajudar a transformar vidas.
+    </p>
+  </div>
 
-          <!-- Elementos decorativos da imagem -->
-          <span class="coracao-decorativo coracao-amarelo">♡</span>
-          <span class="detalhe-amarelo detalhe-um"></span>
-          <span class="detalhe-amarelo detalhe-dois"></span>
-          <span class="curva-amarela"></span>
-        </div>
+  <p class="aviso-demo">
+    Esta é uma demonstração acadêmica.
+    Nenhuma cobrança real será realizada.
+  </p>
+
+  <form id="form-recorrente" novalidate>
+
+    <h3>Valor da contribuição</h3>
+
+    <div class="opcoes-recorrentes">
+      <label for="rec-valor30">
+        <input type="radio" id="rec-valor30"
+          name="rec-valor" value="30" />
+        R$ 30,00
+      </label>
+
+      <label for="rec-valor50">
+        <input type="radio" id="rec-valor50"
+          name="rec-valor" value="50" />
+        R$ 50,00
+      </label>
+
+      <label for="rec-valor100">
+        <input type="radio" id="rec-valor100"
+          name="rec-valor" value="100" />
+        R$ 100,00
+      </label>
+    </div>
+
+    <div class="campo-recorrente">
+      <label for="rec-outro-valor">
+        Outro valor (mínimo R$ 10,00):
+      </label>
+      <input type="text" id="rec-outro-valor"
+        inputmode="decimal"
+        placeholder="Ex.: 75,50" />
+    </div>
+
+    <h3>Frequência da contribuição</h3>
+
+    <div class="campo-recorrente">
+      <label for="rec-frequencia">
+        Com que frequência deseja doar?
+      </label>
+
+      <select id="rec-frequencia">
+        <option value="">Selecione uma frequência</option>
+        <option value="mensal">Mensal</option>
+        <option value="trimestral">Trimestral</option>
+        <option value="anual">Anual</option>
+      </select>
+    </div>
+
+    <h3>Seus dados</h3>
+
+    <div class="campo-recorrente">
+      <label for="rec-nome">Nome completo:</label>
+      <input type="text" id="rec-nome"
+        placeholder="Digite seu nome completo"
+        autocomplete="name" />
+    </div>
+
+    <div class="campo-recorrente">
+      <label for="rec-email">E-mail:</label>
+      <input type="email" id="rec-email"
+        placeholder="exemplo@dominio.com"
+        autocomplete="email" />
+    </div>
+
+    <p class="mensagem-erro" id="rec-erro"
+      role="alert"></p>
+
+    <button type="submit" class="btn-destaque"
+      id="btn-confirmar-recorrencia">
+      Confirmar doação recorrente
+    </button>
+
+  </form>
+
+  <!-- GERENCIAMENTO DA RECORRÊNCIA -->
+  <section class="gerenciar-recorrencia">
+
+    <h3>Gerenciar minha doação</h3>
+
+    <p>
+      Consulte, altere ou cancele sua contribuição.
+    </p>
+
+    <p id="rec-status" role="status"
+      aria-live="polite">
+      Nenhuma doação recorrente cadastrada.
+    </p>
+
+    <div id="rec-resumo" hidden>
+
+      <h4>Minha contribuição</h4>
+
+      <p>Valor:
+        <strong id="rec-resumo-valor"></strong>
+      </p>
+
+      <p>Frequência:
+        <strong id="rec-resumo-frequencia"></strong>
+      </p>
+
+      <p>Nome:
+        <strong id="rec-resumo-nome"></strong>
+      </p>
+
+      <p>Status:
+        <strong id="rec-resumo-status"></strong>
+      </p>
+
+      <div class="acoes-recorrencia">
+        <button type="button" id="rec-editar">
+          Alterar doação
+        </button>
+
+        <button type="button" id="rec-cancelar">
+          Cancelar recorrência
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+</div>
 
         <!-- Introdução e formulário de doação pontual -->
         <div class="doacao-formulario">
