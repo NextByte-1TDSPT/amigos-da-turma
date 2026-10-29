@@ -53,6 +53,25 @@
 
   <form id="form-recorrente" novalidate>
 
+    
+<!-- Etapas da doação recorrente -->
+<ol class="etapas-recorrentes" id="rec-etapas">
+  <li class="ativa">Valor</li>
+  <li>Frequência</li>
+  <li>Seus dados</li>
+  <li>Confirmação</li>
+</ol>
+
+<!-- Resumo atualizado automaticamente -->
+<div class="previa-recorrente" aria-live="polite">
+  <h3>Resumo da sua contribuição</h3>
+  <p id="rec-previa-valor">Escolha um valor para começar.</p>
+  <p id="rec-previa-frequencia">
+    Selecione a frequência da doação.
+  </p>
+</div>
+
+
     <h3>Valor da contribuição</h3>
 
     <div class="opcoes-recorrentes">
@@ -124,6 +143,51 @@
     </button>
 
   </form>
+
+<section
+  id="rec-confirmacao"
+  class="mensagem-sucesso"
+  tabindex="-1"
+  aria-live="polite"
+  hidden
+>
+  <h3>Doação recorrente cadastrada!</h3>
+
+  <p id="rec-conf-texto"></p>
+
+  <ul>
+    <li>
+      <strong>Valor:</strong>
+      <span id="rec-conf-valor"></span>
+    </li>
+
+    <li>
+      <strong>Frequência:</strong>
+      <span id="rec-conf-frequencia"></span>
+    </li>
+
+    <li>
+      <strong>Status:</strong>
+      <span id="rec-conf-status">Ativa</span>
+    </li>
+  </ul>
+
+  <p id="rec-conf-email"></p>
+
+  <p class="conf-aviso">
+    Esta é uma simulação acadêmica.
+    Nenhuma cobrança real será realizada.
+  </p>
+
+  <button
+    type="button"
+    id="rec-nova-doacao"
+    class="btn-destaque"
+  >
+    Fazer nova simulação
+  </button>
+</section>
+
 
   <!-- GERENCIAMENTO DA RECORRÊNCIA -->
   <section class="gerenciar-recorrencia">

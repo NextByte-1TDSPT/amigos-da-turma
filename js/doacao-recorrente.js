@@ -1,306 +1,328 @@
 
+/* SPRINT 2 - DAVID | DOAÇÃO RECORRENTE */
+
 document.addEventListener("DOMContentLoaded", () => {
+  const $ = (id) => document.getElementById(id);
+  const form = $("form-recorrente");
+  if (!form) return;
 
-  const formulario = document.getElementById("form-recorrente");
-  const outroValor = document.getElementById("rec-outro-valor");
-  const frequencia = document.getElementById("rec-frequencia");
-  const nome = document.getElementById("rec-nome");
-  const email = document.getElementById("rec-email");
+  const valorExtra = $("rec-outro-valor");
+  const radios = [...form.querySelectorAll('[name="rec-valor"]')];
+  const frequencia = $("rec-frequencia");
+  const nome = $("rec-nome");
+  const email = $("rec-email");
+  const erro = $("rec-erro");
+  const etapas = [...document.querySelectorAll("#rec-etapas li")];
+  const resumo = $("rec-resumo");
+  const confirmacao = $("rec-confirmacao");
+  const status = $("rec-status");
+  const botaoConfirmar = $("btn-confirmar-recorrencia");
 
-  const erro = document.getElementById("rec-erro");
-  const status = document.getElementById("rec-status");
-  const resumo = document.getElementById("rec-resumo");
+  const frequencias = {
+    mensal: "Mensal",
+    trimestral: "Trimestral",
+    anual: "Anual"
+  };
 
-  const resumoValor = document.getElementById("rec-resumo-valor");
-  const resumoFrequencia = document.getElementById("rec-resumo-frequencia");
-  const resumoNome = document.getElementById("rec-resumo-nome");
-  const resumoStatus = document.getElementById("rec-resumo-status");
+  const moeda = (valor) => Number(valor).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
 
-  const botaoEditar = document.getElementById("rec-editar");
-  const botaoCancelar = document.getElementById("rec-cancelar");
-  const botaoConfirmar = document.getElementById("btn-confirmar-recorrencia");
-
-  const valores = document.querySelectorAll(
-    'input[name="rec-valor"]'
-  );
-
-  if (!formulario) return;
-
-  const chaveArmazenamento = "doacaoRecorrente";
+  const nomeValido = () => nome.value.trim().split(/\s+/).length >= 2;
+  const emailValido = () =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
 
   let doacao = null;
   let editando = false;
-  function formatarValor(valor) {
-    return Number(valor).toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL"
-    });
+  let concluida = false;
+
+  // Valor selecionado ou personalizado
+  function obterValor() {
+    const texto = valorExtra.value.trim();
+
+    if (texto) {
+      if (!/^\d+([.,]\d{1,2})?$/.test(texto)) return null;
+      return Number(texto.replace(",", "."));
+    }
+
+    const marcado = radios.find((radio) => radio.checked);
+    return marcado ? Number(marcado.value) : null;
   }
 
-  // TRADUZIR FREQUÊNCIA
-  function formatarFrequencia(tipo) {
-    const frequencias = {
-      mensal: "Mensal",
-      trimestral: "Trimestral",
-      anual: "Anual"
-    };
-
-    return frequencias[tipo] || tipo;
+  // Salvar e recuperar a simulação
+  function salvar() {
+    try {
+      localStorage.setItem("doacaoRecorrente", JSON.stringify(doacao));
+      return true;
+    } catch {
+      return false;
+    }
   }
 
-  // SALVAR NO NAVEGADOR
-  function salvarDoacao() {
-    localStorage.setItem(
-      chaveArmazenamento,
-      JSON.stringify(doacao)
-    );
-  }
+  function carregar() {
+    try {
+      const dados = JSON.parse(localStorage.getItem("doacaoRecorrente"));
 
-  // RECUPERAR DOAÇÃO SALVA
-  function carregarDoacao() {
-    const dadosSalvos = localStorage.getItem(chaveArmazenamento);
-
-    if (dadosSalvos) {
-      try {
-        doacao = JSON.parse(dadosSalvos);
-      } catch (e) {
-        doacao = null;
+      if (
+        dados &&
+        Number.isFinite(dados.valor) &&
+        dados.valor >= 10 &&
+        frequencias[dados.frequencia] &&
+        typeof dados.nome === "string" &&
+        typeof dados.email === "string" &&
+        ["ativa", "cancelada"].includes(dados.status)
+      ) {
+        doacao = dados;
       }
-    }
-
-    atualizarTela();
-  }
-
-  // ATUALIZAR AS INFORMAÇÕES DA TELA
-  function atualizarTela() {
-
-    if (!doacao) {
-      resumo.hidden = true;
-      formulario.hidden = false;
-
-      status.textContent =
-        "Nenhuma doação recorrente cadastrada.";
-
-      return;
-    }
-
-    resumo.hidden = false;
-
-    resumoValor.textContent = formatarValor(doacao.valor);
-    resumoFrequencia.textContent = formatarFrequencia(
-      doacao.frequencia
-    );
-    resumoNome.textContent = doacao.nome;
-
-    if (doacao.status === "ativa") {
-
-      resumoStatus.textContent = "Ativa";
-
-      status.textContent =
-        "Sua doação recorrente foi cadastrada com sucesso!";
-
-      botaoEditar.hidden = false;
-      botaoCancelar.hidden = false;
-
-      if (!editando) {
-        formulario.hidden = true;
-      }
-
-    } else {
-
-      resumoStatus.textContent = "Cancelada";
-
-      status.textContent =
-        "Sua doação recorrente foi cancelada.";
-
-      botaoEditar.hidden = true;
-      botaoCancelar.hidden = true;
-
-      formulario.hidden = false;
+    } catch {
+      doacao = null;
     }
   }
 
-  // SELEÇÃO DE VALOR
-  valores.forEach((radio) => {
-    radio.addEventListener("change", () => {
-      outroValor.value = "";
-    });
-  });
-
-  outroValor.addEventListener("input", () => {
-    valores.forEach((radio) => {
-      radio.checked = false;
-    });
-  });
-
-  // CADASTRAR OU EDITAR DOAÇÃO
-  formulario.addEventListener("submit", (evento) => {
-
-    evento.preventDefault();
-
+  // Limpar mensagens e bordas de erro
+  function limparErros() {
     erro.textContent = "";
 
-    // Verificar valor escolhido
-    let valorSelecionado = null;
+    [valorExtra, frequencia, nome, email].forEach((campo) => {
+      campo.classList.remove("erro");
+      campo.removeAttribute("aria-invalid");
+    });
+  }
 
-    valores.forEach((radio) => {
-      if (radio.checked) {
-        valorSelecionado = Number(radio.value);
+  // Resumo em tempo real e barra de etapas
+  function atualizarInteratividade() {
+    const valor = obterValor();
+
+    $("rec-previa-valor").textContent =
+      valor !== null && valor >= 10
+        ? `Você vai doar ${moeda(valor)}.`
+        : "Escolha um valor para começar.";
+
+    $("rec-previa-frequencia").textContent =
+      frequencias[frequencia.value]
+        ? `Frequência: ${frequencias[frequencia.value]}.`
+        : "Selecione a frequência da doação.";
+
+    const concluidas = [
+      valor !== null && valor >= 10,
+      Boolean(frequencias[frequencia.value]),
+      nomeValido() && emailValido(),
+      concluida
+    ];
+
+    let atual = false;
+
+    etapas.forEach((etapa, i) => {
+      etapa.classList.remove("ativa", "concluida");
+
+      if (concluidas[i]) {
+        etapa.classList.add("concluida");
+      } else if (!atual) {
+        etapa.classList.add("ativa");
+        atual = true;
       }
     });
+  }
 
-    // Verificar valor personalizado
-    if (outroValor.value.trim() !== "") {
+  // Atualizar o gerenciamento
+  function atualizarTela() {
+    const ativa = doacao?.status === "ativa";
 
-      const valorDigitado = outroValor.value
-        .trim()
-        .replace(",", ".");
+    resumo.hidden = !ativa;
+    form.hidden = ativa && !editando;
+    $("rec-editar").hidden = !ativa;
+    $("rec-cancelar").hidden = !ativa;
 
-      if (!/^\d+(\.\d{1,2})?$/.test(valorDigitado)) {
-        erro.textContent =
-          "Digite um valor válido. Exemplo: 30 ou 30,50.";
-        return;
-      }
-
-      valorSelecionado = Number(valorDigitado);
+    if (ativa) {
+      $("rec-resumo-valor").textContent = moeda(doacao.valor);
+      $("rec-resumo-frequencia").textContent =
+        frequencias[doacao.frequencia];
+      $("rec-resumo-nome").textContent = doacao.nome;
+      $("rec-resumo-status").textContent = "Ativa";
     }
 
-    // Validar valor mínimo
-    if (!valorSelecionado || valorSelecionado < 10) {
-      erro.textContent =
-        "Escolha um valor de no mínimo R$ 10,00.";
-      return;
+    status.textContent = ativa
+      ? "Sua contribuição está ativa nesta simulação."
+      : doacao?.status === "cancelada"
+        ? "Sua recorrência foi cancelada nesta simulação."
+        : "Nenhuma doação recorrente cadastrada.";
+
+    atualizarInteratividade();
+  }
+
+  // Validação de todos os campos
+  function validar() {
+    limparErros();
+    const erros = [];
+    const valor = obterValor();
+
+    function adicionar(campo, mensagem) {
+      campo.classList.add("erro");
+      campo.setAttribute("aria-invalid", "true");
+      erros.push({ campo, mensagem });
     }
 
-    // Validar frequência
-    if (frequencia.value === "") {
-      erro.textContent =
-        "Selecione a frequência da contribuição.";
-      return;
+    if (valor === null || valor < 10) {
+      adicionar(valorExtra, "Escolha um valor válido de no mínimo R$ 10,00.");
+    }
+    if (!frequencias[frequencia.value]) {
+      adicionar(frequencia, "Selecione a frequência da doação.");
+    }
+    if (!nomeValido()) {
+      adicionar(nome, "Digite seu nome e sobrenome.");
+    }
+    if (!emailValido()) {
+      adicionar(email, "Digite um e-mail válido.");
     }
 
-    // Validar nome
-    if (nome.value.trim().split(/\s+/).length < 2) {
-      erro.textContent =
-        "Digite seu nome completo.";
-      return;
+    erro.textContent = erros.map((item) => item.mensagem).join(" ");
+    if (erros.length) erros[0].campo.focus();
+
+    return erros.length === 0;
+  }
+
+  // Eventos dos campos
+  radios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      valorExtra.value = "";
+      limparErros();
+      atualizarInteratividade();
+    });
+  });
+
+  valorExtra.addEventListener("input", () => {
+    radios.forEach((radio) => radio.checked = false);
+    limparErros();
+    atualizarInteratividade();
+  });
+
+  valorExtra.addEventListener("blur", () => {
+    if (valorExtra.value.trim() && (obterValor() ?? 0) < 10) {
+      valorExtra.classList.add("erro");
+      erro.textContent = "Digite um valor válido de no mínimo R$ 10,00.";
     }
+  });
 
-    // Validar e-mail
-    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  [frequencia, nome, email].forEach((campo) => {
+    campo.addEventListener("input", () => {
+      limparErros();
+      atualizarInteratividade();
+    });
+    campo.addEventListener("change", atualizarInteratividade);
+  });
 
-    if (!emailValido.test(email.value.trim())) {
-      erro.textContent =
-        "Digite um e-mail válido.";
-      return;
-    }
+  // Confirmação personalizada
+  function mostrarConfirmacao(eraEdicao) {
+    const primeiroNome = doacao.nome.split(/\s+/)[0];
 
-    // Criar ou atualizar a doação
+    $("rec-conf-texto").textContent = eraEdicao
+      ? `Pronto, ${primeiroNome}! Sua contribuição foi atualizada.`
+      : `Obrigado, ${primeiroNome}! Veja sua contribuição recorrente.`;
+
+    $("rec-conf-valor").textContent = moeda(doacao.valor);
+    $("rec-conf-frequencia").textContent = frequencias[doacao.frequencia];
+    $("rec-conf-status").textContent = "Ativa";
+    $("rec-conf-email").textContent =
+      `Um e-mail de confirmação seria enviado para ${doacao.email}.`;
+
+    confirmacao.hidden = false;
+    confirmacao.scrollIntoView({ behavior: "smooth", block: "center" });
+    confirmacao.focus();
+  }
+
+  // Cadastrar ou atualizar
+  form.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+    if (!validar()) return;
+
+    const eraEdicao = editando;
+
     doacao = {
-      valor: valorSelecionado,
+      valor: obterValor(),
       frequencia: frequencia.value,
       nome: nome.value.trim(),
       email: email.value.trim(),
       status: "ativa"
     };
 
-    const eraEdicao = editando;
-
     editando = false;
+    concluida = true;
 
-    // Salvar os dados
-    salvarDoacao();
+    const salvou = salvar();
+    form.reset();
+    botaoConfirmar.textContent = "Confirmar doação recorrente";
 
-    // Atualizar a tela
     atualizarTela();
+    mostrarConfirmacao(eraEdicao);
 
-    if (eraEdicao) {
-      status.textContent =
-        "Doação recorrente atualizada com sucesso!";
-    } else {
-      status.textContent =
-        "Doação recorrente simulada com sucesso! " +
-        "Nenhuma cobrança real foi realizada.";
-    }
-
-    // Limpar os campos
-    formulario.reset();
-
+    status.textContent = salvou
+      ? "Doação registrada com sucesso nesta simulação."
+      : "Doação simulada, mas não foi possível salvá-la no navegador.";
   });
 
-  // EDITAR DOAÇÃO
-  botaoEditar.addEventListener("click", () => {
+  // Editar doação
+  $("rec-editar").addEventListener("click", () => {
+    if (doacao?.status !== "ativa") return;
 
-    if (!doacao || doacao.status !== "ativa") return;
-
+    confirmacao.hidden = true;
     editando = true;
+    concluida = false;
 
-    formulario.hidden = false;
-
-    // Preencher dados anteriores
     nome.value = doacao.nome;
     email.value = doacao.email;
     frequencia.value = doacao.frequencia;
 
-    // Recuperar o valor
-    let valorEncontrado = false;
-
-    valores.forEach((radio) => {
-      if (Number(radio.value) === doacao.valor) {
-        radio.checked = true;
-        valorEncontrado = true;
-      } else {
-        radio.checked = false;
-      }
+    radios.forEach((radio) => {
+      radio.checked = Number(radio.value) === doacao.valor;
     });
 
-    if (valorEncontrado) {
-      outroValor.value = "";
-    } else {
-      outroValor.value = String(doacao.valor).replace(".", ",");
-    }
+    valorExtra.value = radios.some((radio) => radio.checked)
+      ? ""
+      : String(doacao.valor).replace(".", ",");
 
     botaoConfirmar.textContent = "Salvar alterações";
-
-    status.textContent =
-      "Altere os dados e clique em Salvar alterações.";
-
-    formulario.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-
+    limparErros();
+    atualizarTela();
+    form.scrollIntoView({ behavior: "smooth" });
   });
 
-  // CANCELAR DOAÇÃO
-  botaoCancelar.addEventListener("click", () => {
+  // Cancelar recorrência
+  $("rec-cancelar").addEventListener("click", () => {
+    if (doacao?.status !== "ativa") return;
 
-    if (!doacao || doacao.status !== "ativa") return;
-
-    const confirmar = window.confirm(
-      "Tem certeza que deseja cancelar sua doação recorrente?"
-    );
-
-    if (!confirmar) return;
+    if (!confirm("Deseja cancelar sua doação recorrente?")) return;
 
     doacao.status = "cancelada";
-
     editando = false;
+    concluida = false;
 
-    salvarDoacao();
-
-    formulario.reset();
+    salvar();
+    form.reset();
+    confirmacao.hidden = true;
     botaoConfirmar.textContent = "Confirmar doação recorrente";
 
     atualizarTela();
-
-    status.textContent =
-      "Doação recorrente cancelada com sucesso! " +
-      "Nenhuma cobrança foi realizada.";
-
+    status.textContent = "Recorrência cancelada com sucesso nesta simulação.";
   });
 
-  // CARREGAR DADOS AO ABRIR A PÁGINA
-  carregarDoacao();
+  // Fazer nova simulação
+  $("rec-nova-doacao").addEventListener("click", () => {
+    confirmacao.hidden = true;
+    concluida = false;
+    editando = doacao?.status === "ativa";
 
+    form.reset();
+    limparErros();
+    botaoConfirmar.textContent = "Confirmar doação recorrente";
+
+    atualizarTela();
+    status.textContent = "Preencha os dados para uma nova simulação.";
+    form.scrollIntoView({ behavior: "smooth" });
+  });
+
+  // Inicialização
+  carregar();
+  confirmacao.hidden = true;
+  atualizarTela();
 });
