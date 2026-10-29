@@ -1,0 +1,202 @@
+
+/* SPRINT 2 - DAVID */
+/* Organização dos formulários */
+
+.pagina-doacao .doacao-colunas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+/* Formulário de doação recorrente */
+
+.doacao-recorrente {
+  min-width: 0;
+}
+
+.doacao-recorrente h2 {
+  margin-bottom: 15px;
+}
+
+.doacao-recorrente h3 {
+  margin: 25px 0 15px;
+}
+
+.opcoes-recorrentes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.opcoes-recorrentes label {
+  flex: 1;
+  min-width: 90px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.opcoes-recorrentes label:has(input:checked) {
+  border-color: #23864b;
+  background-color: #e6f5eb;
+}
+
+.campo-recorrente {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.campo-recorrente label {
+  font-weight: 600;
+}
+
+.campo-recorrente input,
+.campo-recorrente select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: inherit;
+}
+
+/* Gerenciamento da recorrência */
+
+.gerenciar-recorrencia {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #edf7ef;
+  border-radius: 12px;
+}
+
+.gerenciar-recorrencia h3 {
+  margin-top: 0;
+}
+
+.gerenciar-recorrencia p {
+  margin-bottom: 12px;
+}
+
+.acoes-recorrencia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.acoes-recorrencia button {
+  padding: 12px;
+  border: 1px solid #23864b;
+  border-radius: 8px;
+  background-color: white;
+  color: #176638;
+  cursor: pointer;
+}
+
+#rec-cancelar {
+  border-color: #b93e3e;
+  color: #b93e3e;
+}
+
+/* Imagem abaixo dos formulários */
+
+.doacao-foto-inferior {
+  margin-top: 35px;
+}
+
+.doacao-foto-inferior .doacao-imagem {
+  width: 100%;
+  min-height: 350px;
+}
+
+/* Responsividade para tablets */
+
+@media (max-width: 900px) {
+  .pagina-doacao .doacao-colunas {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+/* Responsividade para celulares */
+
+@media (max-width: 600px) {
+  .opcoes-recorrentes {
+    flex-direction: column;
+  }
+
+  .gerenciar-recorrencia {
+    padding: 15px;
+  }
+
+  .doacao-foto-inferior {
+    margin-top: 25px;
+  }
+}
+
+
+/* PADRONIZAÇÃO VISUAL COM A DOAÇÃO PONTUAL */
+
+/* Título principal */
+.doacao-recorrente .introducao-doacao h1 {
+  color: #172b27;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+
+/* Descrição do formulário */
+.doacao-recorrente .introducao-doacao > p:last-child {
+  color: #526b62;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Títulos das seções */
+.doacao-recorrente h3 {
+  color: #145c38;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 24px 0 14px;
+}
+
+/* Valores de doação */
+.doacao-recorrente .opcoes-recorrentes label {
+  color: #526b62;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Campos e seus títulos */
+.doacao-recorrente .campo-recorrente label {
+  color: #145c38;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.doacao-recorrente .campo-recorrente input,
+.doacao-recorrente .campo-recorrente select {
+  color: #263d35;
+  font-size: 14px;
+  min-height: 44px;
+}
+
+/* Ajuste do espaço entre opções e campos */
+.doacao-recorrente .opcoes-recorrentes {
+  margin-bottom: 16px;
+}
+
+.doacao-recorrente .campo-recorrente {
+  margin-bottom: 18px;
+}
