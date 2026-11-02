@@ -1,0 +1,642 @@
+
+/* ==========================================
+   AMIGOS DA TURMA - SPRINT 2
+   MEU IMPACTO / ÁREA PESSOAL DO DOADOR
+========================================== */
+
+/* CONFIGURAÇÃO GERAL */
+
+.area-doador {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+/* ESPAÇAMENTO DAS SEÇÕES */
+
+.area-doador .apresentacao-doador,
+.area-doador .perfil-doador,
+.area-doador .indicadores-doador,
+.area-doador .historico-doacoes,
+.area-doador .preferencias-doador {
+    margin-bottom: 48px;
+}
+
+.area-doador .perfil-doador h2,
+.area-doador .indicadores-doador h2,
+.area-doador .historico-doacoes h2,
+.area-doador .preferencias-doador h2 {
+    margin-bottom: 16px;
+    color: #17643b;
+}
+
+/* ==========================================
+   BOAS-VINDAS
+========================================== */
+
+.area-doador .apresentacao-doador h1 {
+    color: #17643b;
+    margin: 14px 0;
+    font-size: 38px;
+}
+
+.area-doador .apresentacao-doador p {
+    line-height: 1.7;
+}
+
+.area-doador .etiqueta-doador,
+.area-doador .etiqueta-impacto {
+    color: #009639;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.area-doador .aviso-demonstracao {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background-color: #f0f8f3;
+    border-left: 4px solid #009639;
+    border-radius: 6px;
+    color: #426451;
+    font-size: 14px;
+}
+
+/* ==========================================
+   PERFIL DO DOADOR
+========================================== */
+
+.area-doador .card-perfil {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+}
+
+.area-doador .foto-perfil {
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    border-radius: 50%;
+    background-color: #e5f5eb;
+    color: #009639;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.area-doador .dados-perfil h3 {
+    color: #17643b;
+    margin-bottom: 12px;
+}
+
+.area-doador .dados-perfil p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   RESUMO DAS CONTRIBUIÇÕES
+========================================== */
+
+.area-doador .cards-indicadores {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.area-doador .card-indicador {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-top: 4px solid #009639;
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.area-doador .card-indicador:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+.area-doador .card-indicador > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #e5f5eb;
+    color: #009639;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.area-doador .card-indicador h3 {
+    font-size: 17px;
+    color: #17643b;
+    margin-bottom: 12px;
+}
+
+.area-doador .numero-indicador {
+    color: #009639;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.area-doador .card-indicador p:last-child {
+    font-size: 14px;
+    color: #777777;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   HISTÓRICO DE CONTRIBUIÇÕES
+========================================== */
+
+.area-doador .historico-doacoes {
+    margin-top: 45px;
+}
+
+.area-doador .tabela-doacoes {
+    width: 100%;
+    margin-top: 24px;
+    overflow-x: auto;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.area-doador .tabela-doacoes table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.area-doador .tabela-doacoes th {
+    background-color: #f0f8f3;
+    color: #17643b;
+    font-weight: 600;
+    padding: 18px 22px;
+    white-space: nowrap;
+}
+
+.area-doador .tabela-doacoes td {
+    padding: 18px 22px;
+    border-bottom: 1px solid #eeeeee;
+    white-space: nowrap;
+}
+
+.area-doador .tabela-doacoes tr:last-child td {
+    border-bottom: none;
+}
+
+.area-doador .tabela-doacoes th:nth-child(3),
+.area-doador .tabela-doacoes td:nth-child(3) {
+    text-align: right;
+}
+
+.area-doador .tabela-doacoes tbody tr:hover {
+    background-color: #f8fcf9;
+}
+
+.area-doador .status-concluido {
+    display: inline-block;
+    color: #008a3d;
+    background-color: #e5f5eb;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.area-doador .aviso-perfil {
+    font-size: 13px;
+    color: #777777;
+    margin-top: 14px;
+    line-height: 1.6;
+}
+
+/* BOTÃO DE SIMULAÇÃO */
+
+.area-doador .btn-secundario {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 24px;
+    background-color: transparent;
+    border: 2px solid #17643b;
+    border-radius: 8px;
+    color: #17643b;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.area-doador .btn-secundario:hover {
+    background-color: #e5f5eb;
+}
+
+/* ==========================================
+   ESTADO VAZIO
+========================================== */
+
+.area-doador [hidden] {
+    display: none !important;
+}
+
+.area-doador .estado-vazio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+    width: 100%;
+    margin-top: 24px;
+    padding: 48px 24px;
+    background-color: #ffffff;
+    border: 2px dashed #c9e5d3;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.area-doador .estado-vazio > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background-color: #e5f5eb;
+    color: #009639;
+    font-size: 34px;
+}
+
+.area-doador .estado-vazio h3 {
+    color: #17643b;
+    font-size: 23px;
+    margin: 0;
+}
+
+.area-doador .estado-vazio p {
+    max-width: 470px;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.area-doador .btn-destaque {
+    display: inline-block;
+    background-color: #f26522;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.area-doador .btn-destaque:hover {
+    background-color: #d95416;
+}
+
+.area-doador .estado-vazio:not([hidden]) + .btn-secundario {
+    display: block;
+    margin: 18px auto 0;
+}
+
+/* ==========================================
+   MEU IMPACTO SOCIAL
+========================================== */
+
+.area-doador .secao-indicadores,
+.area-doador .secao-historia-impacto,
+.area-doador .chamada-impacto {
+    margin-bottom: 50px;
+}
+
+/* ==========================================
+   HISTÓRIAS DE IMPACTO
+   CORREÇÃO DA IMAGEM
+========================================== */
+
+.area-doador .secao-historia-impacto {
+    display: grid !important;
+    grid-template-columns: 28% minmax(0, 1fr) !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* COLUNA DA IMAGEM */
+
+.area-doador .secao-historia-impacto .imagem-historia-impacto {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+/* FOTO DAS MENINAS */
+
+.area-doador .secao-historia-impacto .imagem-historia-impacto img {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 0 !important;
+}
+
+/* TEXTO À DIREITA */
+
+.area-doador .secao-historia-impacto .historia-detalhe {
+    min-width: 0 !important;
+    padding: 24px !important;
+    border-left: 5px solid #f26522;
+}
+
+.area-doador .historia-detalhe h2 {
+    color: #17643b;
+    margin: 8px 0;
+}
+
+.area-doador .historia-detalhe h3 {
+    color: #17643b;
+    margin: 8px 0;
+}
+
+.area-doador .historia-detalhe p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.area-doador .aviso-historia {
+    color: #777777;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* ==========================================
+   PREFERÊNCIAS DE COMUNICAÇÃO
+========================================== */
+
+.area-doador #form-preferencias {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 30px;
+    margin-top: 24px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.area-doador #form-preferencias fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 28px;
+    min-width: 0;
+}
+
+.area-doador #form-preferencias legend {
+    color: #17643b;
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    padding: 0;
+}
+
+.area-doador .opcao-preferencia {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid #eeeeee;
+    cursor: pointer;
+    color: #333333;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.area-doador .opcao-preferencia input {
+    width: 18px;
+    height: 18px;
+    margin: 3px 0 0;
+    flex-shrink: 0;
+    accent-color: #009639;
+    cursor: pointer;
+}
+
+.area-doador .aviso-privacidade {
+    font-size: 13px;
+    color: #777777;
+    margin-bottom: 20px;
+}
+
+/* BOTÃO SALVAR */
+
+.area-doador .btn-salvar {
+    display: block;
+    background-color: #f26522;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.area-doador .btn-salvar:hover {
+    background-color: #d95416;
+}
+
+/* ==========================================
+   FEEDBACK DO JAVASCRIPT
+========================================== */
+
+.area-doador .mensagem-feedback {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.area-doador .mensagem-feedback:empty {
+    display: none;
+}
+
+.area-doador .mensagem-feedback.erro {
+    color: #b42318;
+    background-color: #fff0ee;
+    border: 1px solid #f5c4be;
+    padding: 14px 18px;
+    border-radius: 8px;
+}
+
+.area-doador .mensagem-feedback.sucesso {
+    color: #08783c;
+    background-color: #e5f5eb;
+    border: 1px solid #b8dfc5;
+    padding: 14px 18px;
+    border-radius: 8px;
+}
+
+/* ==========================================
+   CHAMADA FINAL
+========================================== */
+
+.area-doador .chamada-impacto {
+    background-color: #e5f5eb;
+    border-radius: 16px;
+    padding: 42px 32px;
+    text-align: center;
+}
+
+.area-doador .chamada-impacto h2 {
+    color: #17643b;
+    margin: 12px 0;
+}
+
+.area-doador .chamada-impacto p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.area-doador .botoes-impacto {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.area-doador .btn-impacto-secundario {
+    display: inline-block;
+    border: 2px solid #17643b;
+    color: #17643b;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 13px 24px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.area-doador .btn-impacto-secundario:hover {
+    background-color: #d3eddd;
+}
+
+/* ==========================================
+   RESPONSIVIDADE - TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+    .area-doador .cards-indicadores {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .area-doador .secao-historia-impacto {
+        grid-template-columns: 35% minmax(0, 1fr) !important;
+    }
+}
+
+/* ==========================================
+   RESPONSIVIDADE - CELULARES
+========================================== */
+
+@media (max-width: 700px) {
+    .area-doador .secao-historia-impacto {
+        grid-template-columns: 1fr !important;
+    }
+
+    .area-doador .secao-historia-impacto .imagem-historia-impacto {
+        height: 240px !important;
+    }
+
+    .area-doador .secao-historia-impacto .historia-detalhe {
+        padding: 22px !important;
+        border-left: none;
+        border-top: 5px solid #f26522;
+    }
+}
+
+@media (max-width: 600px) {
+    .area-doador {
+        padding: 28px 16px;
+    }
+
+    .area-doador .apresentacao-doador h1 {
+        font-size: 30px;
+    }
+
+    .area-doador .card-perfil {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 18px;
+    }
+
+    .area-doador .cards-indicadores {
+        grid-template-columns: 1fr;
+    }
+
+    .area-doador .card-indicador {
+        padding: 24px;
+    }
+
+    .area-doador .tabela-doacoes th,
+    .area-doador .tabela-doacoes td {
+        padding: 14px 16px;
+    }
+
+    .area-doador .estado-vazio {
+        padding: 32px 18px;
+    }
+
+    .area-doador .estado-vazio h3 {
+        font-size: 20px;
+    }
+
+    .area-doador #form-preferencias {
+        padding: 20px;
+    }
+
+    .area-doador .chamada-impacto {
+        padding: 30px 18px;
+    }
+
+    .area-doador .botoes-impacto {
+        flex-direction: column;
+    }
+
+    .area-doador .botoes-impacto a {
+        width: 100%;
+    }
+}
