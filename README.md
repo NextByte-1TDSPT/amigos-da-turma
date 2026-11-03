@@ -85,7 +85,6 @@ amigos-da-turma/
 │   └── vinicius.jpg
 ├── js/
 │   ├── area-doador.js
-│   ├── auth-doador.js
 │   ├── contato.js
 │   ├── dashboard.js
 │   ├── doacao-recorrente.js
