@@ -818,3 +818,40 @@
 .area-doador .btn-sair-conta:hover {
   background: #e8f5ec;
 }
+
+/* Ajustes de responsividade da página Meu Impacto */
+@media (max-width: 600px) {
+  .area-doador.pagina-impacto {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 28px 16px;
+  }
+
+  .area-doador.pagina-impacto > section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .area-doador.pagina-impacto .historico-doacoes {
+    min-width: 0;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes table {
+    width: 100%;
+    min-width: 520px;
+    table-layout: auto;
+  }
+}
