@@ -495,14 +495,9 @@
     padding: 0.875rem 1rem;
   }
 
-  header .logo,
-  header > a {
-    font-size: 1.2rem;
-  }
-
-  header .logo span,
-  header > a span {
-    font-size: 1.2rem;
+  header .logo img {
+    width: 9rem;
+    max-height: 3.125rem;
   }
 
   header > .botao-menu {

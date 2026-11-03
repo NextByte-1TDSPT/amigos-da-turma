@@ -132,18 +132,18 @@ header {
 /* Logo */
 header .logo,
 header > a {
-  display: inline-block;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--texto);
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
   text-decoration: none;
   white-space: nowrap;
 }
 
-header .logo span,
-header > a span {
-  font-size: 1.5rem;
-  font-weight: bold;
+header .logo img {
+  display: block;
+  width: 11.25rem;
+  max-height: 3.875rem;
+  object-fit: contain;
 }
 
 header nav {
