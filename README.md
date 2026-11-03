@@ -1,4 +1,4 @@
-# 🦷 Amigos da Turma - Challenge Turma do Bem x FIAP 💚
+# Amigos da Turma - Challenge Turma do Bem x FIAP 💚🦷
 
 Plataforma acadêmica desenvolvida pela equipe **NextByte** para aproximar doadores da **Turma do Bem**, apresentar formas de contribuição e demonstrar como uma experiência digital pode apoiar o relacionamento com doadores e a divulgação do impacto social.
 
