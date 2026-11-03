@@ -1,4 +1,4 @@
-/* Dashboard demonstrativo: todos os números abaixo são fictícios. */
+// Dashboard demonstrativo: todos os números abaixo são fictícios.
 const dadosMensais = [
   {
     mes: "Jan",
@@ -107,10 +107,10 @@ const formatoMoeda = new Intl.NumberFormat("pt-BR", {
 const formatoInteiro = new Intl.NumberFormat("pt-BR");
 
 function obterMesesDoPeriodo(periodo) {
-  if (periodo === "semestre1") return dadosMensais.slice(0, 6);
-  if (periodo === "semestre2") return dadosMensais.slice(6, 12);
-  if (periodo === "trimestre3") return dadosMensais.slice(6, 9);
-  if (periodo === "outubro") return dadosMensais.slice(9, 10);
+  if (periodo == "semestre1") return dadosMensais.slice(0, 6);
+  if (periodo == "semestre2") return dadosMensais.slice(6, 12);
+  if (periodo == "trimestre3") return dadosMensais.slice(6, 9);
+  if (periodo == "outubro") return dadosMensais.slice(9, 10);
   return dadosMensais;
 }
 
@@ -134,10 +134,23 @@ function atualizarIndicadores(meses) {
     ? Math.round(totalRecorrentesMes / meses.length)
     : 0;
   const mediaPontuais = Math.max(mediaDoadores - mediaRecorrentes, 0);
-  const retencao =
-    totalDoadoresMes > 0
-      ? Math.round((totalRecorrentesMes / totalDoadoresMes) * 100)
-      : 0;
+  // Retenção demonstrativa: doadores recorrentes no mês atual que retornaram
+  // em relação ao total de doadores ativos no mês imediatamente anterior.
+  // O primeiro mês do histórico não entra no cálculo por não ter mês-base.
+  const indicesMeses = meses
+    .map((mes) => dadosMensais.indexOf(mes))
+    .filter((indice) => indice > 0);
+  const totalDoadoresMesAnterior = indicesMeses.reduce(
+    (total, indice) => total + dadosMensais[indice - 1].doadores,
+    0,
+  );
+  const totalDoadoresRetidos = indicesMeses.reduce(
+    (total, indice) => total + dadosMensais[indice].recorrentes,
+    0,
+  );
+  const taxaRetencao = totalDoadoresMesAnterior > 0
+    ? Math.round((totalDoadoresRetidos / totalDoadoresMesAnterior) * 100)
+    : 0;
 
   document.getElementById("kpi-arrecadado").textContent =
     formatoMoeda.format(arrecadacao);
@@ -145,8 +158,8 @@ function atualizarIndicadores(meses) {
     formatoInteiro.format(doacoes);
   document.getElementById("kpi-doadores").textContent =
     formatoInteiro.format(mediaDoadores);
-  document.getElementById("kpi-retencao").textContent = `${retencao}%`;
-  document.getElementById("resumo-retencao").textContent = `${retencao}%`;
+  document.getElementById("kpi-retencao").textContent = `${taxaRetencao}%`;
+  document.getElementById("resumo-retencao").textContent = `${taxaRetencao}%`;
   document.getElementById("qtd-recorrentes").textContent =
     formatoInteiro.format(mediaRecorrentes);
   document.getElementById("qtd-pontuais").textContent =
@@ -234,7 +247,7 @@ botaoAtualizar.addEventListener("click", function () {
 
 atualizarDashboard();
 
-/* Simulação visual de integração: não realiza chamadas a APIs externas. */
+// Simulação visual de integração apenas, não realiza chamadas a APIs externas ainda.
 const statusSalesforce = document.getElementById("status-salesforce");
 const tituloStatusSalesforce = document.getElementById(
   "titulo-status-salesforce",
