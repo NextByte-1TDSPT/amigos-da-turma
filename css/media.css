@@ -1,0 +1,638 @@
+/* Tablets e celulares (até 992px): menu hambúrguer e layouts em coluna */
+@media (max-width: 62rem) {
+  :root {
+    --fs-cell: 2.75rem;
+    --fs-titulo: 2.125rem;
+    --fs-secao: 1.6875rem;
+    --espaco-secao: 2.8125rem;
+  }
+
+  /* Menu: se houver botão no header, o menu abre e fecha com ele.
+     Sem botão, os links quebram de linha normalmente. */
+  header {
+    flex-wrap: wrap;
+    padding: 0.9375rem 1.25rem;
+  }
+
+  main {
+    padding: 1.5625rem 1.25rem;
+  }
+
+  .pagina-inicial {
+    padding: 1.5625rem 1.25rem;
+  }
+
+  .secao-sobre {
+    padding: 2.8125rem 5%;
+  }
+
+  .secao-ciclo,
+  .secao-funcionamento {
+    padding: 2.8125rem 5%;
+  }
+
+  header nav {
+    width: 100%;
+  }
+
+  header ul {
+    flex-wrap: wrap;
+    gap: 0.75rem 1.125rem;
+  }
+
+  header > button {
+    display: block;
+  }
+
+  header:has(> button) nav {
+    display: none;
+    margin-top: 0.625rem;
+  }
+
+  header:has(> button) nav.aberto {
+    display: block;
+  }
+
+  header:has(> button) ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  header:has(> button) nav a {
+    display: block;
+    padding: 0.75rem 0.25rem;
+  }
+
+  /* Página inicial */
+  .banner-inicial {
+    gap: 1.5625rem;
+  }
+
+  .banner-imagem img {
+    height: 18.75rem;
+  }
+
+  .cards-acoes,
+  .cards-ajuda {
+    flex-wrap: wrap;
+  }
+
+  .card-acao,
+  .card-ajuda {
+    flex: 1 1 16.25rem;
+  }
+
+  /* Sobre */
+  .pagina-sobre .cards-sobre {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .secao-contexto {
+    grid-template-columns: 1fr;
+  }
+
+  .banner-sobre {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Contato */
+  .secao-contato {
+    grid-template-columns: 1fr;
+    row-gap: 0.9375rem;
+  }
+
+  /* Integrantes */
+  .grid-integrantes {
+    grid-template-columns: 1fr;
+  }
+
+  .decoracao-coracoes,
+  .decoracao-laranja,
+  .decoracao-canto {
+    display: none;
+  }
+
+  /* Meu Impacto */
+  .banner-impacto-pagina {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0;
+  }
+
+  .imagem-banner-impacto {
+    width: 100%;
+    max-width: 26.25rem;
+  }
+
+  .cards-impacto {
+    flex-wrap: wrap;
+  }
+
+  .card-impacto {
+    flex: 1 1 12.5rem;
+  }
+
+  .chamada-impacto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Doação */
+  .doacao-colunas {
+    grid-template-columns: 1fr;
+  }
+
+  .doacao-imagem img {
+    height: 20rem;
+  }
+
+  .texto-doacao-imagem {
+    min-height: 0;
+  }
+}
+
+/* Celulares grandes (até 768px) */
+@media (max-width: 48rem) {
+  :root {
+    --fs-cell: 2.25rem;
+    --fs-titulo: 1.875rem;
+    --fs-titulo-compacto: 1.6875rem;
+    --fs-secao: 1.5rem;
+    --espaco-secao: 2.1875rem;
+  }
+
+  main {
+    padding: 1.375rem 1rem;
+  }
+
+  .pagina-inicial {
+    padding: 1.25rem 1rem;
+  }
+
+  .secao-sobre,
+  .secao-ciclo,
+  .secao-funcionamento {
+    padding: 2.1875rem 5%;
+  }
+
+  .pagina-contato {
+    padding: 2.1875rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.3125rem;
+  }
+
+  /* Página inicial */
+  .banner-inicial {
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 0.625rem;
+    padding-bottom: 1.875rem;
+  }
+
+  .banner-imagem img {
+    height: 16.25rem;
+  }
+
+  .banner-botoes {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .secao-acoes,
+  .secao-ajuda {
+    padding: 1.875rem 0;
+  }
+
+  .cards-acoes,
+  .cards-ajuda {
+    flex-direction: column;
+  }
+
+  .banner-impacto {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5625rem;
+  }
+
+  .chamada-final {
+    padding: 1.875rem 1.25rem;
+  }
+
+  /* Sobre */
+  .pagina-sobre .cards-sobre {
+    grid-template-columns: 1fr;
+  }
+
+  .imagem-banner-sobre img {
+    height: 13.75rem;
+  }
+
+  .chamada-sobre {
+    padding: 2.5rem 5%;
+  }
+
+  /* FAQ */
+  .banner-faq {
+    padding: 2.5rem 5%;
+  }
+
+  .faq-lista {
+    padding: 0 1rem;
+  }
+
+  .chamada-faq {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1.875rem 1.25rem;
+  }
+
+  /* Contato */
+  .formulario-contato {
+    padding: 1.375rem;
+  }
+
+  /* Integrantes */
+  .card-integrante {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .integrante-informacoes {
+    text-align: center;
+  }
+
+  .integrante-links {
+    justify-content: center;
+  }
+
+  /* Meu Impacto */
+  .secao-historia-impacto {
+    flex-direction: column;
+  }
+
+  .imagem-historia-impacto {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .imagem-historia-impacto img {
+    height: 11.25rem;
+  }
+
+  .historia-detalhe {
+    border-left: none;
+    border-top: 0.3125rem solid var(--laranja);
+  }
+
+  .decoracao-chamada-impacto {
+    min-width: 0;
+    padding: 0;
+  }
+
+  /* Doação */
+  .doacao-formulario {
+    padding: 1.375rem;
+  }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 30rem) {
+  :root {
+    --fs-cell: 1.875rem;
+    --fs-titulo: 1.625rem;
+    --fs-titulo-compacto: 1.5rem;
+    --fs-secao: 1.375rem;
+  }
+
+  header > a {
+    font-size: 1.3125rem;
+  }
+
+  /* Botões ocupam a largura toda */
+  .btn-destaque,
+  .btn-secundario,
+  .btn-sobre-secundario,
+  .btn-impacto-secundario {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .botoes-sobre,
+  .botoes-impacto {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .banner-botoes {
+    align-items: stretch;
+  }
+
+  .opcoes .opcao {
+    min-width: 40%;
+  }
+
+  .item-ciclo {
+    padding: 0.875rem;
+  }
+
+  .faq-item {
+    padding: 1.125rem;
+  }
+
+  .destaque-contexto {
+    padding: 1.375rem;
+  }
+
+  .decoracao-chamada-impacto .fa-heart {
+    font-size: 2.8125rem;
+  }
+
+  .decoracao-chamada-impacto .fa-leaf {
+    font-size: 2.25rem;
+  }
+
+  .decoracao-chamada-impacto .fa-seedling {
+    font-size: 1.875rem;
+  }
+
+  footer nav ul {
+    gap: 0.625rem 0.875rem;
+  }
+}
+
+
+/* Feedback específico do formulário de contato */
+.feedback-contato {
+  min-height: 1.5rem;
+  margin-top: 0.875rem;
+}
+
+.mensagem-erro-geral {
+  color: #C62828;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+/* Ajustes do painel de preferências em telas menores */
+@media (max-width: 600px) {
+  .area-doador .preferencias-doador {
+    width: 100%;
+    margin: 20px auto 36px;
+    padding: 20px;
+  }
+}
+
+/* Página de contato: composição em coluna em telas menores */
+@media (max-width: 62rem) {
+  .secao-contato {
+    max-width: 38rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .introducao-contato {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .introducao-contato > p:last-of-type {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ilustracao-contato {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .formulario-contato {
+    padding: 1.25rem;
+  }
+}
+
+/* Ajustes responsivos da revisão visual */
+@media (max-width: 62rem) {
+  .secao-contato {
+    max-width: 42rem;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .introducao-contato {
+    text-align: center;
+  }
+
+  .introducao-contato > p:last-of-type {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ilustracao-contato {
+    margin: 1.25rem auto 0;
+  }
+
+  .doacao-foto-inferior .doacao-imagem {
+    grid-template-columns: 1fr;
+  }
+
+  .doacao-foto-inferior .doacao-imagem img {
+    height: 17rem;
+    min-height: 17rem;
+  }
+
+  .doacao-foto-inferior .texto-doacao-imagem {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .pagina-contato {
+    padding: 2rem 1rem;
+  }
+
+  .secao-contato {
+    gap: 1.25rem;
+  }
+
+  .formulario-contato {
+    padding: 1.25rem;
+  }
+
+  .doacao-foto-inferior {
+    margin-top: 1.5rem;
+  }
+
+  .doacao-foto-inferior .doacao-imagem img {
+    height: 14rem;
+    min-height: 14rem;
+  }
+
+  .doacao-foto-inferior .texto-doacao-imagem {
+    padding: 1.5rem;
+  }
+
+  .area-doador .preferencias-doador {
+    padding: 1.25rem;
+    margin: 1.25rem auto 2rem;
+  }
+}
+
+
+/* Menu compacto para celulares: evita que os links quebrem em duas linhas */
+@media (max-width: 62rem) {
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+  }
+
+  header .logo,
+  header > a {
+    font-size: 1.2rem;
+  }
+
+  header .logo span,
+  header > a span {
+    font-size: 1.2rem;
+  }
+
+  header > .botao-menu {
+    display: block;
+    padding: 0.55rem 0.8rem;
+    color: var(--verde-escuro);
+    background-color: var(--branco);
+    border: 1px solid var(--verde);
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  header nav#menu-principal {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+
+  header nav#menu-principal.aberto {
+    display: block;
+  }
+
+  header nav#menu-principal ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 0.35rem;
+  }
+
+  header nav#menu-principal li {
+    border-top: 1px solid var(--borda);
+  }
+
+  header nav#menu-principal a {
+    display: block;
+    padding: 0.75rem 0.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 62.01rem) {
+  header > .botao-menu {
+    display: none;
+  }
+}
+
+
+@media (max-width: 48rem) {
+  .doacao-foto-inferior {
+    margin-bottom: 1.5rem;
+  }
+
+  .doacao-foto-inferior .texto-doacao-imagem {
+    padding: 1.5rem;
+  }
+
+  .botao-banner-doacao {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* Banner de doação em faixa horizontal no desktop e empilhado no celular. */
+@media (max-width: 48rem) {
+  .doacao-foto-inferior {
+    width: calc(100% + 2.5rem);
+    margin: 0 -1.25rem 1.75rem;
+  }
+
+  .doacao-foto-inferior .doacao-imagem {
+    height: auto;
+    min-height: 0;
+    grid-template-columns: 1fr;
+    border-radius: 0;
+  }
+
+  .doacao-foto-inferior .doacao-imagem img {
+    height: 13rem;
+    min-height: 13rem;
+    object-position: center 35%;
+  }
+
+  .doacao-foto-inferior .texto-doacao-imagem {
+    min-height: 0;
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* Mantém os cantos arredondados do banner em telas menores. */
+@media (max-width: 48rem) {
+  .doacao-foto-inferior {
+    border-radius: 0.9rem;
+    overflow: hidden;
+  }
+
+  .doacao-foto-inferior .doacao-imagem {
+    border-radius: 0.9rem;
+    overflow: hidden;
+  }
+
+  .doacao-foto-inferior .doacao-imagem img {
+    object-position: center 24%;
+  }
+}
+
+/* Banner de doação em telas pequenas: foto com enquadramento mais aberto. */
+@media (max-width: 48rem) {
+  .doacao-foto-inferior {
+    border-radius: 0.9rem;
+    overflow: hidden;
+  }
+
+  .doacao-foto-inferior .doacao-imagem {
+    height: auto;
+    min-height: 0;
+    grid-template-columns: 1fr;
+    border-radius: 0.9rem;
+    overflow: hidden;
+  }
+
+  .doacao-foto-inferior .doacao-imagem img {
+    height: 18rem;
+    min-height: 18rem;
+    object-position: center 28%;
+  }
+
+  .doacao-foto-inferior .texto-doacao-imagem {
+    min-height: 0;
+    padding: 1.5rem 1.25rem;
+  }
+}

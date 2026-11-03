@@ -1,5 +1,4 @@
 // Doação pontual: validação, etapas do fluxo e confirmação demonstrativa
-
 const VALOR_MINIMO = 10;
 
 const form = document.getElementById("form-doacao");
@@ -28,6 +27,22 @@ const pagamentos = {
     detalhe: "Em um cenário real, o boleto com código de barras seria gerado agora.",
   },
 };
+
+
+function registrarDoacaoPontualDemo(valor) {
+  const registro = { data: new Date().toISOString(), tipo: "Pontual", valor: Number(valor), status: "Demonstrativa" };
+  const chave = "historicoDoacoes_" + campoEmail.value.trim().toLowerCase();
+  try {
+    const historico = JSON.parse(localStorage.getItem(chave)) || [];
+    historico.push(registro);
+    localStorage.setItem(chave, JSON.stringify(historico));
+  } catch (erro) { /* A confirmação continua sendo apenas demonstrativa. */ }
+}
+
+try {
+  const sessao = JSON.parse(sessionStorage.getItem("amigosTurmaSessaoDemo"));
+  if (sessao) { campoNome.value = sessao.nome || ""; campoEmail.value = sessao.email || ""; }
+} catch (erro) { /* O preenchimento manual continua disponível. */ }
 
 function formatarReais(valor) {
   return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -241,6 +256,8 @@ form.addEventListener("submit", function (evento) {
   }
 
   doacaoEnviada = true;
+  const valorConfirmado = obterValor().numero;
+  registrarDoacaoPontualDemo(valorConfirmado);
   mostrarConfirmacao();
   atualizarEtapas();
 });

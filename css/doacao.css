@@ -1,0 +1,698 @@
+.pagina-doacao {
+  padding: 2.5rem 4%;
+  background-color: var(--fundo);
+  overflow: hidden;
+}
+
+.doacao-colunas {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: stretch;
+  gap: 1.75rem;
+  max-width: 78.125rem;
+  margin: 0 auto;
+}
+
+/* Coluna da imagem */
+.doacao-imagem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--verde-escuro);
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+
+.doacao-imagem img {
+  display: block;
+  width: 100%;
+  height: 29.375rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+}
+
+.texto-doacao-imagem {
+  position: relative;
+  flex: 1;
+  min-height: 20.625rem;
+  padding: 1.875rem;
+  background-color: var(--verde-escuro);
+  border-top: 0.0625rem solid rgba(255, 255, 255, 0.08);
+  color: var(--branco);
+  overflow: hidden;
+}
+
+.texto-doacao-imagem .etiqueta-doacao {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.5rem;
+  color: #FFC15C;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  letter-spacing: 0.0625rem;
+}
+
+.texto-doacao-imagem h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.75rem;
+  color: var(--branco);
+  font-size: var(--fs-secao);
+  line-height: 1.35;
+}
+
+.texto-doacao-imagem > p:last-child {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--verde-claro);
+  font-size: var(--fs-texto);
+  line-height: 1.7;
+}
+
+/* Coluna do formulário */
+.doacao-formulario {
+  min-width: 0;
+  padding: 2rem;
+  background-color: var(--branco);
+  border: 0.0625rem solid #E6EDE8;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.1875rem 0.75rem rgba(36, 91, 55, 0.06);
+}
+
+.introducao-doacao {
+  margin-bottom: 1rem;
+}
+
+.introducao-doacao .etiqueta-doacao {
+  margin-bottom: 0.375rem;
+  color: var(--laranja);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+}
+
+.introducao-doacao h1 {
+  margin: 0 0 0.4375rem;
+  color: #17251C;
+  font-size: var(--fs-titulo-compacto);
+  line-height: 1.25;
+}
+
+.introducao-doacao > p:last-child {
+  margin: 0;
+  color: #526B5C;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.doacao-formulario .aviso-demo {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.doacao-formulario form {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.doacao-formulario form h2 {
+  margin: 1.375rem 0 0.75rem;
+  font-size: 1rem;
+}
+
+/* Opções de frequência, valor e pagamento */
+.opcoes {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-bottom: 1rem;
+}
+
+.opcoes .opcao {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  min-width: 4.6875rem;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.8125rem 0.75rem;
+  background-color: var(--branco);
+  border: 0.0625rem solid #DCE6DF;
+  border-radius: 0.4375rem;
+  color: #33483A;
+  font-size: 0.8125rem;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.opcoes .opcao input[type="radio"] {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.opcoes .opcao:focus-within {
+  outline: 0.125rem solid var(--laranja);
+}
+
+.campo-doacao {
+  margin-bottom: 1rem;
+}
+
+.campo-doacao label {
+  margin: 0 0 0.4375rem;
+  font-size: 0.8125rem;
+}
+
+.campo-doacao input {
+  padding: 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.consentimento {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  margin: 1.125rem 0 1.375rem;
+}
+
+.consentimento label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4375rem;
+  margin: 0;
+  color: #526B5C;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.consentimento input[type="checkbox"] {
+  flex-shrink: 0;
+  margin: 0.125rem 0 0;
+}
+
+.doacao-formulario button.btn-destaque {
+  display: block;
+  width: 100%;
+  margin-top: 1.125rem;
+  padding: 0.9375rem;
+}
+
+/* Decoração (corações e detalhes) */
+.coracao-decorativo {
+  position: absolute;
+  z-index: 3;
+  color: var(--amarelo);
+  font-size: 2.625rem;
+  font-weight: bold;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.coracao-amarelo {
+  top: 35%;
+  right: 1.375rem;
+  transform: rotate(12deg);
+}
+
+.coracao-laranja {
+  bottom: 5.625rem;
+  right: 1.75rem;
+  font-size: 3.4375rem;
+  transform: rotate(-12deg);
+}
+
+.detalhe-amarelo {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  width: 0.375rem;
+  height: 0.375rem;
+  background-color: var(--amarelo);
+  border-radius: 50%;
+}
+
+.detalhe-um {
+  bottom: 4.0625rem;
+  left: 32%;
+}
+
+.detalhe-dois {
+  bottom: 2.8125rem;
+  left: 40%;
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: var(--laranja);
+}
+
+.curva-amarela {
+  position: absolute;
+  bottom: -2rem;
+  left: 1.5625rem;
+  z-index: 2;
+  width: 6.25rem;
+  height: 4.0625rem;
+  background-color: var(--amarelo);
+  border-radius: 60% 60% 0 0;
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+
+
+
+/* Banner final da página de doação: imagem e mensagem lado a lado */
+.doacao-foto-inferior {
+  max-width: 78.125rem;
+  margin: 2.5rem auto 0;
+}
+
+.doacao-foto-inferior .doacao-imagem {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: stretch;
+  min-height: 20rem;
+  border-radius: 0.875rem;
+}
+
+.doacao-foto-inferior .doacao-imagem img {
+  width: 100%;
+  height: 100%;
+  min-height: 20rem;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.doacao-foto-inferior .texto-doacao-imagem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  padding: 2.75rem 3rem;
+  border: 0;
+}
+
+.doacao-foto-inferior .texto-doacao-imagem h1 {
+  max-width: 28rem;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.doacao-foto-inferior .texto-doacao-imagem > p:last-child {
+  max-width: 32rem;
+}
+
+.doacao-foto-inferior .coracao-decorativo,
+.doacao-foto-inferior .detalhe-amarelo,
+.doacao-foto-inferior .curva-amarela {
+  display: none;
+}
+
+/* Escolha inicial entre doação pontual e recorrente */
+.escolha-modalidade {
+  max-width: 850px;
+  margin: 0 auto 2rem;
+  padding: 2.25rem;
+  background: var(--branco);
+  border: 1px solid #E6EDE8;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(36, 91, 55, 0.06);
+  text-align: center;
+}
+
+.escolha-modalidade .etiqueta-doacao {
+  margin: 0 0 0.5rem;
+  color: var(--laranja);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.06rem;
+}
+
+.escolha-modalidade h2 {
+  margin: 0 0 0.65rem;
+  color: var(--verde-escuro);
+  font-size: 2rem;
+}
+
+.escolha-modalidade > p:not(.etiqueta-doacao) {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+.cartoes-modalidade {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  text-align: left;
+}
+
+.cartao-modalidade {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  min-height: 205px;
+  padding: 1.4rem;
+  background: #fff;
+  border: 1px solid #DCE6DF;
+  border-radius: 12px;
+  color: var(--texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.cartao-modalidade:hover,
+.cartao-modalidade:focus-visible {
+  border-color: var(--verde);
+  box-shadow: 0 5px 16px rgba(36, 91, 55, 0.12);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.icone-modalidade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.cartao-modalidade strong {
+  color: var(--verde-escuro);
+  font-size: 1.15rem;
+}
+
+.cartao-modalidade > span:not(.icone-modalidade) {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.cartao-modalidade .texto-escolher {
+  margin-top: auto;
+  color: var(--laranja-escuro) !important;
+  font-weight: bold;
+}
+
+.doacao-colunas.modalidade-escolhida {
+  display: block;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.voltar-modalidades {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--verde-escuro);
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#painel-pontual[hidden],
+#painel-recorrente[hidden],
+#escolha-modalidade[hidden],
+#formularios-doacao [hidden] {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .escolha-modalidade {
+    padding: 1.25rem;
+  }
+  .escolha-modalidade h2 {
+    font-size: 1.55rem;
+  }
+  .cartoes-modalidade {
+    grid-template-columns: 1fr;
+  }
+  .cartao-modalidade {
+    min-height: 0;
+  }
+}
+
+
+/* Ajustes visuais: cartões suaves e banner de impacto em destaque */
+.cartao-modalidade,
+.cartao-modalidade:visited {
+  background-color: rgba(255, 255, 255, 0.96);
+  color: var(--texto);
+}
+
+.cartao-modalidade:hover,
+.cartao-modalidade:focus-visible {
+  background-color: rgba(232, 244, 236, 0.72);
+  border-color: rgba(36, 91, 55, 0.48);
+  color: var(--texto);
+  box-shadow: 0 6px 18px rgba(36, 91, 55, 0.10);
+}
+
+.cartao-modalidade:active {
+  background-color: rgba(232, 244, 236, 0.9);
+  transform: translateY(0);
+}
+
+.cartao-modalidade .texto-escolher {
+  color: #B94C20 !important;
+}
+
+/* O banner apresenta o propósito antes da escolha da doação. */
+.doacao-foto-inferior {
+  margin: 0 auto 2.25rem;
+}
+
+.doacao-foto-inferior .doacao-imagem {
+  min-height: 19rem;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.doacao-foto-inferior .doacao-imagem img {
+  min-height: 19rem;
+}
+
+.doacao-foto-inferior .texto-doacao-imagem {
+  align-items: flex-start;
+  padding: 2.5rem 3rem;
+}
+
+.botao-banner-doacao {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 0.45rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.botao-banner-doacao:hover,
+.botao-banner-doacao:focus-visible {
+  background-color: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.8);
+  color: #FFFFFF;
+}
+
+/* Banner horizontal amplo, inspirado em faixas de destaque de lojas virtuais. */
+.doacao-foto-inferior {
+  width: calc(100% + 8%);
+  max-width: none;
+  margin: 0 -4% 2.5rem;
+}
+
+.doacao-foto-inferior .doacao-imagem {
+  min-height: 16rem;
+  height: 16rem;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+  border-radius: 0;
+}
+
+.doacao-foto-inferior .doacao-imagem img {
+  height: 16rem;
+  min-height: 16rem;
+  object-position: center 38%;
+}
+
+.doacao-foto-inferior .texto-doacao-imagem {
+  min-height: 16rem;
+  padding: 2rem clamp(1.5rem, 5vw, 4.5rem);
+}
+
+.doacao-foto-inferior .texto-doacao-imagem h1 {
+  max-width: 36rem;
+  font-size: clamp(1.65rem, 2.4vw, 2.15rem);
+  line-height: 1.2;
+}
+
+.doacao-foto-inferior .texto-doacao-imagem > p:last-child {
+  max-width: 42rem;
+}
+
+/* Acabamento do banner horizontal: enquadramento e cantos arredondados. */
+.doacao-foto-inferior {
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.doacao-foto-inferior .doacao-imagem {
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.doacao-foto-inferior .doacao-imagem img {
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: 0;
+}
+
+/* Ajuste final do banner: altura suficiente para preservar o rosto na fotografia. */
+.doacao-foto-inferior {
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.doacao-foto-inferior .doacao-imagem {
+  height: 22.5rem;
+  min-height: 22.5rem;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.doacao-foto-inferior .doacao-imagem img {
+  width: 100%;
+  height: 22.5rem;
+  min-height: 22.5rem;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.doacao-foto-inferior .texto-doacao-imagem {
+  min-height: 22.5rem;
+  padding: 2rem clamp(1.5rem, 4vw, 4rem);
+  justify-content: center;
+}
+
+
+/* Terceira opção de apoio: Nota Fiscal Paulista. */
+.cartoes-modalidade {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.icone-nfp {
+  font-size: 1.45rem;
+}
+
+.painel-nfp .nfp {
+  margin-top: 1.5rem;
+}
+
+.painel-nfp .nfp h3 {
+  margin: 0 0 0.5rem;
+  color: var(--verde-escuro);
+  font-size: 1.125rem;
+}
+
+@media (max-width: 760px) {
+  .cartoes-modalidade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .cartoes-modalidade {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Ajuste da escolha de modalidade: mais espaço e ícones Font Awesome. */
+.escolha-modalidade {
+  width: min(1100px, calc(100% - 3rem));
+  max-width: 1100px;
+  margin: 0 auto 2.5rem;
+  padding: 2.75rem 3rem;
+}
+
+.cartoes-modalidade {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.cartao-modalidade {
+  min-height: 220px;
+  padding: 1.5rem;
+}
+
+.icone-modalidade {
+  font-size: 1.35rem;
+}
+
+.cartao-modalidade .texto-escolher {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: nowrap;
+}
+
+.cartao-modalidade .texto-escolher i {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.cartao-modalidade:hover .texto-escolher i,
+.cartao-modalidade:focus-visible .texto-escolher i {
+  transform: translateX(3px);
+}
+
+@media (max-width: 900px) {
+  .escolha-modalidade {
+    width: calc(100% - 2rem);
+    padding: 2rem;
+  }
+  .cartoes-modalidade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .escolha-modalidade {
+    width: calc(100% - 1.25rem);
+    padding: 1.25rem;
+  }
+  .cartoes-modalidade {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mantém a frase de apoio em uma linha em telas maiores. */
+.escolha-modalidade > p:not(.etiqueta-doacao) {
+  max-width: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .escolha-modalidade > p:not(.etiqueta-doacao) {
+    white-space: normal;
+  }
+}

@@ -1,9 +1,3 @@
-
-/* ==========================================
-   AMIGOS DA TURMA - SPRINT 2
-   MEU IMPACTO / ÁREA PESSOAL DO DOADOR
-========================================== */
-
 /* CONFIGURAÇÃO GERAL */
 
 .area-doador {
@@ -56,10 +50,10 @@
 .area-doador .aviso-demonstracao {
     margin-top: 18px;
     padding: 14px 18px;
-    background-color: #f0f8f3;
-    border-left: 4px solid #009639;
+    background-color: var(--verde-claro);
+    border-left: 4px solid var(--laranja);
     border-radius: 6px;
-    color: #426451;
+    color: #365A45;
     font-size: 14px;
 }
 
@@ -640,3 +634,170 @@
         width: 100%;
     }
 }
+
+/* Acesso acadêmico ao dashboard demonstrativo */
+.acesso-painel-demo {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  border: 1px dashed #9bbda5;
+  border-radius: var(--raio-card);
+  background: #f5faf6;
+}
+.acesso-painel-demo p { margin-bottom: 0.45rem; }
+.acesso-painel-demo .btn-impacto-secundario { display: inline-block; margin-top: 0.35rem; }
+
+/* Painel de preferências centralizado */
+.area-doador .preferencias-doador {
+    width: 100%;
+    max-width: 760px;
+    margin: 30px auto 48px;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #e1e5e8;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+/* Preferências: um único painel centralizado, sem cartão aninhado */
+.area-doador .preferencias-doador {
+    width: 100%;
+    max-width: 760px;
+    margin: 36px auto 48px;
+    padding: 32px;
+    background: #ffffff;
+    border: 1px solid #e1e7e3;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(36, 91, 55, 0.06);
+}
+
+.area-doador .preferencias-doador > h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.area-doador .preferencias-doador > p {
+    margin-bottom: 22px;
+    color: #62717e;
+}
+
+.area-doador .preferencias-doador #form-preferencias {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.area-doador .preferencias-doador #form-preferencias fieldset:last-of-type {
+    margin-bottom: 22px;
+}
+
+.area-doador .preferencias-doador #form-preferencias .aviso-privacidade {
+    margin-bottom: 16px;
+}
+
+/* Gerenciamento da contribuição recorrente na área do doador */
+.gerenciar-recorrencia-doador {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.75rem;
+  background: #fff;
+  border: 1px solid #e0e8e2;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(36, 91, 55, 0.06);
+}
+
+.gerenciar-recorrencia-doador h2 {
+  margin: 0 0 0.5rem;
+  color: var(--verde-escuro);
+}
+
+.gerenciar-recorrencia-doador > p,
+.gerenciar-recorrencia-doador #doador-rec-status {
+  line-height: 1.6;
+}
+
+.resumo-recorrencia-doador {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25rem 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #edf7ef;
+  border-radius: 10px;
+}
+
+.resumo-recorrencia-doador p { margin: 0.35rem 0; }
+
+.acoes-recorrencia-doador {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.acoes-recorrencia-doador button {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--verde);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--verde-escuro);
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#doador-rec-cancelar {
+  border-color: #b54747;
+  color: #a83232;
+}
+
+#doador-rec-edicao {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 480px;
+  margin: 1rem 0;
+}
+
+#doador-rec-edicao[hidden] { display: none !important; }
+#doador-rec-edicao input,
+#doador-rec-edicao select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccd9d0;
+  border-radius: 7px;
+  font: inherit;
+}
+
+@media (max-width: 600px) {
+  .gerenciar-recorrencia-doador { padding: 1.2rem; }
+  .resumo-recorrencia-doador { grid-template-columns: 1fr; }
+}
+
+
+/* Conta demonstrativa do doador */
+.area-doador .acoes-conta-doador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+    color: #62717E;
+    font-size: 13px;
+}
+.area-doador .btn-sair-conta {
+    padding: 8px 15px;
+    border: 1px solid #d6e2da;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #245B37;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+.area-doador .btn-sair-conta:hover { background: #E8F5EC; }

@@ -1,464 +1,498 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/doacao-pontual.css" />
-    <script src="../js/doacao.js" defer></script>
-    <link rel="stylesheet" href="../css/doacao-recorrente.css" />
-    <script src="../js/doacao-recorrente.js" defer></script>
-    <title>Doação | Amigos da Turma</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/doacao-pontual.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/doacao-recorrente.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/doacao.css" />
+  <link rel="stylesheet" href="../css/media.css" />
+  <title>Doação | Amigos da Turma</title>
+</head>
 
-  <body>
-    <!-- Cabeçalho e menu de navegação -->
-    <header>
-      <a class="logo" href="../index.html">
-        <span>Amigos da Turma</span>
-      </a>
+<body>
+  <!-- Cabeçalho e menu de navegação -->
+  <header>
+    <a class="logo" href="../index.html">
+      <span>Amigos da Turma</span>
+    </a>
 
-      <nav class="navbar">
-        <ul class="nav-menu">
-          <li><a class="nav-link" href="../index.html">Início</a></li>
-          <li><a class="nav-link" href="./integrantes.html">Quem Somos</a></li>
-          <li><a class="nav-link" href="./sobre.html">Sobre</a></li>
-          <li><a class="nav-link" href="./faq.html">FAQ</a></li>
-          <li><a class="nav-link" href="./contato.html">Contato</a></li>
-          <li><a class="nav-link" href="./meu-impacto.html">Meu Impacto</a></li>
-          <li><a class="nav-link active" href="./doacao.html" aria-current="page">Doação</a></li>
-        </ul>
-      </nav>
-    </header>
+    <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu-principal">☰ Menu</button>
+    <nav class="navbar" id="menu-principal">
+      <ul class="nav-menu">
+        <li><a class="nav-link" href="../index.html">Início</a></li>
+        <li><a class="nav-link" href="./integrantes.html">Quem Somos</a></li>
+        <li><a class="nav-link" href="./sobre.html">Sobre</a></li>
+        <li><a class="nav-link" href="./faq.html">FAQ</a></li>
+        <li><a class="nav-link" href="./contato.html">Contato</a></li>
+        <li><a class="nav-link" href="./meu-impacto.html">Meu Impacto</a></li>
+        <li><a class="nav-link active" href="./doacao.html" aria-current="page">Doação</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Conteúdo principal da página de doação -->
-    <main class="pagina-doacao">
-      <section class="doacao-colunas">
+  <!-- Conteúdo principal da página de doação -->
+  <main class="pagina-doacao">
+    <!-- Imagem abaixo dos dois formulários -->
+    <section class="doacao-foto-inferior">
+      <div class="doacao-imagem">
+        <img src="../imagens/criancas-sorrindo.jpg" alt="Crianças sorrindo" />
 
-<div class="doacao-formulario doacao-recorrente">
+        <div class="texto-doacao-imagem">
+          <p class="etiqueta-doacao">UM SORRISO TRANSFORMA</p>
+          <h1>Faça parte dessa mudança.</h1>
+          <p>
+            Um sorriso pode representar mais autoestima, bem-estar e novas
+            oportunidades.
+          </p>
+        </div>
 
-  <div class="introducao-doacao">
-    <p class="etiqueta-doacao">DOAÇÃO RECORRENTE</p>
-    <h1>Transforme sorrisos continuamente</h1>
-    <p>
-      Escolha o valor e a frequência da sua contribuição
-      para ajudar a transformar vidas.
-    </p>
-  </div>
+        <!-- Elementos decorativos da imagem -->
+        <span class="coracao-decorativo coracao-amarelo">♡</span>
+        <span class="detalhe-amarelo detalhe-um"></span>
+        <span class="detalhe-amarelo detalhe-dois"></span>
+        <span class="curva-amarela"></span>
+      </div>
+    </section>
+    <section class="escolha-modalidade" id="escolha-modalidade">
+      <p class="etiqueta-doacao">SUA CONTRIBUIÇÃO FAZ A DIFERENÇA</p>
+      <h2>Como você quer contribuir?</h2>
+      <p>Escolha a modalidade que combina com você. Você poderá revisar os dados antes de confirmar.</p>
+      <div class="cartoes-modalidade">
+        <button type="button" class="cartao-modalidade" data-modalidade="pontual">
+          <span class="icone-modalidade" aria-hidden="true"><i class="fas fa-hand-holding-usd"></i></span>
+          <strong>Doação pontual</strong>
+          <span>Faça uma contribuição única, com o valor que desejar.</span>
+          <span class="texto-escolher">Escolher doação pontual <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </button>
+        <button type="button" class="cartao-modalidade" data-modalidade="recorrente">
+          <span class="icone-modalidade" aria-hidden="true"><i class="fas fa-sync-alt"></i></span>
+          <strong>Doação recorrente</strong>
+          <span>Contribua periodicamente e ajude a manter as iniciativas.</span>
+          <span class="texto-escolher">Escolher doação recorrente <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </button>
+        <button type="button" class="cartao-modalidade" data-modalidade="nfp">
+          <span class="icone-modalidade icone-nfp" aria-hidden="true"><i class="fas fa-file-invoice"></i></span>
+          <strong>Nota Fiscal Paulista</strong>
+          <span>Saiba como destinar seus créditos à instituição pelos canais oficiais.</span>
+          <span class="texto-escolher">Ver como apoiar pela NFP <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </button>
+      </div>
+    </section>
 
-  <p class="aviso-demo">
-    Esta é uma demonstração acadêmica.
-    Nenhuma cobrança real será realizada.
+    <section class="doacao-colunas" id="formularios-doacao">
+
+<div class="doacao-formulario doacao-recorrente" id="painel-recorrente" hidden>
+<button type="button" class="voltar-modalidades" data-voltar-modalidades>← Escolher outra modalidade</button>
+
+<div class="introducao-doacao">
+  <p class="etiqueta-doacao">DOAÇÃO RECORRENTE</p>
+  <h2>Transforme sorrisos continuamente</h2>
+  <p>
+    Escolha o valor e a frequência da sua contribuição
+    para ajudar a transformar vidas.
   </p>
+</div>
 
-  <form id="form-recorrente" novalidate>
+<p class="aviso-demo">
+  Esta é uma demonstração acadêmica.
+  Nenhuma cobrança real será realizada.
+</p>
 
-    
+<form id="form-recorrente" novalidate>
+
+  
 <!-- Etapas da doação recorrente -->
 <ol class="etapas-recorrentes" id="rec-etapas">
-  <li class="ativa">Valor</li>
-  <li>Frequência</li>
-  <li>Seus dados</li>
-  <li>Confirmação</li>
+<li class="ativa">Valor</li>
+<li>Frequência</li>
+<li>Seus dados</li>
+<li>Confirmação</li>
 </ol>
 
 <!-- Resumo atualizado automaticamente -->
 <div class="previa-recorrente" aria-live="polite">
-  <h3>Resumo da sua contribuição</h3>
-  <p id="rec-previa-valor">Escolha um valor para começar.</p>
-  <p id="rec-previa-frequencia">
-    Selecione a frequência da doação.
-  </p>
+<h3>Resumo da sua contribuição</h3>
+<p id="rec-previa-valor">Escolha um valor para começar.</p>
+<p id="rec-previa-frequencia">
+  Selecione a frequência da doação.
+</p>
 </div>
 
 
-    <h3>Valor da contribuição</h3>
+  <h3>Valor da contribuição</h3>
 
-    <div class="opcoes-recorrentes">
-      <label for="rec-valor30">
-        <input type="radio" id="rec-valor30"
-          name="rec-valor" value="30" />
-        R$ 30,00
-      </label>
+  <div class="opcoes-recorrentes">
+    <label for="rec-valor30">
+      <input type="radio" id="rec-valor30"
+        name="rec-valor" value="30" />
+      R$ 30,00
+    </label>
 
-      <label for="rec-valor50">
-        <input type="radio" id="rec-valor50"
-          name="rec-valor" value="50" />
-        R$ 50,00
-      </label>
+    <label for="rec-valor50">
+      <input type="radio" id="rec-valor50"
+        name="rec-valor" value="50" />
+      R$ 50,00
+    </label>
 
-      <label for="rec-valor100">
-        <input type="radio" id="rec-valor100"
-          name="rec-valor" value="100" />
-        R$ 100,00
-      </label>
-    </div>
+    <label for="rec-valor100">
+      <input type="radio" id="rec-valor100"
+        name="rec-valor" value="100" />
+      R$ 100,00
+    </label>
+  </div>
 
-    <div class="campo-recorrente">
-      <label for="rec-outro-valor">
-        Outro valor (mínimo R$ 10,00):
-      </label>
-      <input type="text" id="rec-outro-valor"
-        inputmode="decimal"
-        placeholder="Ex.: 75,50" />
-    </div>
+  <div class="campo-recorrente">
+    <label for="rec-outro-valor">
+      Outro valor (mínimo R$ 10,00):
+    </label>
+    <input type="text" id="rec-outro-valor"
+      inputmode="decimal"
+      placeholder="Ex.: 75,50" />
+  </div>
 
-    <h3>Frequência da contribuição</h3>
+  <h3>Frequência da contribuição</h3>
 
-    <div class="campo-recorrente">
-      <label for="rec-frequencia">
-        Com que frequência deseja doar?
-      </label>
+  <div class="campo-recorrente">
+    <label for="rec-frequencia">
+      Com que frequência deseja doar?
+    </label>
 
-      <select id="rec-frequencia">
-        <option value="">Selecione uma frequência</option>
-        <option value="mensal">Mensal</option>
-        <option value="trimestral">Trimestral</option>
-        <option value="anual">Anual</option>
-      </select>
-    </div>
+    <select id="rec-frequencia">
+      <option value="">Selecione uma frequência</option>
+      <option value="mensal">Mensal</option>
+      <option value="trimestral">Trimestral</option>
+      <option value="anual">Anual</option>
+    </select>
+  </div>
 
-    <h3>Seus dados</h3>
+  <h3>Seus dados</h3>
 
-    <div class="campo-recorrente">
-      <label for="rec-nome">Nome completo:</label>
-      <input type="text" id="rec-nome"
-        placeholder="Digite seu nome completo"
-        autocomplete="name" />
-    </div>
+  <div class="campo-recorrente">
+    <label for="rec-nome">Nome completo:</label>
+    <input type="text" id="rec-nome"
+      placeholder="Digite seu nome completo"
+      autocomplete="name" />
+  </div>
 
-    <div class="campo-recorrente">
-      <label for="rec-email">E-mail:</label>
-      <input type="email" id="rec-email"
-        placeholder="exemplo@dominio.com"
-        autocomplete="email" />
-    </div>
+  <div class="campo-recorrente">
+    <label for="rec-email">E-mail:</label>
+    <input type="email" id="rec-email"
+      placeholder="exemplo@dominio.com"
+      autocomplete="email" />
+  </div>
 
-    <p class="mensagem-erro" id="rec-erro"
-      role="alert"></p>
+  <p class="mensagem-erro" id="rec-erro"
+    role="alert"></p>
 
-    <button type="submit" class="btn-destaque"
-      id="btn-confirmar-recorrencia">
-      Confirmar doação recorrente
-    </button>
+  <button type="submit" class="btn-destaque"
+    id="btn-confirmar-recorrencia">
+    Confirmar doação recorrente
+  </button>
 
-  </form>
+</form>
 
 <section
-  id="rec-confirmacao"
-  class="mensagem-sucesso"
-  tabindex="-1"
-  aria-live="polite"
-  hidden
+id="rec-confirmacao"
+class="mensagem-sucesso"
+tabindex="-1"
+aria-live="polite"
+hidden
 >
-  <h3>Doação recorrente cadastrada!</h3>
+<h3>Doação recorrente cadastrada!</h3>
 
-  <p id="rec-conf-texto"></p>
+<p id="rec-conf-texto"></p>
 
-  <ul>
-    <li>
-      <strong>Valor:</strong>
-      <span id="rec-conf-valor"></span>
-    </li>
+<ul>
+  <li>
+    <strong>Valor:</strong>
+    <span id="rec-conf-valor"></span>
+  </li>
 
-    <li>
-      <strong>Frequência:</strong>
-      <span id="rec-conf-frequencia"></span>
-    </li>
+  <li>
+    <strong>Frequência:</strong>
+    <span id="rec-conf-frequencia"></span>
+  </li>
 
-    <li>
-      <strong>Status:</strong>
-      <span id="rec-conf-status">Ativa</span>
-    </li>
-  </ul>
+  <li>
+    <strong>Status:</strong>
+    <span id="rec-conf-status">Ativa</span>
+  </li>
+</ul>
 
-  <p id="rec-conf-email"></p>
+<p id="rec-conf-email"></p>
 
-  <p class="conf-aviso">
-    Esta é uma simulação acadêmica.
-    Nenhuma cobrança real será realizada.
-  </p>
+<p class="conf-aviso">
+  Esta é uma simulação acadêmica.
+  Nenhuma cobrança real será realizada.
+</p>
 
-  <button
-    type="button"
-    id="rec-nova-doacao"
-    class="btn-destaque"
-  >
-    Fazer nova simulação
-  </button>
+<button
+  type="button"
+  id="rec-nova-doacao"
+  class="btn-destaque"
+>
+  Fazer nova simulação
+</button>
 </section>
 
 
-  <!-- GERENCIAMENTO DA RECORRÊNCIA -->
-  <section class="gerenciar-recorrencia">
+<!-- GERENCIAMENTO DA RECORRÊNCIA -->
+<section class="gerenciar-recorrencia" id="gerenciar-recorrencia">
 
-    <h3>Gerenciar minha doação</h3>
+  <h3>Gerenciar minha doação</h3>
 
-    <p>
-      Consulte, altere ou cancele sua contribuição.
+  <p>
+    Consulte, altere ou cancele sua contribuição.
+  </p>
+
+  <p id="rec-status" role="status" aria-live="polite">
+    Nenhuma doação recorrente cadastrada neste navegador.
+  </p>
+
+  <div id="rec-vazio" class="recorrencia-vazia">
+    <p>Depois de confirmar uma doação recorrente no formulário acima, os dados aparecerão aqui.</p>
+    <p>Você poderá consultar o valor e a frequência, alterar sua contribuição ou cancelar a recorrência.</p>
+    <a href="#painel-recorrente" class="link-gerenciar-recorrencia">Ir para o formulário recorrente</a>
+  </div>
+
+  <div id="rec-resumo" hidden>
+
+    <h4>Minha contribuição</h4>
+
+    <p>Valor:
+      <strong id="rec-resumo-valor"></strong>
     </p>
 
-    <p id="rec-status" role="status"
-      aria-live="polite">
-      Nenhuma doação recorrente cadastrada.
+    <p>Frequência:
+      <strong id="rec-resumo-frequencia"></strong>
     </p>
 
-    <div id="rec-resumo" hidden>
+    <p>Nome:
+      <strong id="rec-resumo-nome"></strong>
+    </p>
 
-      <h4>Minha contribuição</h4>
+    <p>Status:
+      <strong id="rec-resumo-status"></strong>
+    </p>
 
-      <p>Valor:
-        <strong id="rec-resumo-valor"></strong>
-      </p>
+    <div class="acoes-recorrencia">
+      <button type="button" id="rec-editar">
+        Alterar doação
+      </button>
 
-      <p>Frequência:
-        <strong id="rec-resumo-frequencia"></strong>
-      </p>
-
-      <p>Nome:
-        <strong id="rec-resumo-nome"></strong>
-      </p>
-
-      <p>Status:
-        <strong id="rec-resumo-status"></strong>
-      </p>
-
-      <div class="acoes-recorrencia">
-        <button type="button" id="rec-editar">
-          Alterar doação
-        </button>
-
-        <button type="button" id="rec-cancelar">
-          Cancelar recorrência
-        </button>
-      </div>
-
+      <button type="button" id="rec-cancelar">
+        Cancelar recorrência
+      </button>
     </div>
-  </section>
+
+  </div>
+</section>
 
 </div>
 
-        <!-- Introdução e formulário de doação pontual -->
-        <div class="doacao-formulario">
-          <div class="introducao-doacao">
-            <p class="etiqueta-doacao">DOAÇÃO PONTUAL</p>
-            <h1>Faça sua doação</h1>
-            <p>Escolha o valor, a forma de pagamento e conclua em poucos passos.</p>
+      <!-- Introdução e formulário de doação pontual -->
+      <div class="doacao-formulario" id="painel-pontual" hidden>
+        <button type="button" class="voltar-modalidades" data-voltar-modalidades>← Escolher outra modalidade</button>
+        <div class="introducao-doacao">
+          <p class="etiqueta-doacao">DOAÇÃO PONTUAL</p>
+          <h2>Faça sua doação</h2>
+          <p>Escolha o valor, a forma de pagamento e conclua em poucos passos.</p>
+        </div>
+
+        <!-- Aviso de que o formulário é apenas demonstrativo -->
+        <p class="aviso-demo">
+          Esta é uma demonstração acadêmica. Nenhum pagamento real será
+          realizado.
+        </p>
+
+        <!-- Etapas do fluxo (atualizadas pelo JavaScript) -->
+        <ol class="etapas" id="etapas" aria-label="Etapas da doação">
+          <li class="ativa">Valor</li>
+          <li>Pagamento</li>
+          <li>Seus dados</li>
+          <li>Confirmação</li>
+        </ol>
+
+        <form action="#" id="form-doacao" novalidate>
+
+          <!-- Seleção do valor da doação -->
+          <h2>Valor da doação</h2>
+
+          <div class="opcoes">
+            <label class="opcao" for="valor30">
+              <input type="radio" id="valor30" name="valor" value="30" />
+              R$ 30,00
+            </label>
+
+            <label class="opcao" for="valor50">
+              <input type="radio" id="valor50" name="valor" value="50" />
+              R$ 50,00
+            </label>
+
+            <label class="opcao" for="valor100">
+              <input type="radio" id="valor100" name="valor" value="100" />
+              R$ 100,00
+            </label>
           </div>
 
-          <!-- Aviso de que o formulário é apenas demonstrativo -->
-          <p class="aviso-demo">
-            Esta é uma demonstração acadêmica. Nenhum pagamento real será
-            realizado.
+          <!-- Campo para informar outro valor (mínimo R$ 10,00) -->
+          <div class="campo-doacao">
+            <label for="outro-valor">Outro valor (mínimo R$ 10,00):</label>
+            <input
+              type="text"
+              id="outro-valor"
+              name="outro-valor"
+              inputmode="decimal"
+              placeholder="Ex.: 75 ou 75,50"
+              autocomplete="off"
+            />
+          </div>
+          <span class="mensagem-erro" id="erro-valor" role="alert"></span>
+          <p class="resumo-valor" id="resumo-valor" aria-live="polite"></p>
+
+          <!-- Escolha da forma de pagamento -->
+          <h2>Forma de pagamento</h2>
+
+          <div class="opcoes">
+            <label class="opcao" for="pix">
+              <input type="radio" id="pix" name="pagamento" value="pix" />
+              Pix
+            </label>
+
+            <label class="opcao" for="boleto">
+              <input type="radio" id="boleto" name="pagamento" value="boleto" />
+              Boleto
+            </label>
+          </div>
+          <span class="mensagem-erro" id="erro-pagamento" role="alert"></span>
+          <p class="dica-pagamento" id="dica-pagamento" aria-live="polite">
+            Escolha como deseja pagar.
           </p>
 
-          <!-- Etapas do fluxo (atualizadas pelo JavaScript) -->
-          <ol class="etapas" id="etapas" aria-label="Etapas da doação">
-            <li class="ativa">Valor</li>
-            <li>Pagamento</li>
-            <li>Seus dados</li>
-            <li>Confirmação</li>
+          <!-- Campos para preenchimento dos dados do doador -->
+          <h2>Seus dados</h2>
+
+          <div class="campo-doacao">
+            <label for="nome">Nome completo:</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Digite seu nome completo"
+              autocomplete="name"
+            />
+            <span class="mensagem-erro" id="erro-nome" role="alert"></span>
+          </div>
+
+          <div class="campo-doacao">
+            <label for="email">E-mail:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="exemplo@dominio.com"
+              autocomplete="email"
+            />
+            <span class="mensagem-erro" id="erro-email" role="alert"></span>
+          </div>
+
+          <!-- Opção de consentimento para receber comunicações -->
+          <div class="consentimento">
+            <label for="comunicacoes">
+              <input
+                type="checkbox"
+                id="comunicacoes"
+                name="comunicacoes"
+                value="sim"
+              />
+              Quero receber novidades e informações sobre o impacto social.
+            </label>
+          </div>
+
+          <!-- Botão para simular o envio da doação -->
+          <button class="btn-destaque" type="submit">Simular Doação</button>
+        </form>
+
+        <!-- Confirmação demonstrativa (preenchida pelo JavaScript) -->
+        <div class="mensagem-sucesso" id="confirmacao" role="status" tabindex="-1" hidden>
+          <h3>Doação simulada com sucesso!</h3>
+          <p id="conf-texto"></p>
+          <ul>
+            <li>Valor: <strong id="conf-valor"></strong></li>
+            <li>Forma de pagamento: <strong id="conf-pagamento"></strong></li>
+            <li id="conf-detalhe"></li>
+            <li id="conf-email"></li>
+          </ul>
+          <p class="conf-aviso">
+            Demonstração acadêmica: nenhum pagamento foi realizado e nenhum
+            dado foi enviado.
+          </p>
+          <button class="btn-destaque" type="button" id="nova-doacao">
+            Fazer nova simulação
+          </button>
+        </div>
+
+
+      </div>
+
+      <!-- Orientações sobre a Nota Fiscal Paulista: a adesão ocorre nos canais oficiais. -->
+      <div class="doacao-formulario painel-nfp" id="painel-nfp" hidden>
+        <button type="button" class="voltar-modalidades" data-voltar-modalidades>← Escolher outra modalidade</button>
+        <div class="introducao-doacao">
+          <p class="etiqueta-doacao">OUTRA FORMA DE APOIAR</p>
+          <h2>Nota Fiscal Paulista</h2>
+          <p>Você pode ajudar destinando seus créditos da Nota Fiscal Paulista a uma entidade social cadastrada.</p>
+        </div>
+
+        <aside class="nfp" aria-labelledby="titulo-nfp">
+          <p class="etiqueta-nfp">COMO FUNCIONA</p>
+          <h3 id="titulo-nfp">Apoie por meio dos seus créditos</h3>
+          <p>A Nota Fiscal Paulista é um programa do Estado de São Paulo que permite ao consumidor destinar créditos gerados por suas compras a entidades sociais cadastradas.</p>
+          <ol>
+            <li>Acesse o portal oficial da Nota Fiscal Paulista.</li>
+            <li>Entre na sua conta e consulte as opções de doação disponíveis.</li>
+            <li>Escolha uma entidade social cadastrada e confirme a destinação dos créditos, se a instituição estiver disponível no sistema.</li>
           </ol>
+          <p class="nfp-aviso">A escolha e a destinação dos créditos são feitas diretamente no sistema oficial. O Amigos da Turma não recebe notas fiscais nem processa créditos da NFP por este site.</p>
+          <a href="https://portal.fazenda.sp.gov.br/servicos/nfp" target="_blank" rel="noopener noreferrer">Acessar a Nota Fiscal Paulista</a>
+        </aside>
+      </div>
+    </section>
 
-          <form action="#" id="form-doacao" novalidate>
+  </main>
 
-            <!-- Seleção do valor da doação -->
-            <h2>Valor da doação</h2>
-
-            <div class="opcoes">
-              <label class="opcao" for="valor30">
-                <input type="radio" id="valor30" name="valor" value="30" />
-                R$ 30,00
-              </label>
-
-              <label class="opcao" for="valor50">
-                <input type="radio" id="valor50" name="valor" value="50" />
-                R$ 50,00
-              </label>
-
-              <label class="opcao" for="valor100">
-                <input type="radio" id="valor100" name="valor" value="100" />
-                R$ 100,00
-              </label>
-            </div>
-
-            <!-- Campo para informar outro valor (mínimo R$ 10,00) -->
-            <div class="campo-doacao">
-              <label for="outro-valor">Outro valor (mínimo R$ 10,00):</label>
-              <input
-                type="text"
-                id="outro-valor"
-                name="outro-valor"
-                inputmode="decimal"
-                placeholder="Ex.: 75 ou 75,50"
-                autocomplete="off"
-              />
-            </div>
-            <span class="mensagem-erro" id="erro-valor" role="alert"></span>
-            <p class="resumo-valor" id="resumo-valor" aria-live="polite"></p>
-
-            <!-- Escolha da forma de pagamento -->
-            <h2>Forma de pagamento</h2>
-
-            <div class="opcoes">
-              <label class="opcao" for="pix">
-                <input type="radio" id="pix" name="pagamento" value="pix" />
-                Pix
-              </label>
-
-              <label class="opcao" for="boleto">
-                <input type="radio" id="boleto" name="pagamento" value="boleto" />
-                Boleto
-              </label>
-            </div>
-            <span class="mensagem-erro" id="erro-pagamento" role="alert"></span>
-            <p class="dica-pagamento" id="dica-pagamento" aria-live="polite">
-              Escolha como deseja pagar.
-            </p>
-
-            <!-- Campos para preenchimento dos dados do doador -->
-            <h2>Seus dados</h2>
-
-            <div class="campo-doacao">
-              <label for="nome">Nome completo:</label>
-              <input
-                type="text"
-                id="nome"
-                name="nome"
-                placeholder="Digite seu nome completo"
-                autocomplete="name"
-              />
-              <span class="mensagem-erro" id="erro-nome" role="alert"></span>
-            </div>
-
-            <div class="campo-doacao">
-              <label for="email">E-mail:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="exemplo@dominio.com"
-                autocomplete="email"
-              />
-              <span class="mensagem-erro" id="erro-email" role="alert"></span>
-            </div>
-
-            <!-- Opção de consentimento para receber comunicações -->
-            <div class="consentimento">
-              <label for="comunicacoes">
-                <input
-                  type="checkbox"
-                  id="comunicacoes"
-                  name="comunicacoes"
-                  value="sim"
-                />
-                Quero receber novidades e informações sobre o impacto social.
-              </label>
-            </div>
-
-            <!-- Botão para simular o envio da doação -->
-            <button class="btn-destaque" type="submit">Simular Doação</button>
-          </form>
-
-          <!-- Confirmação demonstrativa (preenchida pelo JavaScript) -->
-          <div class="mensagem-sucesso" id="confirmacao" role="status" tabindex="-1" hidden>
-            <h3>Doação simulada com sucesso!</h3>
-            <p id="conf-texto"></p>
-            <ul>
-              <li>Valor: <strong id="conf-valor"></strong></li>
-              <li>Forma de pagamento: <strong id="conf-pagamento"></strong></li>
-              <li id="conf-detalhe"></li>
-              <li id="conf-email"></li>
-            </ul>
-            <p class="conf-aviso">
-              Demonstração acadêmica: nenhum pagamento foi realizado e nenhum
-              dado foi enviado.
-            </p>
-            <button class="btn-destaque" type="button" id="nova-doacao">
-              Fazer nova simulação
-            </button>
-          </div>
-
-          <!-- Área informativa sobre a Nota Fiscal Paulista -->
-          <aside class="nfp" aria-labelledby="titulo-nfp">
-            <p class="etiqueta-nfp">INFORMATIVO</p>
-            <h2 id="titulo-nfp">Nota Fiscal Paulista</h2>
-            <p>
-              A Turma do Bem também recebe apoio por meio da Nota Fiscal
-              Paulista, programa do Estado de São Paulo em que parte do ICMS das
-              compras volta ao consumidor em forma de créditos.
-            </p>
-            <ol>
-              <li>Peça a nota com CPF nas compras em estabelecimentos paulistas.</li>
-              <li>Cadastre-se no site oficial da Nota Fiscal Paulista.</li>
-              <li>
-                Nos canais oficiais do programa, escolha doar seus créditos a uma
-                entidade cadastrada.
-              </li>
-            </ol>
-            <p class="nfp-aviso">
-              O valor que chega à entidade são os créditos gerados, e não o total
-              da compra. Esta área é apenas informativa: nenhuma nota fiscal é
-              enviada por este site.
-            </p>
-            <a
-              href="https://portal.fazenda.sp.gov.br/servicos/nfp"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Conhecer o programa no site oficial</a
-            >
-          
-          </aside>
-        </div>
-      </section>
-
-      <!-- Imagem abaixo dos dois formulários -->
-      <section class="doacao-foto-inferior">
-        <div class="doacao-imagem">
-          <img src="../imagens/mulher-sorrindo.jpg" alt="Mulher sorrindo" />
-
-          <div class="texto-doacao-imagem">
-            <p class="etiqueta-doacao">UM SORRISO TRANSFORMA</p>
-            <h2>Faça parte dessa mudança.</h2>
-            <p>
-              Um sorriso pode representar mais autoestima, bem-estar e novas
-              oportunidades.
-            </p>
-          </div>
-
-          <!-- Elementos decorativos da imagem -->
-          <span class="coracao-decorativo coracao-amarelo">♡</span>
-          <span class="detalhe-amarelo detalhe-um"></span>
-          <span class="detalhe-amarelo detalhe-dois"></span>
-          <span class="curva-amarela"></span>
-        </div>
-      </section>
-    </main>
-
-    <!-- Rodapé com links de navegação e informações do projeto -->
-    <footer>
+  <!-- Rodapé com links de navegação e informações do projeto -->
+  <footer>
 
 
-    <!-- Rodapé com links de navegação e informações do projeto -->
-    <footer>
-      <p>Turma do Bem - Transformando vidas através de sorrisos.</p>
+  <!-- Rodapé com links de navegação e informações do projeto -->
+  <footer>
+    <p>Turma do Bem - Transformando vidas através de sorrisos.</p>
 
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="../index.html">Início</a></li>
-          <li><a href="./integrantes.html">Quem Somos</a></li>
-          <li><a href="./sobre.html">Sobre</a></li>
-          <li><a href="./faq.html">FAQ</a></li>
-          <li><a href="./contato.html">Contato</a></li>
-          <li><a href="./meu-impacto.html">Meu Impacto</a></li>
-          <li><a href="./doacao.html">Doação</a></li>
-        </ul>
-      </nav>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="./integrantes.html">Quem Somos</a></li>
+        <li><a href="./sobre.html">Sobre</a></li>
+        <li><a href="./faq.html">FAQ</a></li>
+        <li><a href="./contato.html">Contato</a></li>
+        <li><a href="./meu-impacto.html">Meu Impacto</a></li>
+        <li><a href="./doacao.html">Doação</a></li>
+      </ul>
+    </nav>
 
-      <p>
-        &copy; 2026 Turma do Bem - Projeto acadêmico da NextByte. Todos os
-        direitos reservados.
-      </p>
-    </footer>
-  </body>
+    <p>
+      &copy; 2026 Turma do Bem - Projeto acadêmico da NextByte. Todos os
+      direitos reservados.
+    </p>
+  </footer>
+
+  <script src="../js/doacao.js"></script>
+  <script src="../js/doacao-recorrente.js"></script>
+  <script src="../js/escolha-doacao.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
 </html>

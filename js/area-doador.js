@@ -1,11 +1,3 @@
-
-/* =====================================
-   SPRINT 2 - ÁREA PESSOAL DO DOADOR
-   Projeto Amigos da Turma - NextByte
-===================================== */
-
-// HISTÓRICO DE CONTRIBUIÇÕES
-
 const botaoHistorico = document.getElementById("alternar-historico");
 const tabelaDoacoes = document.querySelector(".tabela-doacoes");
 const estadoVazio = document.getElementById("estado-vazio");

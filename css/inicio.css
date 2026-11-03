@@ -1,0 +1,244 @@
+.pagina-inicial {
+  padding: 1.875rem 4%;
+  background-color: #F8FAF9;
+  color: var(--texto);
+}
+
+.pagina-inicial p {
+  line-height: 1.7;
+}
+
+.pagina-inicial h2 {
+  font-size: var(--fs-secao);
+}
+
+/* Banner principal */
+.banner-inicial {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding: 1.25rem 0 2.1875rem;
+}
+
+.banner-texto {
+  flex: 1;
+  min-width: 0;
+}
+
+.banner-inicial .banner-texto h1 {
+  margin: 0.75rem 0 1.125rem;
+  color: var(--titulo-escuro);
+  font-size: var(--fs-cell);
+  line-height: 1.05;
+}
+
+.banner-texto .titulo-verde,
+.pagina-inicial .titulo-verde {
+  display: block;
+  color: var(--verde);
+}
+
+.banner-texto > p:not(.texto-destaque) {
+  max-width: 35rem;
+  margin-bottom: 1.5625rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.banner-botoes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.375rem;
+  margin-top: 1.375rem;
+}
+
+.banner-imagem {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.banner-imagem img {
+  display: block;
+  width: 100%;
+  height: 21.25rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 48% 0.75rem 48% 0.75rem;
+}
+
+.banner-imagem p {
+  position: absolute;
+  right: 0.625rem;
+  bottom: 0.625rem;
+  max-width: 10.625rem;
+  margin: 0;
+  padding: 0.75rem;
+  background-color: var(--branco);
+  color: var(--verde);
+  border-radius: 0.625rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner-imagem .frase-imagem {
+  width: 7.8125rem;
+  padding: 0;
+  background-color: transparent;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.25;
+  transform: rotate(-9deg);
+}
+
+.banner-imagem .frase-imagem span {
+  display: block;
+}
+
+.banner-imagem .coracao-banner {
+  position: absolute;
+  top: 0.625rem;
+  left: 10%;
+  color: var(--verde);
+  font-size: 1.5rem;
+  transform: rotate(-15deg);
+}
+
+.banner-imagem .brilho-banner {
+  position: absolute;
+  top: 0.9375rem;
+  right: 0.5rem;
+  color: var(--laranja);
+  font-size: 1.375rem;
+  transform: rotate(15deg);
+}
+
+/* Seções de ações e formas de ajudar */
+.secao-acoes,
+.secao-ajuda {
+  padding: 2.8125rem 0;
+}
+
+.titulo-secao {
+  margin-bottom: 1.375rem;
+}
+
+.titulo-secao h2,
+.banner-impacto h2,
+.chamada-final h2 {
+  margin: 0.5rem 0 0.625rem;
+  color: var(--titulo-escuro);
+}
+
+.titulo-secao > p:last-child {
+  margin-bottom: 0;
+  color: #555555;
+  font-size: var(--fs-pequeno);
+}
+
+.cards-acoes,
+.cards-ajuda {
+  display: flex;
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+.card-acao,
+.card-ajuda {
+  flex: 1;
+  min-width: 0;
+  padding: 1.5rem;
+  border: 0.0625rem solid #E7ECE8;
+  border-bottom: 0.25rem solid var(--verde);
+  border-radius: var(--raio-card);
+  box-shadow: 0 0.3125rem 1.125rem rgba(0, 0, 0, 0.04);
+}
+
+.icone-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1.125rem;
+  border-radius: 50%;
+  font-size: 1.375rem;
+}
+
+.card-acao h3,
+.card-ajuda h3 {
+  margin-top: 0;
+  margin-bottom: 0.625rem;
+  color: var(--titulo-escuro);
+  font-size: 1.0625rem;
+}
+
+.card-acao p,
+.card-ajuda p {
+  margin-bottom: 1rem;
+  color: #555555;
+  font-size: var(--fs-pequeno);
+  line-height: 1.6;
+}
+
+.card-acao > a,
+.card-ajuda > a:not(.btn-destaque) {
+  color: var(--verde-escuro);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Destaque sobre a importância do impacto */
+.banner-impacto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.1875rem;
+  margin: 2.1875rem 0;
+  padding: 2rem;
+  background-color: var(--verde-claro);
+  border-radius: var(--raio-grande);
+}
+
+.banner-impacto-texto,
+.banner-impacto > div:first-child {
+  max-width: 48.75rem;
+}
+
+.banner-impacto p:not(.texto-destaque) {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.impacto-botao {
+  flex-shrink: 0;
+}
+
+/* Chamada final */
+.chamada-final {
+  margin-top: 2.1875rem;
+  margin-bottom: 0.9375rem;
+  padding: 2.375rem 1.5625rem;
+  background-color: var(--branco);
+  border: 0.0625rem solid #E7ECE8;
+  border-radius: var(--raio-grande);
+  text-align: center;
+}
+
+.chamada-final h2 {
+  max-width: 46.875rem;
+  margin: 0.75rem auto;
+}
+
+.chamada-final p {
+  margin-bottom: 1.375rem;
+}
+
+.chamada-icone {
+  color: var(--laranja);
+  font-size: 1.875rem;
+}
+
+
