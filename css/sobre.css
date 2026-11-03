@@ -1,0 +1,273 @@
+.pagina-sobre {
+  padding: 0;
+  background-color: var(--fundo);
+  color: var(--texto);
+}
+
+/* Banner de apresentação */
+.banner-sobre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.1875rem;
+  padding: 2.1875rem 5%;
+  background-color: var(--branco);
+  text-align: left;
+}
+
+.conteudo-banner-sobre {
+  flex: 1;
+  min-width: 0;
+}
+
+.conteudo-banner-sobre h1 {
+  margin-bottom: 0.9375rem;
+  font-size: var(--fs-titulo);
+  line-height: 1.2;
+}
+
+.conteudo-banner-sobre > p:not(.etiqueta-sobre) {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.imagem-banner-sobre {
+  flex: 1;
+  min-width: 0;
+}
+
+.imagem-banner-sobre img {
+  display: block;
+  width: 100%;
+  height: 18.75rem;
+  object-fit: cover;
+  border-radius: var(--raio-grande);
+}
+
+.botoes-sobre {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.secao-sobre {
+  padding: 3.4375rem 8%;
+}
+
+.secao-ciclo,
+.secao-funcionamento {
+  padding: 3.4375rem 10%;
+}
+
+.titulo-sobre {
+  max-width: 47.5rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.titulo-sobre h2,
+.texto-contexto h2,
+.secao-funcionamento h2,
+.chamada-sobre h2 {
+  margin-bottom: 1rem;
+  font-size: var(--fs-secao);
+}
+
+.titulo-sobre > p:not(.etiqueta-sobre),
+.texto-contexto p,
+.secao-funcionamento > p:not(.etiqueta-sobre),
+.chamada-sobre > p:not(.etiqueta-sobre) {
+  color: var(--texto-suave);
+  line-height: 1.8;
+}
+
+/* Cards da página Sobre (3 por linha) */
+.pagina-sobre .cards-sobre {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.pagina-sobre .cards-sobre .card-sobre {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 1.5rem;
+  border: 0.0625rem solid var(--borda);
+  border-bottom: 0.1875rem solid var(--verde);
+  border-radius: var(--raio-card);
+  box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 0.04);
+  text-align: left;
+}
+
+.pagina-sobre .cards-sobre .card-programa {
+  border-bottom-color: var(--laranja);
+}
+
+.pagina-sobre .cards-sobre .card-sobre h3 {
+  margin-top: 0;
+  margin-bottom: 0.625rem;
+  font-size: 1.0625rem;
+}
+
+.pagina-sobre .cards-sobre .card-sobre p {
+  margin-bottom: 0;
+  color: #444444;
+  font-size: var(--fs-pequeno);
+  line-height: 1.6;
+}
+
+.numero-sobre {
+  margin-bottom: 0.75rem;
+  color: var(--laranja);
+  font-size: 1.625rem;
+  font-weight: bold;
+}
+
+.pagina-sobre .cards-sobre .icone-sobre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 1rem;
+  border-radius: 0.625rem;
+}
+
+.pagina-sobre .cards-sobre .icone-sobre i {
+  font-size: 1.4375rem;
+}
+
+.pagina-sobre .cards-sobre .icone-verde {
+  background-color: var(--verde-claro);
+  color: var(--verde);
+}
+
+.pagina-sobre .cards-sobre .icone-laranja {
+  background-color: #fff0e8;
+  color: var(--laranja);
+}
+
+/* Contexto sobre saúde bucal */
+.secao-contexto {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 2.5rem;
+  background-color: var(--branco);
+}
+
+.destaque-contexto {
+  padding: 2rem;
+  background-color: var(--verde-claro);
+  border-left: 0.3125rem solid var(--verde);
+  border-radius: 0.875rem;
+}
+
+.destaque-contexto h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.4375rem;
+  line-height: 1.5;
+}
+
+.destaque-contexto p {
+  color: var(--texto-suave);
+  line-height: 1.7;
+}
+
+/* Etapas do ciclo da pobreza */
+.secao-ciclo .titulo-sobre {
+  max-width: 53.125rem;
+}
+
+.lista-ciclo {
+  max-width: 53.125rem;
+  margin: 0 auto;
+}
+
+.item-ciclo {
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+  margin-bottom: 0.75rem;
+  padding: 1.125rem 1.375rem;
+  background-color: var(--branco);
+  border: 0.0625rem solid var(--borda);
+  border-radius: var(--raio-card);
+}
+
+.item-ciclo span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.625rem;
+  height: 2.625rem;
+  background-color: var(--verde-claro);
+  color: var(--verde);
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.item-ciclo p {
+  margin-bottom: 0;
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+/* Funcionamento do programa (fundo verde escuro) */
+.secao-funcionamento {
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+}
+
+.secao-funcionamento h2 {
+  color: var(--branco);
+}
+
+.secao-funcionamento .etiqueta-sobre {
+  color: #9fe3b6;
+}
+
+.secao-funcionamento > p:not(.etiqueta-sobre) {
+  max-width: 50rem;
+  color: #dce8ee;
+}
+
+.lista-etapas {
+  max-width: 53.125rem;
+  margin-top: 1.5625rem;
+  padding-left: 1.5625rem;
+}
+
+.lista-etapas li {
+  padding: 0.625rem 0 0.625rem 0.5rem;
+  color: var(--branco);
+  line-height: 1.7;
+}
+
+.secao-presenca {
+  background-color: var(--branco);
+}
+
+.chamada-sobre {
+  padding: 3.75rem 12%;
+  background-color: var(--verde-claro);
+  text-align: center;
+}
+
+.chamada-sobre > p:not(.etiqueta-sobre) {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+/* Centraliza os botões da chamada final */
+.chamada-sobre .botoes-sobre {
+  justify-content: center;
+}

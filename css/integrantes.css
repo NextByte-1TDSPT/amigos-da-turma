@@ -1,0 +1,177 @@
+.pagina-integrantes {
+  padding: 2.8125rem 5%;
+  background-color: var(--fundo);
+  overflow: hidden;
+}
+
+.secao-integrantes {
+  position: relative;
+  max-width: 71.875rem;
+  margin: 0 auto;
+}
+
+.integrantes-introducao {
+  position: relative;
+  max-width: 47.5rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.integrantes-introducao h1 {
+  margin-bottom: 1rem;
+  font-size: var(--fs-titulo);
+}
+
+.integrantes-introducao > p:last-child {
+  color: var(--texto-suave);
+  line-height: 1.7;
+}
+
+/* Grade de cards */
+.grid-equipe,
+.grid-integrantes {
+  margin-top: 1.875rem;
+  gap: 1.5rem;
+}
+
+.grid-equipe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.grid-integrantes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.375rem;
+}
+
+.card-membro {
+  width: 13.75rem;
+  padding: 1.25rem;
+  border-bottom: 0.1875rem solid var(--verde);
+  border-radius: var(--raio);
+  text-align: center;
+}
+
+.card-membro img {
+  width: 9.375rem;
+  height: 9.375rem;
+  object-fit: cover;
+  border-radius: var(--raio);
+}
+
+.card-integrante {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  padding: 1.25rem;
+  border: 0.0625rem solid var(--borda);
+  border-bottom: 0.1875rem solid var(--laranja);
+  border-radius: var(--raio-grande);
+  box-shadow: 0 0.3125rem 1.125rem rgba(36, 91, 55, 0.08);
+  text-align: center;
+}
+
+.card-integrante img {
+  flex-shrink: 0;
+  width: 8.4375rem;
+  height: 8.75rem;
+  object-fit: cover;
+  border-radius: var(--raio-card);
+}
+
+.integrante-informacoes {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.integrante-informacoes h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+}
+
+.integrante-rm {
+  margin-bottom: 0.875rem;
+  color: #71808c;
+  font-size: 0.8125rem;
+}
+
+.integrante-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.integrante-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3125rem;
+  color: var(--verde-escuro);
+  text-decoration: none;
+}
+
+.integrante-links a:hover {
+  color: var(--laranja);
+}
+
+.integrante-links a i {
+  margin-right: 0.125rem;
+}
+
+.integrante-links a i + span {
+  text-decoration: underline;
+}
+
+.integrante-links a img {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.integrante-links .fa-github {
+  color: #181717;
+}
+
+.integrante-links .fa-linkedin {
+  color: #0a66c2;
+}
+
+/* Decoração da página de integrantes */
+.decoracao-coracoes {
+  position: absolute;
+  top: 1.5625rem;
+  right: -4.0625rem;
+  margin: 0;
+  color: var(--verde);
+  font-size: 1.375rem;
+  line-height: 1.5;
+  transform: rotate(12deg);
+}
+
+.decoracao-laranja {
+  position: absolute;
+  top: 5.3125rem;
+  right: -3.4375rem;
+  margin: 0;
+  color: var(--laranja);
+  font-size: 1.125rem;
+}
+
+.decoracao-canto {
+  position: absolute;
+  right: -2.5rem;
+  bottom: -2.1875rem;
+  width: 4.0625rem;
+  height: 6.25rem;
+  margin: 0;
+  background-color: var(--verde);
+  border-radius: 50% 0 0 0;
+  pointer-events: none;
+}

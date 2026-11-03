@@ -1,0 +1,192 @@
+/* Tela de acesso demonstrativa do doador */
+.pagina-acesso-doador {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  background: #f7f9f8;
+}
+
+.cartao-acesso-doador {
+  width: 100%;
+  max-width: 520px;
+  padding: 38px;
+  background: #fff;
+  border: 1px solid #e2ebe5;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(36, 91, 55, 0.08);
+}
+
+.acesso-introducao {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.icone-acesso {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e8f5ec;
+  color: #245b37;
+  font-size: 25px;
+}
+
+.etiqueta-acesso {
+  color: #009639;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.acesso-introducao h1 {
+  margin: 8px 0;
+  font-size: 30px;
+}
+
+.acesso-introducao > p:last-child {
+  color: #62717e;
+}
+
+.abas-acesso {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 5px;
+  margin-bottom: 24px;
+  background: #f0f5f1;
+  border-radius: 10px;
+}
+
+.aba-acesso {
+  padding: 11px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #456050;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.aba-acesso.ativa {
+  background: #fff;
+  color: #245b37;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.formulario-acesso label {
+  display: block;
+  margin: 14px 0 6px;
+  color: #245b37;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.formulario-acesso input {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #d6e2da;
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+}
+
+.formulario-acesso input:focus,
+.formulario-acesso select:focus {
+  outline: 2px solid rgba(0, 150, 57, 0.18);
+  border-color: #009639;
+}
+
+.formulario-acesso select {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #d6e2da;
+  border-radius: 8px;
+  background: #fff;
+  color: #263b2e;
+  font: inherit;
+}
+
+.ajuda-nfp-cadastro {
+  margin: 7px 0 0;
+  color: #62717e;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.botao-acesso-principal {
+  width: 100%;
+  margin-top: 22px;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #245b37;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.botao-acesso-principal:hover {
+  background: #1b482b;
+}
+
+.link-esqueci-senha {
+  display: block;
+  margin: 14px auto 0;
+  border: 0;
+  background: transparent;
+  color: #245b37;
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+}
+
+.texto-recuperacao {
+  color: #62717e;
+  font-size: 14px;
+}
+
+.mensagem-acesso {
+  min-height: 22px;
+  margin-top: 14px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.mensagem-acesso.sucesso {
+  color: #17643b;
+}
+
+.mensagem-acesso.erro {
+  color: #b42318;
+}
+.aviso-acesso-demo {
+  margin-top: 22px;
+  padding: 12px 14px;
+  border-left: 3px solid #f26522;
+  border-radius: 7px;
+  background: #fff5ef;
+  color: #70513f;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+@media (max-width: 600px) {
+  .pagina-acesso-doador {
+    padding: 28px 14px;
+  }
+  .cartao-acesso-doador {
+    padding: 25px 20px;
+  }
+  .acesso-introducao h1 {
+    font-size: 25px;
+  }
+}

@@ -3,28 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="icon" type="image/png" href="../imagens/favicon-amigos.png" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contato.css" />
+    <link rel="stylesheet" href="../css/media.css" />
     <title>Contato | Amigos da Turma</title>
   </head>
 
   <body>
     <!-- Cabeçalho e menu de navegação -->
     <header>
-      <a class="logo" href="../index.html">
-        <span>Amigos da Turma</span>
+      <a
+        class="logo"
+        href="../index.html"
+        aria-label="Amigos da Turma - página inicial"
+      >
+        <img src="../imagens/logo-amigos-da-turma.png" alt="Amigos da Turma" />
       </a>
 
-      <nav class="navbar">
+      <button
+        class="botao-menu"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        ☰ Menu
+      </button>
+      <nav class="navbar" id="menu-principal">
         <ul class="nav-menu">
           <li><a class="nav-link" href="../index.html">Início</a></li>
           <li><a class="nav-link" href="./integrantes.html">Quem Somos</a></li>
           <li><a class="nav-link" href="./sobre.html">Sobre</a></li>
           <li><a class="nav-link" href="./faq.html">FAQ</a></li>
-          <li><a class="nav-link active" href="./contato.html" aria-current="page">Contato</a></li>
+          <li>
+            <a class="nav-link active" href="./contato.html" aria-current="page"
+              >Contato</a
+            >
+          </li>
           <li><a class="nav-link" href="./meu-impacto.html">Meu Impacto</a></li>
           <li><a class="nav-link" href="./doacao.html">Doação</a></li>
         </ul>
@@ -34,7 +50,6 @@
     <!-- Conteúdo principal da página de contato -->
     <main class="pagina-contato">
       <section class="secao-contato">
-
         <!-- Apresentação e ilustração da página -->
         <div class="introducao-contato">
           <p class="etiqueta-contato">ESTAMOS AQUI PARA AJUDAR</p>
@@ -69,7 +84,7 @@
             Este formulário é demonstrativo e ainda não envia mensagens reais.
           </p>
 
-          <form action="#">
+          <form id="form-contato" novalidate>
             <div class="campo-contato">
               <label for="nome">Nome completo:</label>
               <input
@@ -77,7 +92,6 @@
                 id="nome"
                 name="nome"
                 placeholder="Digite seu nome completo"
-                required
               />
             </div>
 
@@ -88,7 +102,6 @@
                 id="email"
                 name="email"
                 placeholder="exemplo@dominio.com"
-                required
               />
             </div>
 
@@ -99,7 +112,6 @@
                 id="assunto"
                 name="assunto"
                 placeholder="Digite o assunto"
-                required
               />
             </div>
 
@@ -110,12 +122,17 @@
                 name="mensagem"
                 rows="3"
                 placeholder="Digite sua mensagem"
-                required
               ></textarea>
             </div>
 
             <!-- Botão para simular o envio do formulário -->
             <button class="btn-destaque" type="submit">Simular Envio</button>
+            <p
+              id="feedback-contato"
+              class="feedback-contato"
+              role="status"
+              aria-live="polite"
+            ></p>
           </form>
         </div>
       </section>
@@ -142,5 +159,8 @@
         direitos reservados.
       </p>
     </footer>
+
+    <script src="../js/contato.js"></script>
+    <script src="../js/menu.js"></script>
   </body>
 </html>

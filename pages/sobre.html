@@ -3,26 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Conheça a história, os programas e a atuação social da Turma do Bem."
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
+    <meta name="description" content="Conheça a história, os programas e a atuação social da Turma do Bem." />
+    <link rel="icon" type="image/png" href="../imagens/favicon-amigos.png" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sobre.css" />
+    <link rel="stylesheet" href="../css/media.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <title>Sobre a Turma do Bem | Amigos da Turma</title>
   </head>
 
   <body>
     <!-- Cabeçalho e menu de navegação -->
     <header>
-      <a class="logo" href="../index.html">
-        <span>Amigos da Turma</span>
+      <a
+        class="logo"
+        href="../index.html"
+        aria-label="Amigos da Turma - página inicial"
+      >
+        <img src="../imagens/logo-amigos-da-turma.png" alt="Amigos da Turma" />
       </a>
 
-      <nav class="navbar">
+      <button
+        class="botao-menu"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        ☰ Menu
+      </button>
+      <nav class="navbar" id="menu-principal">
         <ul class="nav-menu">
           <li><a class="nav-link" href="../index.html">Início</a></li>
           <li><a class="nav-link" href="./integrantes.html">Quem Somos</a></li>
@@ -296,5 +306,7 @@
         direitos reservados.
       </p>
     </footer>
+
+    <script src="../js/menu.js"></script>
   </body>
 </html>

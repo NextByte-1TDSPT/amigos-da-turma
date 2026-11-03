@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"content="Acesse sua área de doador na Amigos da Turma." />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/acesso-doador.css" />
+    <link rel="stylesheet" href="../css/media.css" />
+    <title>Acesso do Doador | Amigos da Turma</title>
+  </head>
+
+  <body>
+    <header>
+      <a class="logo" href="../index.html" aria-label="Amigos da Turma - página inicial">
+        <img src="../imagens/logo-amigos-da-turma.png" alt="Amigos da Turma"/>
+      </a>
+      <button
+        class="botao-menu"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        ☰ Menu
+      </button>
+      <nav id="menu-principal" class="navbar" aria-label="Navegação principal">
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="../index.html">Início</a></li>
+          <li><a class="nav-link" href="./integrantes.html">Quem Somos</a></li>
+          <li><a class="nav-link" href="./sobre.html">Sobre</a></li>
+          <li><a class="nav-link" href="./faq.html">FAQ</a></li>
+          <li><a class="nav-link" href="./contato.html">Contato</a></li>
+          <li>
+            <a
+              class="nav-link active"
+              href="./acesso-doador.html"
+              aria-current="page"
+              >Meu Impacto</a
+            >
+          </li>
+          <li><a class="nav-link" href="./doacao.html">Doação</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="pagina-acesso-doador">
+      <section class="cartao-acesso-doador">
+        <div class="acesso-introducao">
+          <span class="icone-acesso"
+            ><i class="fa-solid fa-heart" aria-hidden="true"></i
+          ></span>
+          <p class="etiqueta-acesso">ÁREA DO DOADOR</p>
+          <h1>Acompanhe seu impacto</h1>
+          <p>
+            Entre na sua conta para consultar suas contribuições, seu histórico
+            e suas preferências.
+          </p>
+        </div>
+
+        <div class="abas-acesso" role="tablist" aria-label="Opções de acesso">
+          <button
+            type="button"
+            class="aba-acesso ativa"
+            id="aba-entrar"
+            role="tab"
+            aria-selected="true"
+            aria-controls="painel-entrar"
+          >
+            Entrar
+          </button>
+          <button
+            type="button"
+            class="aba-acesso"
+            id="aba-cadastro"
+            role="tab"
+            aria-selected="false"
+            aria-controls="painel-cadastro"
+          >
+            Criar conta
+          </button>
+        </div>
+
+        <form id="form-entrar" class="formulario-acesso" novalidate>
+          <div id="painel-entrar" role="tabpanel" aria-labelledby="aba-entrar">
+            <label for="login-email">E-mail</label>
+            <input
+              type="email"
+              id="login-email"
+              autocomplete="email"
+              placeholder="voce@exemplo.com"
+            />
+            <label for="login-senha">Senha</label>
+            <input
+              type="password"
+              id="login-senha"
+              autocomplete="current-password"
+              placeholder="Digite sua senha"
+            />
+            <button type="submit" class="botao-acesso-principal">
+              Entrar na minha conta
+            </button>
+            <button
+              type="button"
+              class="link-esqueci-senha"
+              id="abrir-recuperacao"
+            >
+              Esqueci minha senha
+            </button>
+          </div>
+        </form>
+
+        <form id="form-cadastro" class="formulario-acesso" hidden novalidate>
+          <div
+            id="painel-cadastro"
+            role="tabpanel"
+            aria-labelledby="aba-cadastro"
+          >
+            <label for="cadastro-nome">Nome completo</label>
+            <input
+              type="text"
+              id="cadastro-nome"
+              autocomplete="name"
+              placeholder="Seu nome e sobrenome"
+            />
+            <label for="cadastro-email">E-mail</label>
+            <input
+              type="email"
+              id="cadastro-email"
+              autocomplete="email"
+              placeholder="voce@exemplo.com"
+            />
+            <label for="cadastro-senha">Crie uma senha</label>
+            <input
+              type="password"
+              id="cadastro-senha"
+              autocomplete="new-password"
+              minlength="6"
+              placeholder="Mínimo de 6 caracteres"
+            />
+            <label for="cadastro-confirmar">Confirme sua senha</label>
+            <input
+              type="password"
+              id="cadastro-confirmar"
+              autocomplete="new-password"
+              minlength="6"
+              placeholder="Digite a senha novamente"
+            />
+            <label for="cadastro-nfp"
+              >Você participa da Nota Fiscal Paulista?</label
+            >
+            <select id="cadastro-nfp">
+              <option value="">Selecione uma opção</option>
+              <option value="S">Sim</option>
+              <option value="N">Não</option>
+            </select>
+            <p class="ajuda-nfp-cadastro">
+              Essa informação é declarada por você e não é verificada
+              automaticamente no sistema oficial.
+            </p>
+            <button type="submit" class="botao-acesso-principal">
+              Criar minha conta
+            </button>
+          </div>
+        </form>
+
+        <form id="form-recuperacao" class="formulario-acesso" hidden novalidate>
+          <div>
+            <h2>Redefinir senha</h2>
+            <p class="texto-recuperacao">
+              Informe o e-mail cadastrado e escolha uma nova senha para esta
+              demonstração.
+            </p>
+            <label for="recuperar-email">E-mail cadastrado</label>
+            <input type="email" id="recuperar-email" autocomplete="email" />
+            <label for="recuperar-senha">Nova senha</label>
+            <input
+              type="password"
+              id="recuperar-senha"
+              minlength="6"
+              autocomplete="new-password"
+            />
+            <button type="submit" class="botao-acesso-principal">
+              Salvar nova senha
+            </button>
+            <button type="button" class="link-esqueci-senha" id="voltar-login">
+              Voltar ao login
+            </button>
+          </div>
+        </form>
+
+        <p
+          id="mensagem-acesso"
+          class="mensagem-acesso"
+          role="status"
+          aria-live="polite"
+        ></p>
+        <p class="aviso-acesso-demo">
+          <strong>Demonstração:</strong> a conta fica salva apenas neste
+          navegador. Não use senha real nem dados pessoais verdadeiros.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Turma do Bem - Transformando vidas através de sorrisos.</p>
+
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="./integrantes.html">Quem Somos</a></li>
+          <li><a href="./sobre.html">Sobre</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./contato.html">Contato</a></li>
+          <li><a href="./meu-impacto.html">Meu Impacto</a></li>
+          <li><a href="./doacao.html">Doação</a></li>
+        </ul>
+      </nav>
+
+      <p>
+        &copy; 2026 Turma do Bem - Projeto acadêmico NextByte. Todos os direitos
+        reservados.
+      </p>
+    </footer>
+
+    <script src="../js/login.js"></script>
+    <script src="../js/menu.js"></script>
+  </body>
+</html>
