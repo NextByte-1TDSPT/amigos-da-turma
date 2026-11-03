@@ -358,6 +358,7 @@
         ];
         valores.forEach(function (valor, indice) {
           const celula = document.createElement("td");
+          celula.dataset.label = ["Data", "Tipo", "Valor", "Situação"][indice];
           celula.textContent = valor;
           if (indice === 3) {
             const status = document.createElement("span");

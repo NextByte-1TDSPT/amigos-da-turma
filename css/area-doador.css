@@ -818,3 +818,72 @@
 .area-doador .btn-sair-conta:hover {
   background: #e8f5ec;
 }
+
+/* Ajustes de responsividade da página Meu Impacto */
+@media (max-width: 600px) {
+  .area-doador.pagina-impacto {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 28px 16px;
+  }
+
+  .area-doador.pagina-impacto > section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .area-doador.pagina-impacto .historico-doacoes {
+    min-width: 0;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes table {
+    width: 100%;
+    min-width: 520px;
+    table-layout: auto;
+  }
+}
+
+
+/* Histórico de contribuições: mantém as quatro colunas e o status legível no celular. */
+@media (max-width: 600px) {
+  .area-doador .tabela-doacoes {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .area-doador .tabela-doacoes table {
+    width: 100%;
+    min-width: 390px;
+    table-layout: auto;
+  }
+
+  .area-doador .tabela-doacoes th,
+  .area-doador .tabela-doacoes td {
+    padding: 0.65rem 0.55rem;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .area-doador .tabela-doacoes .status-concluido {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    padding: 0.35rem 0.55rem;
+    font-size: 0.7rem;
+  }
+}

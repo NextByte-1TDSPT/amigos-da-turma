@@ -203,14 +203,16 @@ function atualizarTabela(meses) {
   meses.forEach(function (item) {
     const linha = document.createElement("tr");
     [
-      item.nome,
-      formatoMoeda.format(item.arrecadacao),
-      formatoInteiro.format(item.doacoes),
-      formatoInteiro.format(item.doadores),
-      formatoInteiro.format(item.recorrentes),
-    ].forEach(function (valor) {
+      ["Mês", item.nome],
+      ["Arrecadação", formatoMoeda.format(item.arrecadacao)],
+      ["Doações", formatoInteiro.format(item.doacoes)],
+      ["Doadores", formatoInteiro.format(item.doadores)],
+      ["Recorrentes", formatoInteiro.format(item.recorrentes)],
+    ].forEach(function ([rotulo, valor], indice) {
       const celula = document.createElement("td");
+      celula.dataset.label = rotulo;
       celula.textContent = valor;
+      if (indice === 0) celula.classList.add("celula-mes");
       linha.appendChild(celula);
     });
     corpo.appendChild(linha);

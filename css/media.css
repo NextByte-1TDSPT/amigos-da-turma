@@ -7,8 +7,6 @@
     --espaco-secao: 2.8125rem;
   }
 
-  /* Menu: se houver botão no header, o menu abre e fecha com ele.
-     Sem botão, os links quebram de linha normalmente. */
   header {
     flex-wrap: wrap;
     padding: 0.9375rem 1.25rem;
@@ -626,5 +624,349 @@
   .doacao-foto-inferior .texto-doacao-imagem {
     min-height: 0;
     padding: 1.5rem 1.25rem;
+  }
+}
+/* MEU IMPACTO */
+@media (max-width: 62rem) {
+  .area-doador.pagina-impacto {
+    width: 100%;
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 32px clamp(24px, 4vw, 40px);
+    box-sizing: border-box;
+    overflow-x: clip;
+  }
+
+  .area-doador.pagina-impacto > section,
+  .area-doador.pagina-impacto > div {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .area-doador.pagina-impacto .secao-historia-impacto,
+  .area-doador.pagina-impacto .chamada-impacto {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .area-doador.pagina-impacto .secao-indicadores,
+  .area-doador.pagina-impacto .historico-doacoes {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .area-doador.pagina-impacto .imagem-historia-impacto,
+  .area-doador.pagina-impacto .historia-detalhe,
+  .area-doador.pagina-impacto .texto-chamada-impacto {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 600px) {
+  .area-doador.pagina-impacto {
+    padding: 24px 16px;
+  }
+
+  .area-doador.pagina-impacto .secao-historia-impacto,
+  .area-doador.pagina-impacto .chamada-impacto {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .area-doador.pagina-impacto .secao-historia-impacto .imagem-historia-impacto,
+  .area-doador.pagina-impacto .secao-historia-impacto .imagem-historia-impacto img {
+    max-width: 100%;
+  }
+}
+
+/* Ajustes finais de tabelas e banner de doação */
+@media (max-width: 62rem) {
+  .doacao-foto-inferior .doacao-imagem {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+    min-height: 0;
+  }
+
+  .doacao-foto-inferior .texto-doacao-imagem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+    min-height: 14rem;
+    height: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .doacao-foto-inferior .texto-doacao-imagem .etiqueta-doacao {
+    color: #ffc15c;
+  }
+
+  .doacao-foto-inferior .texto-doacao-imagem h1 {
+    color: var(--branco);
+  }
+
+  .doacao-foto-inferior .texto-doacao-imagem > p:last-child {
+    color: var(--verde-claro);
+  }
+}
+
+@media (max-width: 48rem) {
+  .doacao-foto-inferior {
+    width: 100%;
+    max-width: 100%;
+    margin: 1.5rem auto 1.75rem;
+    border-radius: 0.9rem;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .doacao-foto-inferior .doacao-imagem {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    border-radius: 0.9rem;
+    overflow: hidden;
+  }
+
+  .doacao-foto-inferior .doacao-imagem img {
+    width: 100%;
+    height: 14rem;
+    min-height: 14rem;
+    object-fit: cover;
+    object-position: center 28%;
+  }
+
+  .doacao-foto-inferior .texto-doacao-imagem {
+    min-height: 13rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Tabelas no celular, para preserva todos os títulos e dados sem que quebre as palavras */
+@media (max-width: 600px) {
+  .dashboard-table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dashboard-table {
+    width: 100%;
+    min-width: 500px;
+    table-layout: auto;
+    font-size: 0.68rem;
+  }
+
+  .dashboard-table th,
+  .dashboard-table td {
+    padding: 0.5rem 0.4rem;
+    white-space: nowrap;
+    word-break: normal;
+    overflow-wrap: normal;
+    line-height: 1.3;
+  }
+
+  .dashboard-table th {
+    font-size: 0.65rem;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes table {
+    width: 100%;
+    min-width: 420px;
+    table-layout: auto;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes th,
+  .area-doador.pagina-impacto .tabela-doacoes td {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    word-break: normal;
+    overflow-wrap: normal;
+    line-height: 1.3;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes th {
+    font-size: 0.72rem;
+  }
+
+  .area-doador.pagina-impacto .status-concluido {
+    display: inline-block;
+    max-width: none;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.68rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    text-align: center;
+  }
+}
+
+/* Tabelas em cartões no celular, para que todos os campos fiquem visíveis. */
+@media (max-width: 600px) {
+  .dashboard-table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .dashboard-table {
+    width: 100%;
+    min-width: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .dashboard-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .dashboard-table tbody {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .dashboard-table tbody tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem 0.8rem;
+    padding: 0.85rem;
+    border: 1px solid #e5eee8;
+    border-radius: 0.75rem;
+    background: #fff;
+  }
+
+  .dashboard-table tbody td {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0;
+    border: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .dashboard-table tbody td::before {
+    content: attr(data-label);
+    color: #17643b;
+    font-size: 0.68rem;
+    font-weight: 700;
+  }
+
+  .dashboard-table tbody td.celula-mes {
+    grid-column: 1 / -1;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid #e8eee9;
+    font-weight: 700;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes tbody {
+    display: grid;
+    gap: 0.65rem;
+    padding: 0.65rem;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes tbody tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    padding: 0.85rem;
+    border: 1px solid #e5eee8;
+    border-radius: 0.7rem;
+    background: #fff;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes tbody td {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    padding: 0;
+    border: 0;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes tbody td::before {
+    content: attr(data-label);
+    color: #17643b;
+    font-size: 0.68rem;
+    font-weight: 700;
+  }
+
+  .area-doador.pagina-impacto .tabela-doacoes .status-concluido {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: left;
   }
 }
