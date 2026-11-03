@@ -5,24 +5,32 @@ if (formularioContato && feedbackContato) {
   const campos = [
     {
       id: "nome",
-      validar: function (valor) { return valor.trim().length >= 3; },
-      mensagem: "Informe seu nome (mínimo de 3 caracteres)."
+      validar: function (valor) {
+        return valor.trim().length >= 3;
+      },
+      mensagem: "Informe seu nome (mínimo de 3 caracteres).",
     },
     {
       id: "email",
-      validar: function (valor) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valor.trim()); },
-      mensagem: "Digite um endereço de e-mail válido."
+      validar: function (valor) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valor.trim());
+      },
+      mensagem: "Digite um endereço de e-mail válido.",
     },
     {
       id: "assunto",
-      validar: function (valor) { return valor.trim().length > 0; },
-      mensagem: "Informe o assunto da mensagem."
+      validar: function (valor) {
+        return valor.trim().length > 0;
+      },
+      mensagem: "Informe o assunto da mensagem.",
     },
     {
       id: "mensagem",
-      validar: function (valor) { return valor.trim().length >= 10; },
-      mensagem: "A mensagem deve ter pelo menos 10 caracteres."
-    }
+      validar: function (valor) {
+        return valor.trim().length >= 10;
+      },
+      mensagem: "A mensagem deve ter pelo menos 10 caracteres.",
+    },
   ];
 
   function limparErro(campo) {
@@ -78,7 +86,8 @@ if (formularioContato && feedbackContato) {
     });
 
     if (primeiroCampoInvalido) {
-      feedbackContato.textContent = "Revise os campos destacados antes de continuar.";
+      feedbackContato.textContent =
+        "Revise os campos destacados antes de continuar.";
       feedbackContato.className = "feedback-contato mensagem-erro-geral";
       primeiroCampoInvalido.focus();
       return;

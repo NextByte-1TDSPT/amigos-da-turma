@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  function buscarElemento(id) { return document.getElementById(id); }
+  function buscarElemento(id) {
+    return document.getElementById(id);
+  }
   const $ = buscarElemento;
   const form = $("form-recorrente");
   if (!form) return;
@@ -19,18 +21,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const frequencias = {
     mensal: "Mensal",
     trimestral: "Trimestral",
-    anual: "Anual"
+    anual: "Anual",
   };
 
   function moeda(valor) {
     return Number(valor).toLocaleString("pt-BR", {
       style: "currency",
-      currency: "BRL"
+      currency: "BRL",
     });
   }
 
-  function nomeValido() { return nome.value.trim().split(/\s+/).length >= 2; }
-  function emailValido() { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()); }
+  function nomeValido() {
+    return nome.value.trim().split(/\s+/).length >= 2;
+  }
+  function emailValido() {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+  }
 
   let doacao = null;
   let editando = false;
@@ -53,7 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Cada recorrência fica associada ao e-mail informado no formulário.
   function chaveDoacao(email) {
-    return "doacaoRecorrente_" + String(email || "").trim().toLowerCase();
+    return (
+      "doacaoRecorrente_" +
+      String(email || "")
+        .trim()
+        .toLowerCase()
+    );
   }
 
   // Salvar e recuperar a simulação
@@ -70,14 +81,23 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       let emailSessao = "";
       try {
-        const sessao = JSON.parse(sessionStorage.getItem("amigosTurmaSessaoDemo"));
+        const sessao = JSON.parse(
+          sessionStorage.getItem("amigosTurmaSessaoDemo"),
+        );
         if (sessao && sessao.email) emailSessao = sessao.email;
-      } catch (erro) { emailSessao = ""; }
+      } catch (erro) {
+        emailSessao = "";
+      }
       const emailBusca = emailSessao || email.value.trim();
       let dados = JSON.parse(localStorage.getItem(chaveDoacao(emailBusca)));
       if (!dados && emailBusca) {
         const legado = JSON.parse(localStorage.getItem("doacaoRecorrente"));
-        if (legado && String(legado.email || "").trim().toLowerCase() === String(emailBusca).toLowerCase()) {
+        if (
+          legado &&
+          String(legado.email || "")
+            .trim()
+            .toLowerCase() === String(emailBusca).toLowerCase()
+        ) {
           dados = legado;
           localStorage.setItem(chaveDoacao(emailBusca), JSON.stringify(legado));
         }
@@ -118,16 +138,15 @@ document.addEventListener("DOMContentLoaded", function () {
         ? `Você vai doar ${moeda(valor)}.`
         : "Escolha um valor para começar.";
 
-    $("rec-previa-frequencia").textContent =
-      frequencias[frequencia.value]
-        ? `Frequência: ${frequencias[frequencia.value]}.`
-        : "Selecione a frequência da doação.";
+    $("rec-previa-frequencia").textContent = frequencias[frequencia.value]
+      ? `Frequência: ${frequencias[frequencia.value]}.`
+      : "Selecione a frequência da doação.";
 
     const concluidas = [
       valor !== null && valor >= 10,
       Boolean(frequencias[frequencia.value]),
       nomeValido() && emailValido(),
-      concluida
+      concluida,
     ];
 
     let atual = false;
@@ -157,8 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (ativa) {
       $("rec-resumo-valor").textContent = moeda(doacao.valor);
-      $("rec-resumo-frequencia").textContent =
-        frequencias[doacao.frequencia];
+      $("rec-resumo-frequencia").textContent = frequencias[doacao.frequencia];
       $("rec-resumo-nome").textContent = doacao.nome;
       $("rec-resumo-status").textContent = "Ativa";
     }
@@ -219,13 +237,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   valorExtra.addEventListener("input", function () {
-    radios.forEach(function (radio) { radio.checked = false; });
+    radios.forEach(function (radio) {
+      radio.checked = false;
+    });
     limparErros();
     atualizarInteratividade();
   });
 
   valorExtra.addEventListener("blur", function () {
-    if (valorExtra.value.trim() && (obterValor() === null ? 0 : obterValor()) < 10) {
+    if (
+      valorExtra.value.trim() &&
+      (obterValor() === null ? 0 : obterValor()) < 10
+    ) {
       valorExtra.classList.add("erro");
       erro.textContent = "Digite um valor válido de no mínimo R$ 10,00.";
     }
@@ -270,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
       frequencia: frequencia.value,
       nome: nome.value.trim(),
       email: email.value.trim(),
-      status: "ativa"
+      status: "ativa",
     };
 
     editando = false;
@@ -279,11 +302,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const salvou = salvar();
     if (!eraEdicao) {
       try {
-        const chaveHistorico = "historicoDoacoes_" + doacao.email.trim().toLowerCase();
-        const historico = JSON.parse(localStorage.getItem(chaveHistorico)) || [];
-        historico.push({ data: new Date().toISOString(), tipo: "Recorrente", valor: Number(doacao.valor), status: "Demonstrativa" });
+        const chaveHistorico =
+          "historicoDoacoes_" + doacao.email.trim().toLowerCase();
+        const historico =
+          JSON.parse(localStorage.getItem(chaveHistorico)) || [];
+        historico.push({
+          data: new Date().toISOString(),
+          tipo: "Recorrente",
+          valor: Number(doacao.valor),
+          status: "Demonstrativa",
+        });
         localStorage.setItem(chaveHistorico, JSON.stringify(historico));
-      } catch (erro) { /* O registro é opcional nesta simulação. */ }
+      } catch (erro) {
+        /* O registro é opcional nesta simulação. */
+      }
     }
     form.reset();
     botaoConfirmar.textContent = "Confirmar doação recorrente";
@@ -316,7 +348,9 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < radios.length; i++) {
       if (radios[i].checked) valorSelecionado = true;
     }
-    valorExtra.value = valorSelecionado ? "" : String(doacao.valor).replace(".", ",");
+    valorExtra.value = valorSelecionado
+      ? ""
+      : String(doacao.valor).replace(".", ",");
 
     botaoConfirmar.textContent = "Salvar alterações";
     limparErros();
@@ -361,8 +395,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // Preenche os dados da conta que já entrou nesta demonstração.
   try {
     const sessao = JSON.parse(sessionStorage.getItem("amigosTurmaSessaoDemo"));
-    if (sessao) { nome.value = sessao.nome || ""; email.value = sessao.email || ""; }
-  } catch (erro) { /* Cadastro manual continua disponível. */ }
+    if (sessao) {
+      nome.value = sessao.nome || "";
+      email.value = sessao.email || "";
+    }
+  } catch (erro) {
+    /* Cadastro manual continua disponível. */
+  }
 
   // Inicialização
   carregar();

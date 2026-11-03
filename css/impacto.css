@@ -13,7 +13,7 @@
   gap: 2.1875rem;
   margin: 0 1.5%;
   padding: 1.5625rem 5%;
-  background-color: #E5F4E9;
+  background-color: #e5f4e9;
 }
 
 .conteudo-banner-impacto {
@@ -25,7 +25,7 @@
 .titulo-impacto .etiqueta-impacto,
 .historia-detalhe .etiqueta-impacto,
 .chamada-impacto .etiqueta-impacto {
-  color: #008F3D;
+  color: #008f3d;
   font-size: 0.75rem;
   letter-spacing: 0.0938rem;
   margin-bottom: 0.625rem;
@@ -38,7 +38,7 @@
 
 .conteudo-banner-impacto > p:not(.etiqueta-impacto) {
   margin-bottom: 0.75rem;
-  color: #526B5C;
+  color: #526b5c;
   font-size: var(--fs-pequeno);
   line-height: 1.6;
 }
@@ -46,7 +46,7 @@
 .aviso-impacto {
   padding: 0.625rem 0.875rem;
   background-color: var(--branco);
-  border: 0.0625rem solid #D5E8DB;
+  border: 0.0625rem solid #d5e8db;
   border-radius: var(--raio);
   font-size: 0.75rem;
 }
@@ -120,7 +120,7 @@
   padding: 1rem;
   border: 0.0625rem solid var(--borda);
   border-top: 0.25rem solid var(--verde);
-  border-bottom: 0.1875rem solid #DCECE1;
+  border-bottom: 0.1875rem solid #dcece1;
   border-radius: 0.8125rem;
   box-shadow: 0 0.1875rem 0.625rem rgba(36, 91, 55, 0.08);
   text-align: left;
@@ -136,7 +136,7 @@
 }
 
 .card-impacto:nth-child(3) {
-  border-top-color: #F2A900;
+  border-top-color: #f2a900;
 }
 
 .icone-impacto {
@@ -160,13 +160,13 @@
 }
 
 .card-impacto:nth-child(2) .icone-impacto {
-  background-color: #FFE8DB;
-  color: #E65312;
+  background-color: #ffe8db;
+  color: #e65312;
 }
 
 .card-impacto:nth-child(3) .icone-impacto {
-  background-color: #FFF0C7;
-  color: #B77B00;
+  background-color: #fff0c7;
+  color: #b77b00;
 }
 
 .card-impacto h3 {
@@ -194,11 +194,11 @@
 }
 
 .card-impacto:nth-child(2) .indicador-impacto {
-  color: #E65312;
+  color: #e65312;
 }
 
 .card-impacto:nth-child(3) .indicador-impacto {
-  color: #B77B00;
+  color: #b77b00;
 }
 
 /* História ilustrativa */
@@ -252,7 +252,7 @@
 }
 
 .historia-detalhe .aviso-historia {
-  color: #7A8580;
+  color: #7a8580;
   font-style: italic;
 }
 
@@ -307,7 +307,7 @@
 
 .texto-chamada-impacto > p:not(.etiqueta-impacto) {
   margin-bottom: 0.75rem;
-  color: #365B43;
+  color: #365b43;
   font-size: var(--fs-pequeno);
   line-height: 1.7;
 }
@@ -356,9 +356,7 @@
 }
 
 .decoracao-chamada-impacto .fa-seedling {
-  color: #75B843;
+  color: #75b843;
   font-size: 2.625rem;
   transform: rotate(-10deg);
 }
-
-

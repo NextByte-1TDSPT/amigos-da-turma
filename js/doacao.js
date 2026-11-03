@@ -19,30 +19,43 @@ const pagamentos = {
   pix: {
     nome: "Pix",
     dica: "Pix: pagamento instantâneo. Na versão real, um QR Code seria exibido aqui.",
-    detalhe: "Em um cenário real, o QR Code Pix apareceria agora para o pagamento imediato.",
+    detalhe:
+      "Em um cenário real, o QR Code Pix apareceria agora para o pagamento imediato.",
   },
   boleto: {
     nome: "Boleto",
     dica: "Boleto: pagamento em banco ou aplicativo. Na versão real, o boleto seria gerado aqui.",
-    detalhe: "Em um cenário real, o boleto com código de barras seria gerado agora.",
+    detalhe:
+      "Em um cenário real, o boleto com código de barras seria gerado agora.",
   },
 };
 
-
 function registrarDoacaoPontualDemo(valor) {
-  const registro = { data: new Date().toISOString(), tipo: "Pontual", valor: Number(valor), status: "Demonstrativa" };
+  const registro = {
+    data: new Date().toISOString(),
+    tipo: "Pontual",
+    valor: Number(valor),
+    status: "Demonstrativa",
+  };
   const chave = "historicoDoacoes_" + campoEmail.value.trim().toLowerCase();
   try {
     const historico = JSON.parse(localStorage.getItem(chave)) || [];
     historico.push(registro);
     localStorage.setItem(chave, JSON.stringify(historico));
-  } catch (erro) { /* A confirmação continua sendo apenas demonstrativa. */ }
+  } catch (erro) {
+    /* A confirmação continua sendo apenas demonstrativa. */
+  }
 }
 
 try {
   const sessao = JSON.parse(sessionStorage.getItem("amigosTurmaSessaoDemo"));
-  if (sessao) { campoNome.value = sessao.nome || ""; campoEmail.value = sessao.email || ""; }
-} catch (erro) { /* O preenchimento manual continua disponível. */ }
+  if (sessao) {
+    campoNome.value = sessao.nome || "";
+    campoEmail.value = sessao.email || "";
+  }
+} catch (erro) {
+  /* O preenchimento manual continua disponível. */
+}
 
 function formatarReais(valor) {
   return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -54,7 +67,10 @@ function obterValor() {
 
   if (digitado !== "") {
     if (!/^\d+([.,]\d{1,2})?$/.test(digitado)) {
-      return { numero: null, erro: "Digite um valor válido. Ex.: 75 ou 75,50." };
+      return {
+        numero: null,
+        erro: "Digite um valor válido. Ex.: 75 ou 75,50.",
+      };
     }
     const numero = Number(digitado.replace(",", "."));
     if (numero < VALOR_MINIMO) {
@@ -120,7 +136,11 @@ function validarPagamento() {
 
 function validarNome() {
   if (!nomeValido()) {
-    mostrarErro("erro-nome", campoNome, "Digite seu nome completo (nome e sobrenome).");
+    mostrarErro(
+      "erro-nome",
+      campoNome,
+      "Digite seu nome completo (nome e sobrenome).",
+    );
     return false;
   }
   return true;
@@ -128,7 +148,11 @@ function validarNome() {
 
 function validarEmail() {
   if (!emailValido()) {
-    mostrarErro("erro-email", campoEmail, "Digite um e-mail válido. Ex.: nome@dominio.com");
+    mostrarErro(
+      "erro-email",
+      campoEmail,
+      "Digite um e-mail válido. Ex.: nome@dominio.com",
+    );
     return false;
   }
   return true;
@@ -137,12 +161,15 @@ function validarEmail() {
 // Mostra "Você vai doar R$ X" quando o valor é válido
 function atualizarResumo() {
   const v = obterValor();
-  resumoValor.textContent = v.erro === "" ? "Você vai doar " + formatarReais(v.numero) : "";
+  resumoValor.textContent =
+    v.erro === "" ? "Você vai doar " + formatarReais(v.numero) : "";
 }
 
 function atualizarDica() {
   const p = obterPagamento();
-  dicaPagamento.textContent = p ? pagamentos[p].dica : "Escolha como deseja pagar.";
+  dicaPagamento.textContent = p
+    ? pagamentos[p].dica
+    : "Escolha como deseja pagar.";
 }
 
 // Barra de etapas: concluídas em verde, etapa atual em laranja
@@ -224,7 +251,9 @@ function mostrarConfirmacao() {
   document.getElementById("conf-pagamento").textContent = pagamento.nome;
   document.getElementById("conf-detalhe").textContent = pagamento.detalhe;
   document.getElementById("conf-email").textContent =
-    "Um e-mail de confirmação seria enviado para " + campoEmail.value.trim() + ".";
+    "Um e-mail de confirmação seria enviado para " +
+    campoEmail.value.trim() +
+    ".";
 
   form.hidden = true;
   confirmacao.hidden = false;

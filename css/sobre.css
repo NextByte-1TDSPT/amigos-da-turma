@@ -150,7 +150,7 @@
 }
 
 .pagina-sobre .cards-sobre .icone-laranja {
-  background-color: #FFF0E8;
+  background-color: #fff0e8;
   color: var(--laranja);
 }
 
@@ -232,12 +232,12 @@
 }
 
 .secao-funcionamento .etiqueta-sobre {
-  color: #9FE3B6;
+  color: #9fe3b6;
 }
 
 .secao-funcionamento > p:not(.etiqueta-sobre) {
   max-width: 50rem;
-  color: #DCE8EE;
+  color: #dce8ee;
 }
 
 .lista-etapas {
@@ -266,8 +266,6 @@
   max-width: 50rem;
   margin: 0 auto;
 }
-
-
 
 /* Centraliza os botões da chamada final */
 .chamada-sobre .botoes-sobre {

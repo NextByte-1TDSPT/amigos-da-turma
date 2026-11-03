@@ -1,6 +1,6 @@
 .pagina-inicial {
   padding: 1.875rem 4%;
-  background-color: #F8FAF9;
+  background-color: #f8faf9;
   color: var(--texto);
 }
 
@@ -150,7 +150,7 @@
   flex: 1;
   min-width: 0;
   padding: 1.5rem;
-  border: 0.0625rem solid #E7ECE8;
+  border: 0.0625rem solid #e7ece8;
   border-bottom: 0.25rem solid var(--verde);
   border-radius: var(--raio-card);
   box-shadow: 0 0.3125rem 1.125rem rgba(0, 0, 0, 0.04);
@@ -222,7 +222,7 @@
   margin-bottom: 0.9375rem;
   padding: 2.375rem 1.5625rem;
   background-color: var(--branco);
-  border: 0.0625rem solid #E7ECE8;
+  border: 0.0625rem solid #e7ece8;
   border-radius: var(--raio-grande);
   text-align: center;
 }
@@ -240,5 +240,3 @@
   color: var(--laranja);
   font-size: 1.875rem;
 }
-
-

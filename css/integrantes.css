@@ -97,7 +97,7 @@
 
 .integrante-rm {
   margin-bottom: 0.875rem;
-  color: #71808C;
+  color: #71808c;
   font-size: 0.8125rem;
 }
 
@@ -140,7 +140,7 @@
 }
 
 .integrante-links .fa-linkedin {
-  color: #0A66C2;
+  color: #0a66c2;
 }
 
 /* Decoração da página de integrantes */
@@ -175,5 +175,3 @@
   border-radius: 50% 0 0 0;
   pointer-events: none;
 }
-
-

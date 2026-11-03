@@ -1,22 +1,109 @@
 /* Dashboard demonstrativo: todos os números abaixo são fictícios. */
 const dadosMensais = [
-  { mes: "Jan", nome: "Janeiro", arrecadacao: 4200, doacoes: 34, doadores: 27, recorrentes: 16 },
-  { mes: "Fev", nome: "Fevereiro", arrecadacao: 4650, doacoes: 38, doadores: 29, recorrentes: 18 },
-  { mes: "Mar", nome: "Março", arrecadacao: 5100, doacoes: 41, doadores: 32, recorrentes: 20 },
-  { mes: "Abr", nome: "Abril", arrecadacao: 4850, doacoes: 39, doadores: 30, recorrentes: 19 },
-  { mes: "Mai", nome: "Maio", arrecadacao: 5600, doacoes: 45, doadores: 35, recorrentes: 22 },
-  { mes: "Jun", nome: "Junho", arrecadacao: 5900, doacoes: 48, doadores: 37, recorrentes: 24 },
-  { mes: "Jul", nome: "Julho", arrecadacao: 6200, doacoes: 51, doadores: 40, recorrentes: 26 },
-  { mes: "Ago", nome: "Agosto", arrecadacao: 6100, doacoes: 49, doadores: 38, recorrentes: 25 },
-  { mes: "Set", nome: "Setembro", arrecadacao: 6800, doacoes: 55, doadores: 43, recorrentes: 29 },
-  { mes: "Out", nome: "Outubro", arrecadacao: 7250, doacoes: 59, doadores: 46, recorrentes: 31 },
-  { mes: "Nov", nome: "Novembro", arrecadacao: 0, doacoes: 0, doadores: 0, recorrentes: 0 },
-  { mes: "Dez", nome: "Dezembro", arrecadacao: 0, doacoes: 0, doadores: 0, recorrentes: 0 }
+  {
+    mes: "Jan",
+    nome: "Janeiro",
+    arrecadacao: 4200,
+    doacoes: 34,
+    doadores: 27,
+    recorrentes: 16,
+  },
+  {
+    mes: "Fev",
+    nome: "Fevereiro",
+    arrecadacao: 4650,
+    doacoes: 38,
+    doadores: 29,
+    recorrentes: 18,
+  },
+  {
+    mes: "Mar",
+    nome: "Março",
+    arrecadacao: 5100,
+    doacoes: 41,
+    doadores: 32,
+    recorrentes: 20,
+  },
+  {
+    mes: "Abr",
+    nome: "Abril",
+    arrecadacao: 4850,
+    doacoes: 39,
+    doadores: 30,
+    recorrentes: 19,
+  },
+  {
+    mes: "Mai",
+    nome: "Maio",
+    arrecadacao: 5600,
+    doacoes: 45,
+    doadores: 35,
+    recorrentes: 22,
+  },
+  {
+    mes: "Jun",
+    nome: "Junho",
+    arrecadacao: 5900,
+    doacoes: 48,
+    doadores: 37,
+    recorrentes: 24,
+  },
+  {
+    mes: "Jul",
+    nome: "Julho",
+    arrecadacao: 6200,
+    doacoes: 51,
+    doadores: 40,
+    recorrentes: 26,
+  },
+  {
+    mes: "Ago",
+    nome: "Agosto",
+    arrecadacao: 6100,
+    doacoes: 49,
+    doadores: 38,
+    recorrentes: 25,
+  },
+  {
+    mes: "Set",
+    nome: "Setembro",
+    arrecadacao: 6800,
+    doacoes: 55,
+    doadores: 43,
+    recorrentes: 29,
+  },
+  {
+    mes: "Out",
+    nome: "Outubro",
+    arrecadacao: 7250,
+    doacoes: 59,
+    doadores: 46,
+    recorrentes: 31,
+  },
+  {
+    mes: "Nov",
+    nome: "Novembro",
+    arrecadacao: 0,
+    doacoes: 0,
+    doadores: 0,
+    recorrentes: 0,
+  },
+  {
+    mes: "Dez",
+    nome: "Dezembro",
+    arrecadacao: 0,
+    doacoes: 0,
+    doadores: 0,
+    recorrentes: 0,
+  },
 ];
 
 const filtroPeriodo = document.getElementById("filtro-periodo");
 const botaoAtualizar = document.getElementById("btn-atualizar-dashboard");
-const formatoMoeda = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+const formatoMoeda = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: "BRL",
+});
 const formatoInteiro = new Intl.NumberFormat("pt-BR");
 
 function obterMesesDoPeriodo(periodo) {
@@ -40,18 +127,30 @@ function atualizarIndicadores(meses) {
   const doacoes = somar(meses, "doacoes");
   const totalDoadoresMes = somar(meses, "doadores");
   const totalRecorrentesMes = somar(meses, "recorrentes");
-  const mediaDoadores = meses.length ? Math.round(totalDoadoresMes / meses.length) : 0;
-  const mediaRecorrentes = meses.length ? Math.round(totalRecorrentesMes / meses.length) : 0;
+  const mediaDoadores = meses.length
+    ? Math.round(totalDoadoresMes / meses.length)
+    : 0;
+  const mediaRecorrentes = meses.length
+    ? Math.round(totalRecorrentesMes / meses.length)
+    : 0;
   const mediaPontuais = Math.max(mediaDoadores - mediaRecorrentes, 0);
-  const retencao = totalDoadoresMes > 0 ? Math.round((totalRecorrentesMes / totalDoadoresMes) * 100) : 0;
+  const retencao =
+    totalDoadoresMes > 0
+      ? Math.round((totalRecorrentesMes / totalDoadoresMes) * 100)
+      : 0;
 
-  document.getElementById("kpi-arrecadado").textContent = formatoMoeda.format(arrecadacao);
-  document.getElementById("kpi-doacoes").textContent = formatoInteiro.format(doacoes);
-  document.getElementById("kpi-doadores").textContent = formatoInteiro.format(mediaDoadores);
+  document.getElementById("kpi-arrecadado").textContent =
+    formatoMoeda.format(arrecadacao);
+  document.getElementById("kpi-doacoes").textContent =
+    formatoInteiro.format(doacoes);
+  document.getElementById("kpi-doadores").textContent =
+    formatoInteiro.format(mediaDoadores);
   document.getElementById("kpi-retencao").textContent = `${retencao}%`;
   document.getElementById("resumo-retencao").textContent = `${retencao}%`;
-  document.getElementById("qtd-recorrentes").textContent = formatoInteiro.format(mediaRecorrentes);
-  document.getElementById("qtd-pontuais").textContent = formatoInteiro.format(mediaPontuais);
+  document.getElementById("qtd-recorrentes").textContent =
+    formatoInteiro.format(mediaRecorrentes);
+  document.getElementById("qtd-pontuais").textContent =
+    formatoInteiro.format(mediaPontuais);
 }
 
 function atualizarGrafico(meses) {
@@ -67,7 +166,9 @@ function atualizarGrafico(meses) {
     coluna.className = "bar-item";
     const valor = document.createElement("span");
     valor.className = "bar-value";
-    valor.textContent = item.arrecadacao ? `${(item.arrecadacao / 1000).toFixed(1).replace(".", ",")} mil` : "—";
+    valor.textContent = item.arrecadacao
+      ? `${(item.arrecadacao / 1000).toFixed(1).replace(".", ",")} mil`
+      : "—";
     const barra = document.createElement("div");
     barra.className = "bar-column";
     barra.style.height = `${item.arrecadacao ? Math.max((item.arrecadacao / maiorValor) * 145, 5) : 5}px`;
@@ -79,7 +180,8 @@ function atualizarGrafico(meses) {
     grafico.appendChild(coluna);
   });
 
-  document.getElementById("legenda-grafico").textContent = "Arrecadação mensal fictícia em reais. Meses futuros aparecem sem movimentação registrada.";
+  document.getElementById("legenda-grafico").textContent =
+    "Arrecadação mensal fictícia em reais. Meses futuros aparecem sem movimentação registrada.";
 }
 
 function atualizarTabela(meses) {
@@ -87,7 +189,13 @@ function atualizarTabela(meses) {
   corpo.innerHTML = "";
   meses.forEach(function (item) {
     const linha = document.createElement("tr");
-    [item.nome, formatoMoeda.format(item.arrecadacao), formatoInteiro.format(item.doacoes), formatoInteiro.format(item.doadores), formatoInteiro.format(item.recorrentes)].forEach(function (valor) {
+    [
+      item.nome,
+      formatoMoeda.format(item.arrecadacao),
+      formatoInteiro.format(item.doacoes),
+      formatoInteiro.format(item.doadores),
+      formatoInteiro.format(item.recorrentes),
+    ].forEach(function (valor) {
       const celula = document.createElement("td");
       celula.textContent = valor;
       linha.appendChild(celula);
@@ -104,7 +212,7 @@ function atualizarDashboard() {
     semestre1: "1º semestre de 2026",
     semestre2: "2º semestre de 2026",
     trimestre3: "3º trimestre de 2026",
-    outubro: "Outubro de 2026"
+    outubro: "Outubro de 2026",
   };
 
   atualizarIndicadores(meses);
@@ -116,9 +224,11 @@ function atualizarDashboard() {
 filtroPeriodo.addEventListener("change", atualizarDashboard);
 botaoAtualizar.addEventListener("click", function () {
   atualizarDashboard();
-  botaoAtualizar.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Painel atualizado';
+  botaoAtualizar.innerHTML =
+    '<i class="fa-solid fa-check" aria-hidden="true"></i> Painel atualizado';
   window.setTimeout(function () {
-    botaoAtualizar.innerHTML = '<i class="fa-solid fa-rotate" aria-hidden="true"></i> Atualizar painel';
+    botaoAtualizar.innerHTML =
+      '<i class="fa-solid fa-rotate" aria-hidden="true"></i> Atualizar painel';
   }, 1400);
 });
 
@@ -126,14 +236,21 @@ atualizarDashboard();
 
 /* Simulação visual de integração: não realiza chamadas a APIs externas. */
 const statusSalesforce = document.getElementById("status-salesforce");
-const tituloStatusSalesforce = document.getElementById("titulo-status-salesforce");
-const mensagemStatusSalesforce = document.getElementById("mensagem-status-salesforce");
-const botaoSincronizarSalesforce = document.getElementById("btn-sincronizar-salesforce");
+const tituloStatusSalesforce = document.getElementById(
+  "titulo-status-salesforce",
+);
+const mensagemStatusSalesforce = document.getElementById(
+  "mensagem-status-salesforce",
+);
+const botaoSincronizarSalesforce = document.getElementById(
+  "btn-sincronizar-salesforce",
+);
 const botaoFalhaSalesforce = document.getElementById("btn-falha-salesforce");
 const ultimaSincronizacao = document.getElementById("ultima-sincronizacao");
 
 function exibirStatusSalesforce(tipo, titulo, mensagem, icone) {
-  statusSalesforce.className = `salesforce-status ${tipo ? `status-${tipo}` : ""}`.trim();
+  statusSalesforce.className =
+    `salesforce-status ${tipo ? `status-${tipo}` : ""}`.trim();
   statusSalesforce.querySelector("i").className = `fa-solid ${icone}`;
   tituloStatusSalesforce.textContent = titulo;
   mensagemStatusSalesforce.textContent = mensagem;
@@ -146,17 +263,32 @@ function definirBotoesSalesforce(bloqueados) {
 
 function simularSincronizacao() {
   definirBotoesSalesforce(true);
-  exibirStatusSalesforce("loading", "Sincronizando...", "Aguarde enquanto a interface simula o processamento dos dados.", "fa-spinner fa-spin");
+  exibirStatusSalesforce(
+    "loading",
+    "Sincronizando...",
+    "Aguarde enquanto a interface simula o processamento dos dados.",
+    "fa-spinner fa-spin",
+  );
 
   window.setTimeout(function () {
-    exibirStatusSalesforce("success", "Sincronização concluída (simulação)", "A demonstração terminou com sucesso. Nenhum dado foi enviado a um serviço externo.", "fa-circle-check");
+    exibirStatusSalesforce(
+      "success",
+      "Sincronização concluída (simulação)",
+      "A demonstração terminou com sucesso. Nenhum dado foi enviado a um serviço externo.",
+      "fa-circle-check",
+    );
     ultimaSincronizacao.textContent = `Última simulação de sucesso: ${new Date().toLocaleString("pt-BR")}`;
     definirBotoesSalesforce(false);
   }, 1200);
 }
 
 function simularFalhaSincronizacao() {
-  exibirStatusSalesforce("error", "Falha na sincronização (simulação)", "Exemplo de retorno de erro: não foi possível concluir a comunicação. Verifique a conexão e tente novamente. Esta mensagem é demonstrativa.", "fa-triangle-exclamation");
+  exibirStatusSalesforce(
+    "error",
+    "Falha na sincronização (simulação)",
+    "Exemplo de retorno de erro: não foi possível concluir a comunicação. Verifique a conexão e tente novamente. Esta mensagem é demonstrativa.",
+    "fa-triangle-exclamation",
+  );
   ultimaSincronizacao.textContent = `Última simulação de falha: ${new Date().toLocaleString("pt-BR")}`;
 }
 

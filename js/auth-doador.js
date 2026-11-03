@@ -10,20 +10,28 @@
     try {
       const contas = JSON.parse(localStorage.getItem(CHAVE_CONTAS));
       return Array.isArray(contas) ? contas : [];
-    } catch (erro) { return []; }
+    } catch (erro) {
+      return [];
+    }
   }
 
   function lerSessao() {
-    try { return JSON.parse(sessionStorage.getItem(CHAVE_SESSAO)); }
-    catch (erro) { return null; }
+    try {
+      return JSON.parse(sessionStorage.getItem(CHAVE_SESSAO));
+    } catch (erro) {
+      return null;
+    }
   }
 
   function iniciarSessao(conta) {
-    sessionStorage.setItem(CHAVE_SESSAO, JSON.stringify({
-      nome: conta.nome,
-      email: conta.email,
-      criadoEm: conta.criadoEm
-    }));
+    sessionStorage.setItem(
+      CHAVE_SESSAO,
+      JSON.stringify({
+        nome: conta.nome,
+        email: conta.email,
+        criadoEm: conta.criadoEm,
+      }),
+    );
   }
 
   function mostrarMensagem(texto, tipo) {
@@ -74,11 +82,19 @@
 
     formEntrar.addEventListener("submit", function (evento) {
       evento.preventDefault();
-      const email = document.getElementById("login-email").value.trim().toLowerCase();
+      const email = document
+        .getElementById("login-email")
+        .value.trim()
+        .toLowerCase();
       const senha = document.getElementById("login-senha").value;
-      const conta = lerContas().find((item) => item.email === email && item.senha === senha);
+      const conta = lerContas().find(
+        (item) => item.email === email && item.senha === senha,
+      );
       if (!conta) {
-        mostrarMensagem("E-mail ou senha não conferem. Verifique os dados ou crie uma conta de demonstração.", "erro");
+        mostrarMensagem(
+          "E-mail ou senha não conferem. Verifique os dados ou crie uma conta de demonstração.",
+          "erro",
+        );
         return;
       }
       iniciarSessao(conta);
@@ -88,50 +104,103 @@
 
     formCadastro.addEventListener("submit", function (evento) {
       evento.preventDefault();
-      const nome = document.getElementById("cadastro-nome").value.trim().replace(/\s+/g, " ");
-      const email = document.getElementById("cadastro-email").value.trim().toLowerCase();
+      const nome = document
+        .getElementById("cadastro-nome")
+        .value.trim()
+        .replace(/\s+/g, " ");
+      const email = document
+        .getElementById("cadastro-email")
+        .value.trim()
+        .toLowerCase();
       const senha = document.getElementById("cadastro-senha").value;
       const confirmar = document.getElementById("cadastro-confirmar").value;
-      if (nome.split(" ").length < 2) { mostrarMensagem("Digite seu nome e sobrenome.", "erro"); return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { mostrarMensagem("Digite um e-mail válido.", "erro"); return; }
-      if (senha.length < 6) { mostrarMensagem("A senha precisa ter pelo menos 6 caracteres.", "erro"); return; }
-      if (senha !== confirmar) { mostrarMensagem("As senhas não são iguais.", "erro"); return; }
+      if (nome.split(" ").length < 2) {
+        mostrarMensagem("Digite seu nome e sobrenome.", "erro");
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        mostrarMensagem("Digite um e-mail válido.", "erro");
+        return;
+      }
+      if (senha.length < 6) {
+        mostrarMensagem("A senha precisa ter pelo menos 6 caracteres.", "erro");
+        return;
+      }
+      if (senha !== confirmar) {
+        mostrarMensagem("As senhas não são iguais.", "erro");
+        return;
+      }
       const contas = lerContas();
-      if (contas.some((item) => item.email === email)) { mostrarMensagem("Já existe uma conta de demonstração com esse e-mail. Entre ou recupere a senha.", "erro"); return; }
+      if (contas.some((item) => item.email === email)) {
+        mostrarMensagem(
+          "Já existe uma conta de demonstração com esse e-mail. Entre ou recupere a senha.",
+          "erro",
+        );
+        return;
+      }
       const conta = { nome, email, senha, criadoEm: new Date().toISOString() };
       contas.push(conta);
       try {
         localStorage.setItem(CHAVE_CONTAS, JSON.stringify(contas));
         iniciarSessao(conta);
         window.location.href = "./meu-impacto.html";
-      } catch (erro) { mostrarMensagem("Não foi possível salvar a conta neste navegador.", "erro"); }
+      } catch (erro) {
+        mostrarMensagem(
+          "Não foi possível salvar a conta neste navegador.",
+          "erro",
+        );
+      }
     });
 
-    document.getElementById("abrir-recuperacao").addEventListener("click", function () {
-      formEntrar.hidden = true;
-      formCadastro.hidden = true;
-      formRecuperacao.hidden = false;
-      abaEntrar.classList.remove("ativa");
-      abaCadastro.classList.remove("ativa");
-      mostrarMensagem("", "");
-    });
+    document
+      .getElementById("abrir-recuperacao")
+      .addEventListener("click", function () {
+        formEntrar.hidden = true;
+        formCadastro.hidden = true;
+        formRecuperacao.hidden = false;
+        abaEntrar.classList.remove("ativa");
+        abaCadastro.classList.remove("ativa");
+        mostrarMensagem("", "");
+      });
 
-    document.getElementById("voltar-login").addEventListener("click", () => selecionarAba("entrar"));
+    document
+      .getElementById("voltar-login")
+      .addEventListener("click", () => selecionarAba("entrar"));
     formRecuperacao.addEventListener("submit", function (evento) {
       evento.preventDefault();
-      const email = document.getElementById("recuperar-email").value.trim().toLowerCase();
+      const email = document
+        .getElementById("recuperar-email")
+        .value.trim()
+        .toLowerCase();
       const senha = document.getElementById("recuperar-senha").value;
-      if (senha.length < 6) { mostrarMensagem("A nova senha precisa ter pelo menos 6 caracteres.", "erro"); return; }
+      if (senha.length < 6) {
+        mostrarMensagem(
+          "A nova senha precisa ter pelo menos 6 caracteres.",
+          "erro",
+        );
+        return;
+      }
       const contas = lerContas();
       const conta = contas.find((item) => item.email === email);
-      if (!conta) { mostrarMensagem("Não encontramos uma conta com esse e-mail neste navegador.", "erro"); return; }
+      if (!conta) {
+        mostrarMensagem(
+          "Não encontramos uma conta com esse e-mail neste navegador.",
+          "erro",
+        );
+        return;
+      }
       conta.senha = senha;
       try {
         localStorage.setItem(CHAVE_CONTAS, JSON.stringify(contas));
-        mostrarMensagem("Senha atualizada nesta demonstração. Você já pode entrar.", "sucesso");
+        mostrarMensagem(
+          "Senha atualizada nesta demonstração. Você já pode entrar.",
+          "sucesso",
+        );
         selecionarAba("entrar");
         document.getElementById("login-email").value = email;
-      } catch (erro) { mostrarMensagem("Não foi possível atualizar a senha.", "erro"); }
+      } catch (erro) {
+        mostrarMensagem("Não foi possível atualizar a senha.", "erro");
+      }
     });
   }
 
@@ -151,21 +220,47 @@
     if (emailSessao) emailSessao.textContent = "Conectado como " + sessao.email;
     if (dataPerfil) {
       const data = new Date(sessao.criadoEm);
-      dataPerfil.textContent = data.toLocaleDateString("pt-BR", { month: "long", year: "numeric" });
+      dataPerfil.textContent = data.toLocaleDateString("pt-BR", {
+        month: "long",
+        year: "numeric",
+      });
     }
     carregarHistoricoDoador(sessao.email);
     if (tipoDoador) {
       let recorrencia = null;
-      try { recorrencia = JSON.parse(localStorage.getItem("doacaoRecorrente_" + sessao.email.toLowerCase())); } catch (erro) { recorrencia = null; }
+      try {
+        recorrencia = JSON.parse(
+          localStorage.getItem(
+            "doacaoRecorrente_" + sessao.email.toLowerCase(),
+          ),
+        );
+      } catch (erro) {
+        recorrencia = null;
+      }
       let historico = [];
-      try { historico = JSON.parse(localStorage.getItem("historicoDoacoes_" + sessao.email.toLowerCase())) || []; } catch (erro) { historico = []; }
-      tipoDoador.textContent = recorrencia && recorrencia.status === "ativa" ? "Recorrente" : historico.length ? "Pontual" : "Ainda não realizou doações";
+      try {
+        historico =
+          JSON.parse(
+            localStorage.getItem(
+              "historicoDoacoes_" + sessao.email.toLowerCase(),
+            ),
+          ) || [];
+      } catch (erro) {
+        historico = [];
+      }
+      tipoDoador.textContent =
+        recorrencia && recorrencia.status === "ativa"
+          ? "Recorrente"
+          : historico.length
+            ? "Pontual"
+            : "Ainda não realizou doações";
     }
     const sair = document.getElementById("sair-conta-doador");
-    if (sair) sair.addEventListener("click", function () {
-      sessionStorage.removeItem(CHAVE_SESSAO);
-      window.location.href = "./acesso-doador.html";
-    });
+    if (sair)
+      sair.addEventListener("click", function () {
+        sessionStorage.removeItem(CHAVE_SESSAO);
+        window.location.href = "./acesso-doador.html";
+      });
   }
 
   function carregarHistoricoDoador(email) {
@@ -174,35 +269,54 @@
     try {
       const dados = JSON.parse(localStorage.getItem(chave));
       if (Array.isArray(dados)) historico = dados;
-    } catch (erro) { historico = []; }
+    } catch (erro) {
+      historico = [];
+    }
 
     const corpo = document.getElementById("lista-doacoes");
     if (!corpo) return;
     corpo.textContent = "";
-    const moeda = (valor) => Number(valor).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-    const total = historico.reduce((soma, item) => soma + (Number(item.valor) || 0), 0);
-    const meses = new Set(historico.map((item) => {
-      const data = new Date(item.data);
-      return data.getFullYear() + "-" + data.getMonth();
-    }));
-
-    historico.slice().reverse().forEach((item) => {
-      const linha = document.createElement("tr");
-      const valores = [new Date(item.data).toLocaleDateString("pt-BR"), item.tipo || "Doação", moeda(item.valor), "Demonstrativa"];
-      valores.forEach((valor, indice) => {
-        const celula = document.createElement("td");
-        celula.textContent = valor;
-        if (indice === 3) {
-          const status = document.createElement("span");
-          status.className = "status-concluido";
-          status.textContent = valor;
-          celula.textContent = "";
-          celula.appendChild(status);
-        }
-        linha.appendChild(celula);
+    const moeda = (valor) =>
+      Number(valor).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
       });
-      corpo.appendChild(linha);
-    });
+    const total = historico.reduce(
+      (soma, item) => soma + (Number(item.valor) || 0),
+      0,
+    );
+    const meses = new Set(
+      historico.map((item) => {
+        const data = new Date(item.data);
+        return data.getFullYear() + "-" + data.getMonth();
+      }),
+    );
+
+    historico
+      .slice()
+      .reverse()
+      .forEach((item) => {
+        const linha = document.createElement("tr");
+        const valores = [
+          new Date(item.data).toLocaleDateString("pt-BR"),
+          item.tipo || "Doação",
+          moeda(item.valor),
+          "Demonstrativa",
+        ];
+        valores.forEach((valor, indice) => {
+          const celula = document.createElement("td");
+          celula.textContent = valor;
+          if (indice === 3) {
+            const status = document.createElement("span");
+            status.className = "status-concluido";
+            status.textContent = valor;
+            celula.textContent = "";
+            celula.appendChild(status);
+          }
+          linha.appendChild(celula);
+        });
+        corpo.appendChild(linha);
+      });
 
     if (!historico.length) {
       const linha = document.createElement("tr");
@@ -218,6 +332,7 @@
     const mesesEl = document.getElementById("doador-meses-apoio");
     if (totalEl) totalEl.textContent = moeda(total);
     if (quantidadeEl) quantidadeEl.textContent = String(historico.length);
-    if (mesesEl) mesesEl.textContent = meses.size + (meses.size === 1 ? " mês" : " meses");
+    if (mesesEl)
+      mesesEl.textContent = meses.size + (meses.size === 1 ? " mês" : " meses");
   }
 })();

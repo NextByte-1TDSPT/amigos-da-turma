@@ -1,4 +1,4 @@
-/* Tablets e celulares (até 992px): menu hambúrguer e layouts em coluna */
+/* Tablets e celulares: menu hambúrguer e layouts em coluna */
 @media (max-width: 62rem) {
   :root {
     --fs-cell: 2.75rem;
@@ -365,7 +365,6 @@
   }
 }
 
-
 /* Feedback específico do formulário de contato */
 .feedback-contato {
   min-height: 1.5rem;
@@ -373,7 +372,7 @@
 }
 
 .mensagem-erro-geral {
-  color: #C62828;
+  color: #c62828;
   font-size: 0.875rem;
   font-weight: bold;
 }
@@ -483,7 +482,6 @@
   }
 }
 
-
 /* Menu compacto para celulares: evita que os links quebrem em duas linhas */
 @media (max-width: 62rem) {
   header {
@@ -545,7 +543,6 @@
     display: none;
   }
 }
-
 
 @media (max-width: 48rem) {
   .doacao-foto-inferior {

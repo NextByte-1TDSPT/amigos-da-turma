@@ -1,17 +1,17 @@
 :root {
   /* Cores */
   --verde: #009639;
-  --verde-escuro: #245B37;
-  --verde-claro: #E8F5EC;
-  --laranja: #F26522;
-  --laranja-escuro: #D95113;
-  --amarelo: #FFC857;
-  --fundo: #F8F9FA;
-  --branco: #FFFFFF;
+  --verde-escuro: #245b37;
+  --verde-claro: #e8f5ec;
+  --laranja: #f26522;
+  --laranja-escuro: #d95113;
+  --amarelo: #ffc857;
+  --fundo: #f8f9fa;
+  --branco: #ffffff;
   --texto: #333333;
-  --texto-suave: #62717E;
-  --titulo-escuro: #17252F;
-  --borda: #E5EDE7;
+  --texto-suave: #62717e;
+  --titulo-escuro: #17252f;
+  --borda: #e5ede7;
   --rodape: #252525;
 
   /* Fonte e tamanhos de texto */
@@ -33,7 +33,6 @@
   /* Espaçamentos */
   --espaco-secao: 3.4375rem;
 }
-
 
 /* RESET E ESTILOS GERAIS */
 * {
@@ -116,7 +115,6 @@ textarea:focus-visible {
   outline-offset: 0.125rem;
 }
 
-
 /* CABEÇALHO E MENU */
 header {
   display: flex;
@@ -191,7 +189,6 @@ header > button:hover {
   color: var(--verde-escuro);
 }
 
-
 /* BOTÕES */
 /* Botão principal (laranja) */
 .btn-destaque,
@@ -207,7 +204,9 @@ button {
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .btn-destaque:hover,
@@ -229,7 +228,9 @@ button:hover {
   border-radius: var(--raio-botao);
   font-weight: bold;
   text-decoration: none;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .btn-secundario:hover,
@@ -253,7 +254,6 @@ button:hover {
 .link-secundario i {
   margin-left: 0.3125rem;
 }
-
 
 /* FORMULÁRIOS (GERAL) */
 form {
@@ -282,7 +282,7 @@ textarea {
   max-width: 100%;
   padding: 0.75rem 0.875rem;
   background-color: var(--branco);
-  border: 0.0625rem solid #D6E0D9;
+  border: 0.0625rem solid #d6e0d9;
   border-radius: var(--raio);
   color: var(--texto);
   font-family: inherit;
@@ -312,14 +312,14 @@ form button {
 
 /* Classes criadas pelo JavaScript (validação do formulário) */
 .erro {
-  border-color: #C62828 !important;
-  background-color: #FFF5F5 !important;
+  border-color: #c62828 !important;
+  background-color: #fff5f5 !important;
 }
 
 .mensagem-erro {
   display: block;
   margin-top: 0.3125rem;
-  color: #C62828;
+  color: #c62828;
   font-size: 0.8125rem;
   font-weight: normal;
 }
@@ -333,7 +333,6 @@ form button {
   color: var(--verde-escuro);
   font-weight: bold;
 }
-
 
 /* RODAPÉ */
 footer {
@@ -384,7 +383,6 @@ footer nav a:hover,
   color: var(--laranja);
 }
 
-
 /* COMPONENTES COMPARTILHADOS */
 /* Aviso de funcionalidade demonstrativa */
 .aviso-demo {
@@ -393,7 +391,7 @@ footer nav a:hover,
   background-color: var(--verde-claro);
   border-left: 0.25rem solid var(--laranja);
   border-radius: 0.375rem;
-  color: #365A45;
+  color: #365a45;
   font-size: var(--fs-pequeno);
   line-height: 1.6;
 }
@@ -422,7 +420,7 @@ footer nav a:hover,
 }
 
 .icone-amarelo {
-  background-color: #F5A900;
+  background-color: #f5a900;
   color: var(--branco);
 }
 

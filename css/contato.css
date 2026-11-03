@@ -49,7 +49,7 @@
   top: 1.875rem;
   width: 6.5625rem;
   height: 6.5625rem;
-  background-color: #FFE0A3;
+  background-color: #ffe0a3;
   border-radius: 50%;
 }
 
@@ -59,7 +59,7 @@
   bottom: -5.9375rem;
   width: 16.875rem;
   height: 10.625rem;
-  background-color: #D5E9DE;
+  background-color: #d5e9de;
   border-radius: 50%;
 }
 
@@ -120,8 +120,6 @@
   font-size: var(--fs-pequeno);
 }
 
-
-
 /* Ajuste visual da página de contato */
 .secao-contato {
   grid-template-columns: minmax(0, 1fr) minmax(21rem, 0.9fr);
@@ -180,7 +178,9 @@
   padding: 0.85rem 0.95rem;
   font: inherit;
   background: #fff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .formulario-contato .campo-contato input:focus,
@@ -313,7 +313,6 @@
   margin-bottom: 0;
 }
 
-
 /* Ajuste da sobreposição dos elementos da ilustração de contato */
 .ilustracao-contato .forma-laranja,
 .ilustracao-contato .forma-verde {
@@ -340,7 +339,6 @@
 .ilustracao-contato .icone-mensagem {
   top: 5rem;
 }
-
 
 /* Ilustração simplificada: um único ícone para evitar elementos sobrepostos */
 .ilustracao-contato {

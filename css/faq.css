@@ -84,13 +84,11 @@
 }
 
 .chamada-faq .etiqueta-faq {
-  color: #9FE3B6;
+  color: #9fe3b6;
 }
 
 .chamada-faq > p:not(.etiqueta-faq) {
   margin-bottom: 1.25rem;
-  color: #DCE8EE;
+  color: #dce8ee;
   line-height: 1.7;
 }
-
-

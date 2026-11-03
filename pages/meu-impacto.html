@@ -1,568 +1,487 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Área pessoal do doador da Amigos da Turma."/>
+    <link rel="icon" type="image/png" href="../imagens/favicon-amigos.png" />
+    <link rel="stylesheet" href="../css/area-doador.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/impacto.css" />
+    <link rel="stylesheet" href="../css/media.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Impacto | Amigos da Turma</title>
+  </head>
 
-  <meta name="description"
-        content="Área pessoal do doador da Amigos da Turma.">
-
-  <!-- Estilos do projeto -->
-  <link rel="icon" type="image/png" href="../imagens/favicon-amigos.png" />
-  <link rel="stylesheet" href="../css/area-doador.css">
-
-  <!-- Ícones -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-  <!-- Acesso demonstrativo do doador -->
-
-  <!-- Funcionalidades -->
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/impacto.css">
-  <link rel="stylesheet" href="../css/media.css">
-  
-  <title>Meu Impacto | Amigos da Turma</title>
-</head>
-
-<body>
-
-  <!-- CABEÇALHO -->
-  <header>
-      <a class="logo" href="../index.html" aria-label="Amigos da Turma - página inicial">
-          <img src="../imagens/logo-amigos-da-turma.png" alt="Amigos da Turma" />
+  <body>
+    <!-- CABEÇALHO -->
+    <header>
+      <a
+        class="logo"
+        href="../index.html"
+        aria-label="Amigos da Turma - página inicial"
+      >
+        <img src="../imagens/logo-amigos-da-turma.png" alt="Amigos da Turma" />
       </a>
 
-      <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu-principal">☰ Menu</button>
-    <nav id="menu-principal" class="navbar" aria-label="Navegação principal">
-          <ul class="nav-menu">
-              <li>
-                  <a class="nav-link" href="../index.html">
-                      Início
-                  </a>
-              </li>
+      <button
+        class="botao-menu"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        ☰ Menu
+      </button>
+      <nav id="menu-principal" class="navbar" aria-label="Navegação principal">
+        <ul class="nav-menu">
+          <li>
+            <a class="nav-link" href="../index.html"> Início </a>
+          </li>
 
-              <li>
-                  <a class="nav-link" href="./integrantes.html">
-                      Quem Somos
-                  </a>
-              </li>
+          <li>
+            <a class="nav-link" href="./integrantes.html"> Quem Somos </a>
+          </li>
 
-              <li>
-                  <a class="nav-link" href="./sobre.html">
-                      Sobre
-                  </a>
-              </li>
+          <li>
+            <a class="nav-link" href="./sobre.html"> Sobre </a>
+          </li>
 
-              <li>
-                  <a class="nav-link" href="./faq.html">
-                      FAQ
-                  </a>
-              </li>
+          <li>
+            <a class="nav-link" href="./faq.html"> FAQ </a>
+          </li>
 
-              <li>
-                  <a class="nav-link" href="./contato.html">
-                      Contato
-                  </a>
-              </li>
+          <li>
+            <a class="nav-link" href="./contato.html"> Contato </a>
+          </li>
 
-              <li>
-                  <a class="nav-link active"
-                     href="./meu-impacto.html"
-                     aria-current="page">
-                      Meu Impacto
-                  </a>
-              </li>
+          <li>
+            <a
+              class="nav-link active"
+              href="./meu-impacto.html"
+              aria-current="page"
+            >
+              Meu Impacto
+            </a>
+          </li>
 
-              <li>
-                  <a class="nav-link" href="./doacao.html">
-                      Doação
-                  </a>
-              </li>
-          </ul>
+          <li>
+            <a class="nav-link" href="./doacao.html"> Doação </a>
+          </li>
+        </ul>
       </nav>
-  </header>
+    </header>
 
-  <main class="area-doador pagina-impacto">
-
-      <!-- 1. BOAS-VINDAS -->
+    <main class="area-doador pagina-impacto">
+      <!-- BOAS-VINDAS -->
       <section class="apresentacao-doador">
-          <p class="etiqueta-impacto">
-              SUA ÁREA PESSOAL
-          </p>
+        <p class="etiqueta-impacto">SUA ÁREA PESSOAL</p>
 
-          <h1>Olá, <span id="doador-nome">Doador(a)</span>!</h1>
+        <h1>Olá, <span id="doador-nome">Doador(a)</span>!</h1>
 
-          <p>
-              Que bom ter você por aqui!
-              Acompanhe suas contribuições e descubra
-              como seu apoio pode transformar vidas.
-          </p>
+        <p>
+          Que bom ter você por aqui! Acompanhe suas contribuições e descubra
+          como seu apoio pode transformar vidas.
+        </p>
 
-          <p class="aviso-demonstracao">
-              Esta é uma demonstração acadêmica. Os dados exibidos são fictícios e ficam salvos somente neste navegador.
-          </p>
-          <div class="acoes-conta-doador">
-              <span id="doador-email-sessao"></span>
-              <button type="button" id="sair-conta-doador" class="btn-sair-conta">Sair da conta</button>
-          </div>
-      </section>
-
-      <!-- 2. PERFIL DO DOADOR -->
-      <section class="perfil-doador"
-               aria-labelledby="titulo-perfil">
-
-          <h2 id="titulo-perfil">Meu Perfil</h2>
-
-          <div class="card-perfil">
-
-              <div class="foto-perfil">
-                  <i class="fa-solid fa-user"
-                     aria-hidden="true"></i>
-              </div>
-
-              <div class="dados-perfil">
-                  <h3 id="perfil-doador-nome">Doador(a)</h3>
-
-                  <p>
-                      <strong>E-mail:</strong>
-                      <span id="perfil-doador-email">—</span>
-                  </p>
-
-                  <p>
-                      <strong>Tipo de doador:</strong>
-                      <span id="perfil-doador-tipo">Ainda não definido</span>
-                  </p>
-
-                  <p>
-                      <strong>Participação na Nota Fiscal Paulista:</strong>
-                      <span id="perfil-doador-nfp">Não informado</span>
-                  </p>
-
-                  <p>
-                      <strong>Membro desde:</strong>
-                      <span id="perfil-doador-data">—</span>
-                  </p>
-              </div>
-
-          </div>
-      </section>
-
-      <!-- 3. RESUMO DAS CONTRIBUIÇÕES -->
-      <section class="indicadores-doador"
-               aria-labelledby="titulo-resumo">
-
-          <h2 id="titulo-resumo">
-              Resumo das Minhas Contribuições
-          </h2>
-
-          <p>
-              Veja um resumo demonstrativo
-              da sua participação.
-          </p>
-
-          <div class="cards-indicadores">
-
-              <article class="card-indicador">
-                  <i class="fa-solid fa-hand-holding-dollar"
-                     aria-hidden="true"></i>
-
-                  <h3>Total doado</h3>
-                  <p class="numero-indicador">
-                      R$ 1.250,00
-                  </p>
-                  <p>Valor acumulado fictício</p>
-              </article>
-
-              <article class="card-indicador">
-                  <i class="fa-solid fa-receipt"
-                     aria-hidden="true"></i>
-
-                  <h3>Doações realizadas</h3>
-                  <p class="numero-indicador" id="doador-total-doacoes">0</p>
-                  <p>Contribuições demonstrativas</p>
-              </article>
-
-              <article class="card-indicador">
-                  <i class="fa-solid fa-calendar-check"
-                     aria-hidden="true"></i>
-
-                  <h3>Meses de apoio</h3>
-                  <p class="numero-indicador" id="doador-meses-apoio">0 meses</p>
-                  <p>Desde janeiro de 2026</p>
-              </article>
-
-          </div>
-      </section>
-
-      <!-- 4. HISTÓRICO DE DOAÇÕES -->
-      <section class="historico-doacoes"
-               aria-labelledby="titulo-historico">
-
-          <h2 id="titulo-historico">
-              Histórico de Contribuições
-          </h2>
-
-          <p>
-              Confira suas últimas contribuições
-              demonstrativas.
-          </p>
-
-          <div class="tabela-doacoes">
-              <table>
-                  <thead>
-                      <tr>
-                          <th scope="col">Data</th>
-                          <th scope="col">Tipo</th>
-                          <th scope="col">Valor</th>
-                          <th scope="col">Situação</th>
-                      </tr>
-                  </thead>
-
-                  <tbody id="lista-doacoes"></tbody>
-              </table>
-          </div>
-
-          <p class="aviso-perfil">
-              As contribuições registradas nesta demonstração aparecem aqui. Nenhuma cobrança real é realizada.
-          </p>
-
-          <!-- Estado vazio -->
-          <div class="estado-vazio"
-               id="estado-vazio"
-               hidden>
-
-              <i class="fa-solid fa-inbox"
-                 aria-hidden="true"></i>
-
-              <h3>
-                  Você ainda não realizou nenhuma doação
-              </h3>
-
-              <p>
-                  Sua primeira contribuição pode fazer
-                  a diferença na vida de muitas pessoas.
-              </p>
-
-              <a class="btn-destaque" href="./doacao.html">
-                  Fazer minha primeira doação
-              </a>
-          </div>
-
-          <button type="button"
-                  id="alternar-historico"
-                  class="btn-secundario">
-              Simular histórico vazio
+        <p class="aviso-demonstracao">
+          Esta é uma demonstração acadêmica. Os dados exibidos são fictícios e
+          ficam salvos somente neste navegador.
+        </p>
+        <div class="acoes-conta-doador">
+          <span id="doador-email-sessao"></span>
+          <button type="button" id="sair-conta-doador" class="btn-sair-conta">
+            Sair da conta
           </button>
+        </div>
+      </section>
+
+      <!-- PERFIL DO DOADOR -->
+      <section class="perfil-doador" aria-labelledby="titulo-perfil">
+        <h2 id="titulo-perfil">Meu Perfil</h2>
+
+        <div class="card-perfil">
+          <div class="foto-perfil">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+          </div>
+
+          <div class="dados-perfil">
+            <h3 id="perfil-doador-nome">Doador(a)</h3>
+
+            <p>
+              <strong>E-mail:</strong>
+              <span id="perfil-doador-email">—</span>
+            </p>
+
+            <p>
+              <strong>Tipo de doador:</strong>
+              <span id="perfil-doador-tipo">Ainda não definido</span>
+            </p>
+
+            <p>
+              <strong>Participação na Nota Fiscal Paulista:</strong>
+              <span id="perfil-doador-nfp">Não informado</span>
+            </p>
+
+            <p>
+              <strong>Membro desde:</strong>
+              <span id="perfil-doador-data">—</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESUMO DAS CONTRIBUIÇÕES -->
+      <section class="indicadores-doador" aria-labelledby="titulo-resumo">
+        <h2 id="titulo-resumo">Resumo das Minhas Contribuições</h2>
+
+        <p>Veja um resumo demonstrativo da sua participação.</p>
+
+        <div class="cards-indicadores">
+          <article class="card-indicador">
+            <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i>
+
+            <h3>Total doado</h3>
+            <p class="numero-indicador">R$ 1.250,00</p>
+            <p>Valor acumulado fictício</p>
+          </article>
+
+          <article class="card-indicador">
+            <i class="fa-solid fa-receipt" aria-hidden="true"></i>
+
+            <h3>Doações realizadas</h3>
+            <p class="numero-indicador" id="doador-total-doacoes">0</p>
+            <p>Contribuições demonstrativas</p>
+          </article>
+
+          <article class="card-indicador">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+
+            <h3>Meses de apoio</h3>
+            <p class="numero-indicador" id="doador-meses-apoio">0 meses</p>
+            <p>Desde janeiro de 2026</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- HISTÓRICO DE DOAÇÕES -->
+      <section class="historico-doacoes" aria-labelledby="titulo-historico">
+        <h2 id="titulo-historico">Histórico de Contribuições</h2>
+
+        <p>Confira suas últimas contribuições demonstrativas.</p>
+
+        <div class="tabela-doacoes">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Situação</th>
+              </tr>
+            </thead>
+
+            <tbody id="lista-doacoes"></tbody>
+          </table>
+        </div>
+
+        <p class="aviso-perfil">
+          As contribuições registradas nesta demonstração aparecem aqui. Nenhuma
+          cobrança real é realizada.
+        </p>
+
+        <!-- Estado vazio -->
+        <div class="estado-vazio" id="estado-vazio" hidden>
+          <i class="fa-solid fa-inbox" aria-hidden="true"></i>
+
+          <h3>Você ainda não realizou nenhuma doação</h3>
+
+          <p>
+            Sua primeira contribuição pode fazer a diferença na vida de muitas
+            pessoas.
+          </p>
+
+          <a class="btn-destaque" href="./doacao.html">
+            Fazer minha primeira doação
+          </a>
+        </div>
+
+        <button type="button" id="alternar-historico" class="btn-secundario">
+          Simular histórico vazio
+        </button>
       </section>
 
       <!-- GERENCIAMENTO DA DOAÇÃO RECORRENTE -->
-      <section class="gerenciar-recorrencia-doador" aria-labelledby="titulo-gerenciar-recorrencia">
-          <div>
-              <p class="etiqueta-impacto">SUA CONTRIBUIÇÃO</p>
-              <h2 id="titulo-gerenciar-recorrencia">Gerenciar minha doação recorrente</h2>
-              <p>Consulte os dados da sua contribuição, altere o valor ou a frequência e cancele quando desejar.</p>
-          </div>
-          <p id="doador-rec-status" role="status" aria-live="polite">Nenhuma doação recorrente cadastrada.</p>
-          <div id="doador-rec-detalhes" hidden>
-              <div class="resumo-recorrencia-doador">
-                  <p>Valor: <strong id="doador-rec-valor"></strong></p>
-                  <p>Frequência: <strong id="doador-rec-frequencia"></strong></p>
-                  <p>Nome: <strong id="doador-rec-nome"></strong></p>
-                  <p>E-mail: <strong id="doador-rec-email"></strong></p>
-                  <p>Status: <strong id="doador-rec-situacao"></strong></p>
-              </div>
-              <div class="acoes-recorrencia-doador">
-                  <button type="button" id="doador-rec-abrir-edicao">Alterar contribuição</button>
-                  <button type="button" id="doador-rec-cancelar">Cancelar recorrência</button>
-              </div>
-          </div>
-          <form id="doador-rec-edicao" hidden>
-              <h3>Alterar contribuição</h3>
-              <label for="doador-rec-novo-valor">Novo valor (mínimo R$ 10,00)</label>
-              <input type="number" id="doador-rec-novo-valor" min="10" step="0.01">
-              <label for="doador-rec-nova-frequencia">Nova frequência</label>
-              <select id="doador-rec-nova-frequencia">
-                  <option value="mensal">Mensal</option>
-                  <option value="trimestral">Trimestral</option>
-                  <option value="anual">Anual</option>
-              </select>
-              <div class="acoes-recorrencia-doador">
-                  <button type="submit">Salvar alterações</button>
-                  <button type="button" id="doador-rec-descartar">Voltar</button>
-              </div>
-          </form>
-          <a class="btn-secundario" href="./doacao.html">Fazer uma nova contribuição</a>
-      </section>
-
-      <!-- 5. MEU IMPACTO SOCIAL -->
-      <section class="secao-indicadores"
-               aria-labelledby="titulo-impacto">
-
-          <div class="titulo-impacto">
-              <p class="etiqueta-impacto">
-                  TRANSFORMAÇÃO SOCIAL
-              </p>
-
-              <h2 id="titulo-impacto">
-                  Meu Impacto Social
-              </h2>
-
-              <p>
-                  Conheça exemplos de como as contribuições
-                  podem apoiar iniciativas sociais.
-              </p>
-          </div>
-
-          <div class="cards-impacto">
-
-              <article class="card-impacto">
-                  <div class="icone-impacto">
-                      <i class="fa-solid fa-users"
-                         aria-hidden="true"></i>
-                  </div>
-
-                  <h3>Jovens impactados</h3>
-                  <p class="indicador-impacto">3 jovens</p>
-
-                  <p>
-                      Indicador fictício de impacto social.
-                  </p>
-              </article>
-
-              <article class="card-impacto">
-                  <div class="icone-impacto">
-                      <i class="fa-solid fa-tooth"
-                         aria-hidden="true"></i>
-                  </div>
-
-                  <h3>Saúde e bem-estar</h3>
-
-                  <p>
-                      Apoio a iniciativas que promovem
-                      acesso ao cuidado odontológico.
-                  </p>
-              </article>
-
-              <article class="card-impacto">
-                  <div class="icone-impacto">
-                      <i class="fa-solid fa-heart"
-                         aria-hidden="true"></i>
-                  </div>
-
-                  <h3>Transformação de vidas</h3>
-
-                  <p>
-                      Contribuições que podem fortalecer
-                      ações sociais e oportunidades.
-                  </p>
-              </article>
-
-          </div>
-      </section>
-
-      <!-- 6. HISTÓRIAS DE IMPACTO -->
-      <section class="secao-historia-impacto">
-
-          <div class="imagem-historia-impacto">
-              <img
-                  src="../imagens/mulher-sorrindo.jpg"
-                  alt="Imagem ilustrativa de crianças sorrindo">
-          </div>
-
-          <article class="historia-detalhe">
-
-              <p class="etiqueta-impacto">
-                  HISTÓRIAS QUE INSPIRAM
-              </p>
-
-              <h2>Histórias de Impacto</h2>
-
-              <h3>Uma nova oportunidade</h3>
-
-              <p>
-                  O acesso ao cuidado odontológico pode
-                  contribuir para a autoestima,
-                  o bem-estar e novas oportunidades.
-              </p>
-
-              <p>
-                  Sua contribuição ajuda a fortalecer
-                  iniciativas que buscam transformar
-                  realidades por meio do cuidado.
-              </p>
-
-              <p class="aviso-historia">
-                  Exemplo ilustrativo.
-                  Não representa uma história real
-                  nem resultados individuais comprovados.
-              </p>
-
-          </article>
-      </section>
-
-      <!-- 7. PREFERÊNCIAS DE COMUNICAÇÃO -->
-      <section class="preferencias-doador"
-               aria-labelledby="titulo-preferencias">
-
-          <h2 id="titulo-preferencias">
-              Minhas Preferências
+      <section
+        class="gerenciar-recorrencia-doador"
+        aria-labelledby="titulo-gerenciar-recorrencia"
+      >
+        <div>
+          <p class="etiqueta-impacto">SUA CONTRIBUIÇÃO</p>
+          <h2 id="titulo-gerenciar-recorrencia">
+            Gerenciar minha doação recorrente
           </h2>
+          <p>
+            Consulte os dados da sua contribuição, altere o valor ou a
+            frequência e cancele quando desejar.
+          </p>
+        </div>
+        <p id="doador-rec-status" role="status" aria-live="polite">
+          Nenhuma doação recorrente cadastrada.
+        </p>
+        <div id="doador-rec-detalhes" hidden>
+          <div class="resumo-recorrencia-doador">
+            <p>Valor: <strong id="doador-rec-valor"></strong></p>
+            <p>Frequência: <strong id="doador-rec-frequencia"></strong></p>
+            <p>Nome: <strong id="doador-rec-nome"></strong></p>
+            <p>E-mail: <strong id="doador-rec-email"></strong></p>
+            <p>Status: <strong id="doador-rec-situacao"></strong></p>
+          </div>
+          <div class="acoes-recorrencia-doador">
+            <button type="button" id="doador-rec-abrir-edicao">
+              Alterar contribuição
+            </button>
+            <button type="button" id="doador-rec-cancelar">
+              Cancelar recorrência
+            </button>
+          </div>
+        </div>
+        <form id="doador-rec-edicao" hidden>
+          <h3>Alterar contribuição</h3>
+          <label for="doador-rec-novo-valor"
+            >Novo valor (mínimo R$ 10,00)</label
+          >
+          <input
+            type="number"
+            id="doador-rec-novo-valor"
+            min="10"
+            step="0.01"
+          />
+          <label for="doador-rec-nova-frequencia">Nova frequência</label>
+          <select id="doador-rec-nova-frequencia">
+            <option value="mensal">Mensal</option>
+            <option value="trimestral">Trimestral</option>
+            <option value="anual">Anual</option>
+          </select>
+          <div class="acoes-recorrencia-doador">
+            <button type="submit">Salvar alterações</button>
+            <button type="button" id="doador-rec-descartar">Voltar</button>
+          </div>
+        </form>
+        <a class="btn-secundario" href="./doacao.html"
+          >Fazer uma nova contribuição</a
+        >
+      </section>
+
+      <!-- MEU IMPACTO SOCIAL -->
+      <section class="secao-indicadores" aria-labelledby="titulo-impacto">
+        <div class="titulo-impacto">
+          <p class="etiqueta-impacto">TRANSFORMAÇÃO SOCIAL</p>
+
+          <h2 id="titulo-impacto">Meu Impacto Social</h2>
 
           <p>
-              Gerencie como gostaria de receber
-              novidades e informações da ONG.
+            Conheça exemplos de como as contribuições podem apoiar iniciativas
+            sociais.
+          </p>
+        </div>
+
+        <div class="cards-impacto">
+          <article class="card-impacto">
+            <div class="icone-impacto">
+              <i class="fa-solid fa-users" aria-hidden="true"></i>
+            </div>
+
+            <h3>Jovens impactados</h3>
+            <p class="indicador-impacto">3 jovens</p>
+
+            <p>Indicador fictício de impacto social.</p>
+          </article>
+
+          <article class="card-impacto">
+            <div class="icone-impacto">
+              <i class="fa-solid fa-tooth" aria-hidden="true"></i>
+            </div>
+
+            <h3>Saúde e bem-estar</h3>
+
+            <p>
+              Apoio a iniciativas que promovem acesso ao cuidado odontológico.
+            </p>
+          </article>
+
+          <article class="card-impacto">
+            <div class="icone-impacto">
+              <i class="fa-solid fa-heart" aria-hidden="true"></i>
+            </div>
+
+            <h3>Transformação de vidas</h3>
+
+            <p>
+              Contribuições que podem fortalecer ações sociais e oportunidades.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- HISTÓRIAS DE IMPACTO -->
+      <section class="secao-historia-impacto">
+        <div class="imagem-historia-impacto">
+          <img
+            src="../imagens/mulher-sorrindo.jpg"
+            alt="Imagem ilustrativa de crianças sorrindo"
+          />
+        </div>
+
+        <article class="historia-detalhe">
+          <p class="etiqueta-impacto">HISTÓRIAS QUE INSPIRAM</p>
+
+          <h2>Histórias de Impacto</h2>
+
+          <h3>Uma nova oportunidade</h3>
+
+          <p>
+            O acesso ao cuidado odontológico pode contribuir para a autoestima,
+            o bem-estar e novas oportunidades.
           </p>
 
-          <form id="form-preferencias">
+          <p>
+            Sua contribuição ajuda a fortalecer iniciativas que buscam
+            transformar realidades por meio do cuidado.
+          </p>
 
-              <fieldset>
-                  <legend>Comunicações</legend>
+          <p class="aviso-historia">
+            Exemplo ilustrativo. Não representa uma história real nem resultados
+            individuais comprovados.
+          </p>
+        </article>
+      </section>
 
-                  <label class="opcao-preferencia">
-                      <input type="checkbox"
-                             id="receber-novidades"
-                             checked>
+      <!-- PREFERÊNCIAS DE COMUNICAÇÃO -->
+      <section
+        class="preferencias-doador"
+        aria-labelledby="titulo-preferencias"
+      >
+        <h2 id="titulo-preferencias">Minhas Preferências</h2>
 
-                      <span>
-                          Receber novidades sobre projetos
-                          e ações sociais.
-                      </span>
-                  </label>
+        <p>Gerencie como gostaria de receber novidades e informações da ONG.</p>
 
-                  <label class="opcao-preferencia">
-                      <input type="checkbox"
-                             id="receber-campanhas">
+        <form id="form-preferencias">
+          <fieldset>
+            <legend>Comunicações</legend>
 
-                      <span>
-                          Receber informações sobre campanhas
-                          e oportunidades de doação.
-                      </span>
-                  </label>
+            <label class="opcao-preferencia">
+              <input type="checkbox" id="receber-novidades" checked />
 
-                  <label class="opcao-preferencia">
-                      <input type="checkbox"
-                             id="receber-impacto"
-                             checked>
+              <span> Receber novidades sobre projetos e ações sociais. </span>
+            </label>
 
-                      <span>
-                          Receber atualizações sobre
-                          o impacto das contribuições.
-                      </span>
-                  </label>
-              </fieldset>
+            <label class="opcao-preferencia">
+              <input type="checkbox" id="receber-campanhas" />
 
-              <fieldset>
-                  <legend>Consentimento</legend>
+              <span>
+                Receber informações sobre campanhas e oportunidades de doação.
+              </span>
+            </label>
 
-                  <label class="opcao-preferencia">
-                      <input type="checkbox"
-                             id="consentimento-dados">
+            <label class="opcao-preferencia">
+              <input type="checkbox" id="receber-impacto" checked />
 
-                      <span>
-                          Autorizo o uso dos meus dados
-                          de contato para as comunicações
-                          selecionadas, conforme a
-                          política de privacidade.
-                      </span>
-                  </label>
-              </fieldset>
+              <span>
+                Receber atualizações sobre o impacto das contribuições.
+              </span>
+            </label>
+          </fieldset>
 
-              <p class="aviso-privacidade">
-                  Demonstração acadêmica.
-                  Nenhuma informação será enviada
-                  para servidores externos.
-              </p>
+          <fieldset>
+            <legend>Consentimento</legend>
 
-              <button type="submit"
-                      class="btn-salvar">
-                  Salvar preferências
-              </button>
+            <label class="opcao-preferencia">
+              <input type="checkbox" id="consentimento-dados" />
 
-              <p id="mensagem-feedback"
-                 class="mensagem-feedback"
-                 role="status"
-                 aria-live="polite"></p>
+              <span>
+                Autorizo o uso dos meus dados de contato para as comunicações
+                selecionadas, conforme a política de privacidade.
+              </span>
+            </label>
+          </fieldset>
 
-          </form>
+          <p class="aviso-privacidade">
+            Demonstração acadêmica. Nenhuma informação será enviada para
+            servidores externos.
+          </p>
+
+          <button type="submit" class="btn-salvar">Salvar preferências</button>
+
+          <p
+            id="mensagem-feedback"
+            class="mensagem-feedback"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
       </section>
 
       <!-- Acesso ao painel demonstrativo para apresentação acadêmica -->
       <section class="acesso-painel-demo" aria-label="Painel demonstrativo">
-          <p><strong>Área de demonstração do projeto</strong></p>
-          <p>O painel interno apresenta indicadores fictícios de captação e retenção.</p>
-          <a class="btn-impacto-secundario" href="./dashboard.html">Visualizar dashboard demonstrativo</a>
+        <p><strong>Área de demonstração do projeto</strong></p>
+        <p>
+          O painel interno apresenta indicadores fictícios de captação e
+          retenção.
+        </p>
+        <a class="btn-impacto-secundario" href="./dashboard.html"
+          >Visualizar dashboard demonstrativo</a
+        >
       </section>
 
       <!-- 8. CHAMADA PARA DOAÇÃO -->
       <section class="chamada-impacto">
+        <div class="texto-chamada-impacto">
+          <p class="etiqueta-impacto">CONTINUE FAZENDO A DIFERENÇA</p>
 
-          <div class="texto-chamada-impacto">
+          <h2>Seu apoio pode transformar vidas</h2>
 
-              <p class="etiqueta-impacto">
-                  CONTINUE FAZENDO A DIFERENÇA
-              </p>
+          <p>
+            Continue contribuindo para fortalecer iniciativas sociais e ampliar
+            oportunidades de cuidado.
+          </p>
 
-              <h2>
-                  Seu apoio pode transformar vidas
-              </h2>
+          <div class="botoes-impacto">
+            <a class="btn-destaque" href="./doacao.html"> Quero doar </a>
 
-              <p>
-                  Continue contribuindo para fortalecer
-                  iniciativas sociais e ampliar
-                  oportunidades de cuidado.
-              </p>
-
-              <div class="botoes-impacto">
-                  <a class="btn-destaque"
-                     href="./doacao.html">
-                      Quero doar
-                  </a>
-
-                  <a class="btn-impacto-secundario"
-                     href="./sobre.html">
-                      Conheça a Turma do Bem
-                  </a>
-              </div>
-
+            <a class="btn-impacto-secundario" href="./sobre.html">
+              Conheça a Turma do Bem
+            </a>
           </div>
+        </div>
       </section>
+    </main>
 
-  </main>
+    <!-- RODAPÉ -->
+    <footer>
+      <p>Turma do Bem - Transformando vidas através de sorrisos.</p>
 
-  <!-- RODAPÉ -->
-  <footer>
-      <p>
-          Turma do Bem - Transformando vidas
-          através de sorrisos.
-      </p>
-
-      <nav class="footer-nav"
-           aria-label="Navegação do rodapé">
-          <ul>
-              <li><a href="../index.html">Início</a></li>
-              <li><a href="./integrantes.html">Quem Somos</a></li>
-              <li><a href="./sobre.html">Sobre</a></li>
-              <li><a href="./faq.html">FAQ</a></li>
-              <li><a href="./contato.html">Contato</a></li>
-              <li><a href="./meu-impacto.html">Meu Impacto</a></li>
-              <li><a href="./doacao.html">Doação</a></li>
-          </ul>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="./integrantes.html">Quem Somos</a></li>
+          <li><a href="./sobre.html">Sobre</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./contato.html">Contato</a></li>
+          <li><a href="./meu-impacto.html">Meu Impacto</a></li>
+          <li><a href="./doacao.html">Doação</a></li>
+        </ul>
       </nav>
 
       <p>
-          &copy; 2026 Turma do Bem -
-          Projeto acadêmico NextByte.
-          Todos os direitos reservados.
+        &copy; 2026 Turma do Bem - Projeto acadêmico NextByte. Todos os direitos
+        reservados.
       </p>
-  </footer>
+    </footer>
 
-
-  <script src="../js/login.js"></script>
-  <script src="../js/area-doador.js"></script>
-  <script src="../js/gerenciar-recorrencia-doador.js"></script>
-  <script src="../js/menu.js"></script>
-</body>
+    <script src="../js/login.js"></script>
+    <script src="../js/area-doador.js"></script>
+    <script src="../js/gerenciar-recorrencia-doador.js"></script>
+    <script src="../js/menu.js"></script>
+  </body>
 </html>

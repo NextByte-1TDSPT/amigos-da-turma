@@ -6,7 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const painelNfp = document.getElementById("painel-nfp");
   const formularios = document.getElementById("formularios-doacao");
 
-  if (!escolha || !painelPontual || !painelRecorrente || !painelNfp || !formularios) {
+  if (
+    !escolha ||
+    !painelPontual ||
+    !painelRecorrente ||
+    !painelNfp ||
+    !formularios
+  ) {
     return;
   }
 
@@ -42,7 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  document.querySelectorAll("[data-voltar-modalidades]").forEach(function (botao) {
-    botao.addEventListener("click", voltarParaEscolha);
-  });
+  document
+    .querySelectorAll("[data-voltar-modalidades]")
+    .forEach(function (botao) {
+      botao.addEventListener("click", voltarParaEscolha);
+    });
 });
